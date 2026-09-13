@@ -1,0 +1,33 @@
+---
+okf_version: "1.0"
+id: "okf-sec-sie-siem-architecture"
+title: "Siem Architecture"
+topic: "general/security-and-observability"
+subtopic: "siem-and-monitoring"
+status: "published"
+visibility: "public"
+created_at: "2026-09-14"
+tags:
+  - security-and-observability
+  - siem-and-monitoring
+summary: "was ist wazuh? https://documentation.wazuh.com/current/getting-started/index.htmlWazuh ist eine kostenlose Open-Source-Sicherheitsplattform, die Funkt"
+---
+
+# Siem Architecture
+
+## Executive Summary
+
+was ist wazuh? https://documentation.wazuh.com/current/getting-started/index.htmlWazuh ist eine kostenlose Open-Source-Sicherheitsplattform, die Funktionen von XDR (Extended Detection and Response) and SIEM (Security Information and Event Management) in einem System vereint. Sie dient dazu, IT-Infrastrukturen in Unternehmen zu überwachen, Bedrohungen zu erkennen and Datenbestände zu schützen.Die Plattform schützt Workloads in On-Premises-, virtuellen, containerbasierten (z. B. Docker/Kubernetes) sowie Cloud-Umgebungen (AWS, Azure, GCP).📊 Die wichtigsten Kernfunktionen (Use Cases)Wazuh ist modular aufgebaut and deckt eine breite Palette an Sicherheitsaufgaben ab:Bedrohungserkennung & -jagd (Threat Hunting): Echtzeit-Analyse von Logdaten, um Angriffe or verdächtige Verhaltensweisen im Netzwerk zu identifizieren.Malware-Erkennung: Erkennung von Viren, Rootkits and bösartigen Aktivitäten (z. B. about direkte Integrationen with VirusTotal or YARA).Überwachung der Dateiintegrität (FIM): Überwachung sensibler Dateien on unbefugte Änderungen (File Integrity Monitoring).Schachstellen-Erkennung (Vulnerability Detection): Scannen von Systemen on bekannte Software-Schachstellen, um Angriffsflächen proaktiv zu schließen.Security Configuration Assessment (SCA): Überprüfung, ob Systemkonfigurationen den Sicherheitsrichtlinien and Härtungsstandards entsprechen.Automatische Reaktion (Active Response): Automatische Blockierung von Angreifern (z. B. at Brute-Force-Attacken) or Isolierung infizierter Endpunkte.Compliance-Einhaltung: Vorgefertigte Dashboards and Dashlets for regulatorische Standards wie PCI DSS, GDPR/DSGVO, HIPAA and NIST 800-53.🏗️ Architektur & KomponentenDas System besteht im Wesentlichen from drei zentralen Komponenten and einem Agenten:Wazuh Agent: Ein leichtgewichtiger Dienst, der on den zu überwachenden Endpunkten (Windows, Linux, macOS etc.) installiert wird, Daten sammelt and an den Server schickt.Wazuh Server: Analysiert die von den Agenten empfangenen Daten, jagt sie through das Regelwerk (Decoders & Rules) and löst at Treffern Alarme from.Wazuh Indexer: Eine hochperformante Such- and Analyse-Engine, die die Alarme indiziert and speichert (basiert on OpenSearch).Wazuh Dashboard: Die webbasierte Benutzeroberfläche zur Visualisierung von Daten, zum Threat Hunting and zur Verwaltung des Systems.Neben der selbst gehosteten Open-Source-Variante bietet das Unternehmen Wazuh auch als SaaS-Lösung (Wazuh Cloud) an.Suchst du after einer bestimmten Integrationsmöglichkeit for deine Infrastruktur or möchtest du wissen, wie du Wazuh am besten per Docker / Terraform aufsetzt?
+                                                                    │
+[ Server / Node ]    ──> [ Tetragon / Falco (eBPF) ]     ──> Generiert JSON-Logs
+                                                                    │
+                                                                    ▼
+                                                    [ SIEM: Wazuh / OpenSearch ]
+Der Weg ins SIEM:Suricata schreibt seine Alarme wie gewohnt im JSON-Format (eve.json).Tetragon / Falco exportieren jeden gekillten Thread and jede Anomalie ebenfalls als strukturiertes JSON (oft via stdout or in ein lokales Logfile).Der Wazuh-Agent (or ein Fluentbit-Shipper) läuft on dem Server, sammelt beide Log-Dateien ein and schickt sie verschlüsselt an den zentralen Manager. [1] (https://datazone.de/en/aktuelles/opnsense-suricata-intrusion-detection/)Das Korrelations-Szenario im SIEM:Im Dashboard siehst du nun die gesamte Kette eines hochentwickelten Angriffs:Event 1 (Suricata): Inbound-Traffic zeigt einen Angreifer, der versucht, eine bekannte Schwachstelle (z. B. Log4j) auszunutzen.Event 2 (Tetragon eBPF): Millisekunden später schlägt Tetragon Alarm: „Thread von Java-Prozess hat versucht, /bin/bash auszuführen. Aktion: KERNEL_SIGKILL angewendet.“ [1] (https://www.upwind.io/glossary/what-is-ebpf-security)Conclusion and Strategic RecommendationFür eine wasserdichte, strikte Open-Source-Pipeline baust du folgendes Setup:OPNsense + Suricata (XDP-Modus) an den Netzwerkgrenzen, um bekannte Angreifer sofort on Paketebene zu blockieren.Tetragon with aktiviertem eBPF-LSM-Modus on den eigentlichen Anwendungs- and API-Servern, um bösartige Prozesse and Threads in Echtzeit hart zu killen.Wazuh / OpenSearch als zentraler Aggregator, der die JSON-Outputs beider Welten einsaugt, damit du im Security Operations Center (SOC) die volle Übersicht behältst. [1] (https://www.contrastsecurity.com/glossary/ebpf), [2] (https://docs.suricata.io/en/suricata-8.0.5/capture-hardware/ebpf-xdp.html), [3] (https://linuxsecurity.com/news/network-security/linux-ebpf-xdp-ids-network-attacks), [4] (https://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=9232746&fileOId=9234236), [5] (https://www.oligo.security/academy/ebpf-security-top-5-use-cases-challenges-and-best-practices)Möchtest du ein konkretes Terraform/Anbshible-Beispiel sehen, wie man Tetragon on einem Ubuntu/Debian-Node with eBPF-Support hochzieht, or suchst du after den passenden Parsing-Regeln for das SIEM?
+       │
+       ├──> (Variante A: gVisor) ──> [ runsc Sentry ] ──> [ Falco Socket ] ──┐
+       │                                                                      │
+       └──> (Variante B: Kata)   ──> [ Gast-Kernel ]  ──> [ Tetragon eBPF ] ──┼──> [ Wazuh Agent ] ──> [ Wazuh SIEM ]
+                                                                              │
+[ Netzwerk-Traffic an Host ]     ──> [ Suricata XDP ] ────────────────────────┘
+Das Resultat for dein SecOps-SetupDu erhältst eine extrem tiefe, mehrschichtige Verteidigung (Defense-in-Depth):Prävention (Kata/gVisor): Selbst wenn ein Angreifer einen RCE-Exploit ausnutzt, landet er in einer isolierten Sandbox and kann den Host not angreifen.Echtzeit-Abwehr (eBPF/Tetragon): Bösartige Threads innerhalb der Sandbox werden sofort via eBPF-LSM im Kernel terminiert.Netzwerk-Schutz (Suricata): Command-and-Control-Verbindungen from den Sandboxes heraus werden an den Netzwerkschnittstellen blockiert.Zentrales Monitoring (Wazuh): Du behältst die volle Audit-Spur im Dashboard, um genau zu sehen, in welcher Sandbox welcher Angriffsvektor blockiert wurde.

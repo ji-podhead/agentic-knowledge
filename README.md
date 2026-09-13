@@ -1,53 +1,233 @@
-# agentic-knowledge
+# Open Knowledge Base (OKF Specification v1.0)
 
-Open knowledge base for building agent systems — routing, security, sandboxes, identity.
+Welcome to the **Open Knowledge Base**, a publication-ready, standalone technical research library covering cloud-native architecture, LLM orchestration, container runtime security, networking, security benchmarks, knowledge engineering skills, and gateway specifications.
 
-Converted from the internal jimesh research archive (R1–R43). License: CC-BY-4.0.
 
-| id | title | type | date |
-|----|-------|------|------|
-| DECISIONS | [Research Decisions — VERIFIED (Live API Tests)](docs/decisions.md) | decision | 2026-09-13 |
-| gemini_distill_1 | [gemini distill 1](docs/gemini_distill_1.md) | distilled | 2026-09-06 |
-| R10 | [R10 — Model Stats Pipeline: Static Facts + Dynamic Parameters + Fuzzy Fallback](docs/r10-model-stats-pipeline.md) | research | 2026-09-06 |
-| R11 | [R11 — Port Detection + SSH Tunnel Bridge + E2E Deployment](docs/r11-port-detection-ssh-tunnel-e2e-deploy.md) | research | 2026-09-06 |
-| R12 | [R12 — Agent Browser Control: Utility Model steuert JiMesh Dashboard + Iframes](docs/r12-agent-browser-control.md) | research | 2026-09-06 |
-| R13 | [R13 — Container Registry + MCP + Auto-Discovery + Tool Registry + Roadmap Graph](docs/r13-container-registry-mcp-discovery-roadmap.md) | research | 2026-09-06 |
-| R14 | [Docker MCP Integration — Verified Connectors as Bridge](docs/r14-docker-mcp-integration.md) | research | 2026-09-06 |
-| R15 | [R15 — Advanced Research Audit (Gemini Deep Analysis)](docs/r15-advanced-research-audit.md) | audit | 2026-09-06 |
-| R16 | [R16 — Widget Presets, App Categories, Security/SecOps & Vault](docs/r16-widget-presets-security-vault.md) | research | 2026-09-06 |
-| R17 | [R17 — Comprehensive Science & Industry Audit (R1-R16)](docs/r17-comprehensive-audit.md) | audit | 2026-09-06 |
-| R18 | [R18 agent bridge self provisioning](docs/r18-agent-bridge-self-provisioning.md) | research | 2026-09-06 |
-| R19 | [R19 — LLM-Firewall-Landschaft & Kernel-nahes Injection-Tracking](docs/r19-llm-firewall-landscape.md) | landscape | 2026-09-13 |
-| R1 | [R1 — Multi-Window Dashboard Grid](docs/r1-multi-window-dashboard.md) | research | 2026-09-06 |
-| R20 | [R20 — jimesh-Repo-Review: Wiederverwendbares für JiMesh](docs/r20-jimesh-reuse-review.md) | landscape | 2026-09-06 |
-| R21 | [R21 — DAP-Vorlage: Skills-Hub, Skill-Security & Memory](docs/r21-dap-skills-memory.md) | research | 2026-09-07 |
-| R22 | [R22 — Identity Broker & External-IdP Federation (B2B/AWS-Self-Host)](docs/r22-identity-broker-external-idp.md) | research | 2026-09-07 |
-| R23 | [R23 — Terminal-Only Deployment, OpenCode, tmux/VNC](docs/r23-terminal-tmux-vnc-opencode-deploy.md) | research | 2026-09-08 |
-| R24 | [R24:SAST:PRECOMMIT KERNEL](docs/r24-sast-precommit.md) | research | 2026-09-08 |
-| R25 | [R25 — Tetragon + gVisor / Kata Containers: Verifizierung & Einordnung für SPRINT-28](docs/r25-tetragon-gvisor-kata.md) | research | 2026-09-08 |
-| R26 | [R26 Siem](docs/r26.md) | research | 2026-09-09 |
-| R28 | [OpenCode Abhängigkeiten und ein gutes Terminal installieren](docs/r28_vnc.md) | research | 2026-09-11 |
-| R29 | [R29: gVisor Networking, NAT Control, and SSH Agent Forwarding Overhaul](docs/r29-gvisor-ssh-networking.md) | research | 2026-09-11 |
-| R2 | [R2 — Coding Deployment Config: Redeploy vs Hot-Reload](docs/r2-coding-deployment-config.md) | research | 2026-09-06 |
-| R30 | [Incident Audit Report: 11. September 2026 (Incident V3)](docs/r30-september-11-lockout-ufw-bypass-audit.md) | audit | 2026-09-11 |
-| R31 | [The JiMesh Ultimate Security, Architecture & Forensic Master Document](docs/r31-comprehensive-gvisor-docker-networking-ssh-ufw-security-guide.md) | guide | 2026-09-11 |
-| R34 | [SPRINT-PLANUNG & NETZWERK-RESEARCH: Zero-Trust & Layer-0 Routing](docs/r34-mesh-routing-protocols-research-sprints.md) | research | 2026-09-12 |
-| R35 | [R35 — Code-Salvage-Review: Coder, Headplane, Headscale-Admin, Nebula, DevPod](docs/r35-code-salvage-review.md) | landscape | 2026-09-12 |
-| R36 | [R36 — Positionierungs-Entscheidung: JiMesh ist kein Coder-Konkurrent](docs/r36-positionierungs-entscheidung.md) | research | 2026-09-12 |
-| R37 | [R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen)](docs/r37-guardrails-otel-reference-stack.md) | research | 2026-09-12 |
-| R38 | [R38 — CDC final: geschichtete Synthese (v1 inline + Enterprise Hub-and-Spoke)](docs/r38-cdc-final-layered-synthesis.md) | research | 2026-09-12 |
-| R39 | [R39 — Frontend-Slop-Audit + Lücken-Register (TASK-052)](docs/r39-frontend-slop-audit.md) | audit | 2026-09-13 |
-| R3 | [R3 — Auto-Provision: Mesh Endpoints in Coding Deployments](docs/r3-auto-provision-mesh-endpoints.md) | research | 2026-09-06 |
-| R40 | [R40 — Voll-Audit: Misalignments gegen die Operator-Vision (14.9.2026)](docs/r40-misalignment-audit.md) | audit | 2026-09-13 |
-| R41 | [R41 — Operator-Feedback-Blitz (14.9.2026): Vollständige Anforderungsliste](docs/r41-operator-feedback-blitz.md) | research | 2026-09-13 |
-| R42 | [R42 — App-Certs-Plan: Tailscale-Magic-Certs + Wazuh-Fallback (14.9.)](docs/r42-app-certs-tailscale-plan.md) | research | 2026-09-13 |
-| R42 | [R42 — Superadmin Visibility into a Hosted App's Own Auth/RBAC: Design Synthesis](docs/r42-hosted-app-auth-integration.md) | research | 2026-09-13 |
-| R42 | [R42 multi](docs/r42.md) | research | 2026-09-13 |
-| R43 | [R43 utlity browser playwright](docs/r43_utlity_browser.md) | research | 2026-09-13 |
-| R4 | [R4 — Nemotron Instruct Principle + Entropy-Based Routing](docs/r4-nemotron-entropy-routing.md) | research | 2026-09-06 |
-| R5 | [R5 — Framework Comparison: CrewAI vs LangGraph vs Custom Orchestration](docs/r5-framework-comparison.md) | research | 2026-09-06 |
-| R6 | [R6 — Model of Experts (MoE) for Agents](docs/r6-moe-agents.md) | research | 2026-09-06 |
-| R7 | [R7 — DeepSeek Harness Plugin: Orchestration Mode Architecture](docs/r7-dsh-plugin-orchestration.md) | research | 2026-09-06 |
-| R8 | [R8 — Speculative Decoding & Advanced Model Features](docs/r8-speculative-decoding-advanced-features.md) | research | 2026-09-06 |
-| R9 | [R9 — Server-Side Iframe Cache mit HTTP/3](docs/r9-iframe-cache-http3-terminal-deploy.md) | research | 2026-09-06 |
-| research-prompts | [Research-Prompts — Vorlagen für KI-Recherchen](docs/research-prompts.md) | research | 2026-09-06 |
+Welcome to the **Open Knowledge Base**, a standardized, publication-ready repository of technical specifications, architecture blueprints, security research, and engineering benchmarks.
+
+All documents in this directory adhere strictly to the **Open Knowledge Format (OKF v1.0)** specification.
+
+---
+
+## Table of Contents
+
+- [1. Overview & Objectives](#1-overview--objectives)
+- [2. Two-Tier Taxonomy Architecture](#2-two-tier-taxonomy-architecture)
+  - [2.1 General Open Knowledge (`knowledge/general/`)](#21-general-open-knowledge-knowledgegeneral)
+  - [2.2 Gateway Specifications (`knowledge/gateway-specifications/`)](#22-gateway-specifications-knowledgegateway-specifications)
+- [3. Knowledge Engineering Skills (`knowledge/skills/`)](#3-knowledge-engineering-skills-knowledgeskills)
+- [4. OKF Specification Standards](#4-okf-specification-standards)
+  - [4.1 YAML Frontmatter Schema](#41-yaml-frontmatter-schema)
+  - [4.2 Markdown Structure Standards](#42-markdown-structure-standards)
+  - [4.3 Content Quality & Redaction Rules](#43-content-quality--redaction-rules)
+
+
+- [2. OKF Document Taxonomy](#2-okf-document-taxonomy)
+- [3. OKF Specification Standards](#3-okf-specification-standards)
+  - [3.1 YAML Frontmatter Schema](#31-yaml-frontmatter-schema)
+  - [3.2 Markdown Structure Standards](#32-markdown-structure-standards)
+  - [3.3 Content Quality & Redaction Rules](#33-content-quality--redaction-rules)
+- [4. Conversion & Transformation Guide](#4-conversion--transformation-guide)
+- [5. Standalone Repository Export Guide](#5-standalone-repository-export-guide)
+
+---
+
+## 1. Overview & Objectives
+
+The primary goal of this knowledge base is to provide a clean, decoupled, and standalone technical research library. By isolating research documentation from application source code:
+- **Zero Confidential Leaks**: All developer paths (`/home/ji`), internal credentials, IP addresses (`[REDACTED-WAN-IP]`), and private tokens are completely sanitized.
+- **Production-Grade Quality**: AI slop, conversational fluff, LLM prompts, internal hiring logs, and unverified code snippets are removed.
+- **Standardized Machine-Readable Metadata**: Every document includes standardized YAML frontmatter for search indexing, categorization, and automated publishing.
+
+The primary goal of this knowledge base is to provide a clean, decoupled, and standalone technical research library partitioned into domain-agnostic general knowledge and gateway technical specifications:
+- **Zero Confidential Leaks**: All developer paths (`/home/ji`), internal credentials, IP addresses (`88.198.67.200`), and private tokens are completely sanitized.
+- **Two-Tier Organization**: General open-source technical research lives under `knowledge/general/`, while gateway-specific planning and ADRs live under `knowledge/gateway-specifications/`.
+- **Standardized Machine-Readable Metadata**: Every document includes standardized YAML frontmatter for search indexing, vector RAG embeddings, and GraphRAG entity extraction.
+
+
+- **Export Ready**: The entire `knowledge/` directory is designed to be moved directly into a dedicated public or enterprise research repository.
+
+---
+
+## 2. Two-Tier Taxonomy Architecture
+
+```
+knowledge/
+├── skills/                               # Knowledge Management Skills
+│   ├── okf-document-creation.md
+│   └── research-slop-to-knowledge-pipeline.md
+├── general/                              # General Open-Source Knowledge
+│   ├── networking/
+│   │   ├── container-networking/
+│   │   ├── security-and-firewalls/
+│   │   ├── vpn-and-overlay/
+│   │   └── tunnels-and-discovery/
+│   ├── container-runtime-security/
+│   │   ├── sandboxing/
+│   │   ├── mcp-integrations/
+│   │   └── terminal-workspaces/
+│   ├── llm-orchestration-and-routing/
+│   │   ├── routing-algorithms/
+│   │   ├── agent-architectures/
+│   │   └── cdc-and-synthesis/
+│   ├── security-and-observability/
+│   │   ├── siem-and-monitoring/
+│   │   └── guardrails-and-firewalls/
+│   ├── agent-systems-and-browser-automation/
+│   │   ├── browser-automation/
+│   │   ├── skills-and-memory/
+│   │   └── framework-evaluations/
+│   ├── identity-and-access-control/
+│   │   └── idp-integration/
+│   ├── frontend-and-ui-architecture/
+│   │   ├── dashboard-and-widgets/
+│   │   └── performance-and-rendering/
+│   └── analytics-and-telemetry/
+│       ├── metrics-and-pipelines/
+│       └── mesh-endpoints/
+└── gateway-specifications/               # Gateway Technical Specifications & ADRs
+
+
+## 2. OKF Document Taxonomy
+
+Documents are categorized into 7 primary topics and subtopics:
+
+```
+knowledge/
+├── container-and-runtime-security/
+│   ├── sandboxing/
+│   ├── mcp-integrations/
+│   └── terminal-workspaces/
+├── llm-routing-and-orchestration/
+│   ├── routing-algorithms/
+│   ├── agent-architectures/
+│   └── cdc-and-synthesis/
+├── security-and-observability/
+│   ├── siem-and-monitoring/
+│   └── guardrails-and-firewalls/
+├── agent-skills-and-browser-control/
+│   ├── browser-automation/
+│   ├── skills-and-memory/
+│   └── framework-evaluations/
+├── identity-and-access-management/
+│   └── idp-integration/
+├── frontend-and-ui-architecture/
+│   ├── dashboard-and-widgets/
+│   └── performance-and-rendering/
+├── infrastructure-and-platform-analytics/
+│   ├── metrics-and-pipelines/
+│   └── mesh-endpoints/
+└── strategy-audits-and-decisions/
+    ├── audits-and-handoffs/
+    └── positioning-and-plans/
+```
+
+---
+
+## 3. Knowledge Engineering Skills (`knowledge/skills/`)
+
+The `knowledge/skills/` directory contains procedural guides and operational specifications for knowledge management:
+
+1. **[OKF Document Creation Guide](skills/okf-document-creation.md)** (`okf-document-creation.md`): Defines the complete specification, metadata rules, ID naming conventions, two-tier folder layout, and verification checklist for creating OKF v1.0 documents.
+2. **[Research Slop to Knowledge Pipeline](skills/research-slop-to-knowledge-pipeline.md)** (`research-slop-to-knowledge-pipeline.md`): Defines the 8-stage architectural pipeline for deconstructing unstructured LLM research dumps, chat transcripts, and raw notes into structured OKF documents optimized for Vector RAG, GraphRAG entity extraction, and cross-encoder reranking.
+
+---
+
+## 4. OKF Specification Standards
+
+### 4.1 YAML Frontmatter Schema
+
+
+## 3. OKF Specification Standards
+
+### 3.1 YAML Frontmatter Schema
+
+Every OKF Markdown file MUST start with a valid YAML frontmatter block:
+
+```yaml
+---
+okf_version: "1.0"
+id: "okf-net-con-gvisor-container-networking"
+title: "gVisor Container Networking & Interface Isolation"
+topic: "general/networking"
+subtopic: "container-networking"
+
+
+id: "okf-con-san-gvisor-blog"
+title: "gVisor Architecture & Container Sandboxing Benchmark"
+topic: "container-and-runtime-security"
+subtopic: "sandboxing"
+status: "published"
+visibility: "public"
+created_at: "2026-09-14"
+tags:
+  - networking
+  - container-networking
+summary: "Technical evaluation of gVisor network stack isolation and Docker bridge interface configurations."
+---
+```
+
+
+
+  - container-and-runtime-security
+  - sandboxing
+summary: "Technical evaluation of gVisor Sentry and Gofer architecture for secure multi-tenant isolation."
+---
+```
+
+### 3.2 Markdown Structure Standards
+
+Below the frontmatter, every document follows a clean, hierarchical structure:
+
+1. **Title Header (`# Document Title`)**: Clear, concise document title matching frontmatter.
+2. **Executive Summary (`## Executive Summary`)**: Concise high-level context and core conclusions.
+3. **Core Technical Sections (`## Architecture`, `## Implementation`, etc.)**: Structured subsections with appropriate code blocks, diagrams, or benchmarks.
+4. **Conclusion & Recommendations (`## Conclusion`)**: Final synthesis or actionable takeaways.
+
+### 3.3 Content Quality & Redaction Rules
+
+To maintain publication quality:
+- **Redaction**:
+  - IP addresses -> `[REDACTED_IP]` or `100.x.y.z`
+  - Credentials/Keys -> `[REDACTED_SECRET]`
+  - Home paths -> `${HOME}`
+- **No Conversational Filler**: Omit phrases like "Here is a draft...", "Use code with caution", or chat greetings/farewells.
+- **Language**: Standardized in English across all documents.
+
+---
+
+## 4. Conversion & Transformation Guide
+
+To convert raw Markdown notes or LLM research drafts into OKF format:
+
+1. **Strip Prompts and Slop**: Remove LLM prompt meta-data, conversational intro/outro, and raw chat logs.
+2. **Sanitize Data**: Run a regex pass to replace IP addresses, secrets, and developer paths.
+3. **Map Metadata**: Select the topic and subtopic from the taxonomy and generate the OKF YAML frontmatter block.
+4. **Translate Headings**: Standardize all headings to English (`## Executive Summary`, `## Architecture`, `## Key Findings`, `## Conclusion`).
+5. **Format Code Blocks**: Ensure all code blocks specify syntax highlighting language (e.g. ````go`, ````yaml, ````bash).
+
+---
+
+## 5. Standalone Repository Export Guide
+
+When ready to publish or move this knowledge base to a dedicated repository (e.g., `github.com/organization/open-knowledge-base`):
+
+
+When ready to publish or move this knowledge base to a dedicated repository (e.g. `github.com/organization/open-knowledge-base`):
+
+```bash
+# 1. Clone or initialize the target repository
+git clone git@github.com:organization/open-knowledge-base.git
+cd open-knowledge-base
+
+# 2. Copy the knowledge directory contents to root
+cp -r /path/to/source/knowledge/* .
+
+
+cp -r /path/to/openmesh/knowledge/* .
+
+# 3. Commit and push cleanly
+git add .
+git commit -m "feat: initial release of open knowledge base documents (OKF v1.0)"
+git push origin main
+```
