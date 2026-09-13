@@ -19,7 +19,7 @@ summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog pos
 > **Datum:** 8. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
 > ([2026-09-08-entropy-cascades-blogpost.md](2026-09-08-entropy-cascades-blogpost.md)).
-> Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
+> Bild: `https://raw.githubusercontent.com/ji-podhead/articles/main/entropy-cascades/titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
 
@@ -55,8 +55,8 @@ What does your gateway do when the small model was *sure*?
 
 ## Veröffentlichungs-Checkliste
 
-- [ ] `titel.svg` → PNG konvertieren (Snippet im Hauptartikel-Anhang) und als Post-Bild anhängen
-- [ ] Alternativ: `pipeline.svg` als zweites Bild (die Two-Phase-Pipeline ist der visuelle Hook)
+- [ ] `https://raw.githubusercontent.com/ji-podhead/articles/main/entropy-cascades/titel.svg` → PNG konvertieren (Snippet im Hauptartikel-Anhang) und als Post-Bild anhängen
+- [ ] Alternativ: `https://raw.githubusercontent.com/ji-podhead/articles/main/entropy-cascades/pipeline.svg` als zweites Bild (die Two-Phase-Pipeline ist der visuelle Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
 - [ ] Hashtags: 5 Stück (3–5 work best)

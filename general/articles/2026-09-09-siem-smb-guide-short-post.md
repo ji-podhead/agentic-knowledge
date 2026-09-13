@@ -19,7 +19,7 @@ summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog pos
 > **Datum:** 9. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
 > ([2026-09-09-siem-smb-guide-blogpost.md](2026-09-09-siem-smb-guide-blogpost.md)).
-> Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
+> Bild: `https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
 
@@ -51,8 +51,8 @@ What does your team actually run today — self-hosted, managed, or "we'll get t
 
 ## Veröffentlichungs-Checkliste
 
-- [ ] `titel.svg` → PNG konvertieren (bereits unter `png/titel.png`) und als Post-Bild anhängen
-- [ ] Alternativ: `table_mapping.svg` als zweites Bild (die AWS-vs-OSS-Tabelle ist der stärkste Save/Share-Hook)
+- [ ] `https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/titel.svg` → PNG konvertieren (bereits unter `https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/png/titel.png`) und als Post-Bild anhängen
+- [ ] Alternativ: `https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/table_mapping.svg` als zweites Bild (die AWS-vs-OSS-Tabelle ist der stärkste Save/Share-Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
 - [ ] Hashtags: 5–7 Stück (3–5 work best, deliberately broader for cross-audience AWS+OSS)

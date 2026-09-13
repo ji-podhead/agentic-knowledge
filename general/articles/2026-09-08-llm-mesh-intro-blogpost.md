@@ -15,7 +15,7 @@ summary: "![Title graphic — dark blue tech background with grid, the headline 
 
 # One API Key to Route Them All: What an LLM Mesh Is (and Why Your Apps Shouldn't Talk to Providers Directly)
 
-![Title graphic — dark blue tech background with grid, the headline "One API Key to Route Them All", a monospace curl snippet against a local OpenAI-compatible endpoint, and the The Multi-Provider Gateway mesh-node logo inside orbital rings, mesh logo watermark bottom left](titel.svg)
+![Title graphic — dark blue tech background with grid, the headline "One API Key to Route Them All", a monospace curl snippet against a local OpenAI-compatible endpoint, and the The Multi-Provider Gateway mesh-node logo inside orbital rings, mesh logo watermark bottom left](https://raw.githubusercontent.com/ji-podhead/articles/main/llm-mesh-intro/titel.svg)
 
 *Title image: one endpoint, every model — the mesh hub pattern.*
 
@@ -27,7 +27,7 @@ An **LLM mesh** (most people say *gateway* or *router*) collapses the matrix to 
 
 ## What it actually is
 
-![Diagram: BEFORE — three apps each hold their own API keys and connect directly to OpenAI, Gemini, Groq/DeepSeek, with six crossing key lines labeled sk-…, gem-…, gsk-… (N × M configs, N × M failure modes). AFTER — the three apps connect to one local "LLM Mesh" endpoint (keys · routing · fallback · budgets · analytics · security), which holds the provider keys in its vault and connects to all providers](before_after.svg)
+![Diagram: BEFORE — three apps each hold their own API keys and connect directly to OpenAI, Gemini, Groq/DeepSeek, with six crossing key lines labeled sk-…, gem-…, gsk-… (N × M configs, N × M failure modes). AFTER — the three apps connect to one local "LLM Mesh" endpoint (keys · routing · fallback · budgets · analytics · security), which holds the provider keys in its vault and connects to all providers](https://raw.githubusercontent.com/ji-podhead/articles/main/llm-mesh-intro/before_after.svg)
 
 *Figure 0: The hub pattern. Every app solves the same three problems badly, separately — or once, properly, in one component.*
 
@@ -53,7 +53,7 @@ Seven things you get on day one:
 
 "Routing" is not one thing. The menu, from dumbest to smartest:
 
-![Comparison of five routing method families: static (priority chains, weighted shuffle, least-busy, latency-, cost-based — predictable, no learning); learned (decayed bandits from outcome feedback, or trained routers like RouteLLM on preference data); content-aware cascades (FrugalGPT-style learned scorer, entropy gates reading the model's own logprobs); similarity/kNN routing (embed the prompt, find nearest historical prompts, route to what served them well and cheap); mesh/graph routing (models as nodes, pools and sub-chains as edges, failover walks the graph)](routing_methods.svg)
+![Comparison of five routing method families: static (priority chains, weighted shuffle, least-busy, latency-, cost-based — predictable, no learning); learned (decayed bandits from outcome feedback, or trained routers like RouteLLM on preference data); content-aware cascades (FrugalGPT-style learned scorer, entropy gates reading the model's own logprobs); similarity/kNN routing (embed the prompt, find nearest historical prompts, route to what served them well and cheap); mesh/graph routing (models as nodes, pools and sub-chains as edges, failover walks the graph)](https://raw.githubusercontent.com/ji-podhead/articles/main/llm-mesh-intro/routing_methods.svg)
 
 *Figure 1: Five families of routing methods. They compose — a mesh can run static fallback as the floor, a bandit for provider selection, and a content-aware gate on top.*
 

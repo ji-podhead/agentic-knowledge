@@ -19,7 +19,7 @@ summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog pos
 > **Datum:** 7. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
 > ([2026-09-07-ebpf-llm-guards-blogpost.md](2026-09-07-ebpf-llm-guards-blogpost.md)).
-> Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
+> Bild: `https://raw.githubusercontent.com/ji-podhead/articles/main/ebpf/titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
 
@@ -49,8 +49,8 @@ What's your stack doing about prompt injection — guardrail library, gateway sc
 
 ## Veröffentlichungs-Checkliste
 
-- [ ] `titel.svg` → PNG konvertieren (`rsvg-convert -w 1200 titel.svg > titel.png`) und als Post-Bild anhängen
-- [ ] Alternativ: `pipeline.svg` als zweites Bild (die 6-Schritte-Pipeline ist der visuelle Hook)
+- [ ] `https://raw.githubusercontent.com/ji-podhead/articles/main/ebpf/titel.svg` → PNG konvertieren (`rsvg-convert -w 1200 titel.svg > titel.png`) und als Post-Bild anhängen
+- [ ] Alternativ: `https://raw.githubusercontent.com/ji-podhead/articles/main/ebpf/pipeline.svg` als zweites Bild (die 6-Schritte-Pipeline ist der visuelle Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
 - [ ] Hashtags am Ende: 10 Stück (3–5 work best; keep the first 5 if in doubt: `#PromptInjection #eBPF #LLMSecurity #AIAgents #CyberSecurity`)
