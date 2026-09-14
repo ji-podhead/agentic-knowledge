@@ -23,7 +23,7 @@
   - [Blog Post — Teaser für den SIEM-SMB-Guide (technical blogs)](/general/articles/2026-09-09-siem-smb-guide-short-post.md)
   - [The Bouncer, the Wall, and the Straitjacket: How Multi-Tenant Sandboxes Actually Stay Isolated (technical blogs)](/general/articles/2026-09-13-gvisor-workspace-isolation-blogpost.md)
   - [Blog Post — Teaser für den gVisor/VLAN/Identity-Routing-Artikel (technical blogs)](/general/articles/2026-09-13-gvisor-workspace-isolation-short-post.md)
-  - [Porting Heterogeneous Engineering Research into Open Knowledge Format (OKF v1.0) for Autonomous Agents & GraphRAG (technical blogs)](/general/articles/2026-09-14-okf-agentic-knowledge-porting-blogpost.md)
+  - [The Open Knowledge Format: Turning Research Slop into Machine-Readable Knowledge for Agents (technical blogs)](/general/articles/2026-09-14-okf-agentic-knowledge-porting-blogpost.md)
 - **Container Runtime Security**
   - [R13 — Container Registry + MCP + Auto-Discovery + Tool Registry + Roadmap Graph (mcp integrations)](/general/container-runtime-security/mcp-integrations/container-registry-mcp-discovery.md)
   - [Docker MCP Integration — Verified Connectors as Bridge (mcp integrations)](/general/container-runtime-security/mcp-integrations/docker-mcp-integration.md)

@@ -1138,65 +1138,81 @@
   },
   {
    "id": "okf-art-gen-agentic-knowledge-porting",
-   "title": "Porting Heterogeneous Engineering Research into Open Knowledge Format (OKF v1.0) for Autonomous Agents & GraphRAG",
+   "title": "The Open Knowledge Format: Turning Research Slop into Machine-Readable Knowledge for Agents",
    "path": "general/articles/2026-09-14-okf-agentic-knowledge-porting-blogpost.md",
    "topic": "articles",
    "subtopic": "technical-blogs",
    "tags": [],
-   "summary": "Detailed technical article describing how heterogeneous engineering research, chat transcripts, and internal project notes were transformed into standardized Open Knowledge Format ",
+   "summary": "How the Open Knowledge Format (OKF v0.2) turns research slop into machine-readable knowledge: the real Google Cloud spec, an 8-stage slop-to-knowledge pipeline, zero-build Docsify ",
    "status": "published",
    "chunks": [
     {
      "heading": "---",
-     "chars": 683
+     "chars": 1017
     },
     {
-     "heading": "Porting Heterogeneous Engineering Research into Open Knowledge Format (OKF v1.0)",
-     "chars": 115
+     "heading": "The Open Knowledge Format: Turning Research Slop into Machine-Readable Knowledge",
+     "chars": 1831
     },
     {
-     "heading": "Executive Summary",
-     "chars": 932
+     "heading": "1. The Challenge: Research Slop in Agent Pipelines",
+     "chars": 1102
     },
     {
-     "heading": "1. The Challenge: Unstructured Research Slop in Agent Pipelines",
-     "chars": 1268
+     "heading": "2. What OKF Actually Is (Spec v0.2)",
+     "chars": 2683
     },
     {
-     "heading": "2. The Open Knowledge Format (OKF v1.0) Architecture",
-     "chars": 422
+     "heading": "3. Our Two-Tier Implementation",
+     "chars": 1026
     },
     {
-     "heading": "2.1 The Two-Tier Directory Taxonomy",
-     "chars": 928
+     "heading": "4. How an Agent Actually Reads OKF (Without Embeddings)",
+     "chars": 1246
     },
     {
-     "heading": "2.2 YAML Frontmatter Schema",
-     "chars": 555
+     "heading": "5. OKF vs. RAG: They Solve Different Problems",
+     "chars": 1158
     },
     {
-     "heading": "3. The 8-Stage Slop-to-Knowledge Pipeline",
-     "chars": 272
+     "heading": "6. The 8-Stage Slop-to-Knowledge Pipeline",
+     "chars": 1089
     },
     {
-     "heading": "Pipeline Stages Breakdown",
-     "chars": 1122
+     "heading": "Entity-Relation Extraction (Stage 5 in practice)",
+     "chars": 382
     },
     {
-     "heading": "4. Multi-Hop GraphRAG & Entity Graph Traversal",
-     "chars": 533
+     "heading": "Before & After",
+     "chars": 600
     },
     {
-     "heading": "Entity-Relation Triple Extraction Examples",
-     "chars": 268
+     "heading": "7. Rendering It: The Zero-Build Pattern",
+     "chars": 1172
     },
     {
-     "heading": "5. Case Study: Transformation Before & After",
-     "chars": 675
+     "heading": "8. Agentic Tools: Metadata First, RAG Second",
+     "chars": 1876
     },
     {
-     "heading": "6. Conclusion & Best Practices",
-     "chars": 465
+     "heading": "9. Models & Guardrails for Structuring and Sanitation",
+     "chars": 1698
+    },
+    {
+     "heading": "10. What This Unlocks: Personal Brain-to-OKF & Lead Scrapers",
+     "chars": 1080
+    },
+    {
+     "heading": "11. Taxonomy and Ontology: OKF's Secret Superpower",
+     "chars": 1139
+    },
+    {
+     "heading": "12. Ecosystem: Specs, Tools & Awesome Repos",
+     "chars": 1783
+    },
+    {
+     "heading": "The Bottom Line",
+     "chars": 461
     }
    ]
   },
@@ -4096,9 +4112,9 @@
   {
    "id": "doc:okf-art-gen-agentic-knowledge-porting",
    "type": "doc",
-   "label": "Porting Heterogeneous Engineering Research into Open Knowledge Format (OKF v1.0) for Autonomous Agents & GraphRAG",
+   "label": "The Open Knowledge Format: Turning Research Slop into Machine-Readable Knowledge for Agents",
    "path": "general/articles/2026-09-14-okf-agentic-knowledge-porting-blogpost.md",
-   "size": 13
+   "size": 17
   },
   {
    "id": "doc:okf-con-mcp-container-registry-mcp-discovery",
