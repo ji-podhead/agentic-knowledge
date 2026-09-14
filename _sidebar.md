@@ -43,6 +43,9 @@
   - [DNS Protection: TSIG, DNSSEC, and Dynamic Updates with RNDC (dns dhcp storage)](/general/infrastructure-automation/dns-dhcp-storage/dns-protection-guide.md)
   - [Layer-2 Attack Surface in Multi-VM Environments: DNS, DHCP, MAC, SSH (network security)](/general/infrastructure-automation/network-security/layer2-attack-surface.md)
   - [Bare-Metal Provisioning with Foreman: PXE, DHCP, TFTP, and Discovery (provisioning)](/general/infrastructure-automation/provisioning/foreman-pxe-provisioning.md)
+- **Knowledge Engineering**
+  - [Fuzzy Logic: Inference with Degrees of Truth (history)](/general/knowledge-engineering/history/fuzzy-logic.md)
+  - [Knowledge-Based Systems: Facts, Rules and the Inference Machine (history)](/general/knowledge-engineering/history/knowledge-based-systems.md)
 - **Llm Orchestration And Routing**
   - [Agent Bridge Self Provisioning (agent architectures)](/general/llm-orchestration-and-routing/agent-architectures/agent-bridge-self-provisioning.md)
   - [requirements: pip install camoufox playwright (agent architectures)](/general/llm-orchestration-and-routing/agent-architectures/browser-agent-integrations.md)
@@ -59,6 +62,12 @@
   - [Incident Audit Report: 11. September 2026 (Incident V3) (security and firewalls)](/general/networking/security-and-firewalls/ufw-bypass-and-firewall-audits.md)
   - [R11 — Port Detection + SSH Tunnel Bridge + E2E Deployment (tunnels and discovery)](/general/networking/tunnels-and-discovery/port-detection-and-ssh-tunnels.md)
   - [R42 — App-Certs-Plan: Tailscale-Magic-Certs + Wazuh-Fallback (14.9.) (vpn and overlay)](/general/networking/vpn-and-overlay/tailscale-app-certificates.md)
+- **Retrieval Augmented Generation**
+  - [Agentic RAG Pipelines: Budgets, Gates and Trust Boundaries (agentic rag)](/general/retrieval-augmented-generation/agentic-rag/agentic-rag-pipelines.md)
+  - [RAG Foundations: Retrieval as a Precision Filter, Not a Vending Machine (fundamentals)](/general/retrieval-augmented-generation/fundamentals/rag-foundations.md)
+  - [Ontology-Driven GraphRAG: From Chunks to a Validated Knowledge Graph (graphrag)](/general/retrieval-augmented-generation/graphrag/ontology-driven-graphrag.md)
+  - [Hybrid Retrieval: BM25, Vector Search and Reciprocal Rank Fusion (hybrid retrieval)](/general/retrieval-augmented-generation/hybrid-retrieval/hybrid-search-rrf.md)
+  - [Provable RAG: Verifying Retrieval-Augmented Answers with Z3 (verification)](/general/retrieval-augmented-generation/verification/provable-rag-z3.md)
 - **Security And Observability**
   - [R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen) (guardrails and firewalls)](/general/security-and-observability/guardrails-and-firewalls/guardrails-otel-reference-stack.md)
   - [R19 — LLM-Firewall-Landschaft & Kernel-nahes Injection-Tracking (guardrails and firewalls)](/general/security-and-observability/guardrails-and-firewalls/llm-firewall-landscape.md)

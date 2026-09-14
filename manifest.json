@@ -2605,6 +2605,98 @@
    ]
   },
   {
+   "id": "okf-kno-his-fuzzy-logic",
+   "title": "Fuzzy Logic: Inference with Degrees of Truth",
+   "path": "general/knowledge-engineering/history/fuzzy-logic.md",
+   "topic": "knowledge-engineering",
+   "subtopic": "history",
+   "tags": [],
+   "summary": "Zadeh's fuzzy sets replace crisp two-state logic with membership degrees — the formal ancestor of relevance scores and confidence gates in modern AI systems.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 478
+    },
+    {
+     "heading": "Fuzzy Logic: Inference with Degrees of Truth",
+     "chars": 46
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 411
+    },
+    {
+     "heading": "Crisp vs. Fuzzy Sets",
+     "chars": 368
+    },
+    {
+     "heading": "The Temperature Controller Example",
+     "chars": 452
+    },
+    {
+     "heading": "Why Early AI Needed It",
+     "chars": 420
+    },
+    {
+     "heading": "Modern Descendants",
+     "chars": 507
+    },
+    {
+     "heading": "Conclusion",
+     "chars": 328
+    }
+   ]
+  },
+  {
+   "id": "okf-kno-his-knowledge-based-systems",
+   "title": "Knowledge-Based Systems: Facts, Rules and the Inference Machine",
+   "path": "general/knowledge-engineering/history/knowledge-based-systems.md",
+   "topic": "knowledge-engineering",
+   "subtopic": "history",
+   "tags": [],
+   "summary": "The knowledge-based system playbook: fact base, rule base and inference machine — the ancestor of every curated RAG knowledge base and answer verifier.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 529
+    },
+    {
+     "heading": "Knowledge-Based Systems: Facts, Rules and the Inference Machine",
+     "chars": 65
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 460
+    },
+    {
+     "heading": "The Definition",
+     "chars": 383
+    },
+    {
+     "heading": "Rule-Based Systems",
+     "chars": 605
+    },
+    {
+     "heading": "Expert Systems",
+     "chars": 726
+    },
+    {
+     "heading": "The Two Central Components",
+     "chars": 404
+    },
+    {
+     "heading": "Why It Matters for Modern RAG",
+     "chars": 657
+    },
+    {
+     "heading": "Conclusion",
+     "chars": 365
+    }
+   ]
+  },
+  {
    "id": "okf-llm-age-agent-bridge-self-provisioning",
    "title": "Agent Bridge Self Provisioning",
    "path": "general/llm-orchestration-and-routing/agent-architectures/agent-bridge-self-provisioning.md",
@@ -3617,6 +3709,246 @@
    ]
   },
   {
+   "id": "okf-rag-age-agentic-rag-pipelines",
+   "title": "Agentic RAG Pipelines: Budgets, Gates and Trust Boundaries",
+   "path": "general/retrieval-augmented-generation/agentic-rag/agentic-rag-pipelines.md",
+   "topic": "retrieval-augmented-generation",
+   "subtopic": "agentic-rag",
+   "tags": [],
+   "summary": "RAG as a governed workflow phase: token budgets, layered access control, graph persistence, quality gates before memory writes and metadata-first agent reading.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 537
+    },
+    {
+     "heading": "Agentic RAG Pipelines: Budgets, Gates and Trust Boundaries",
+     "chars": 60
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 413
+    },
+    {
+     "heading": "RAG as a Workflow Phase",
+     "chars": 415
+    },
+    {
+     "heading": "Four Layers of Access Control",
+     "chars": 490
+    },
+    {
+     "heading": "Persistence Turns Search into Memory",
+     "chars": 525
+    },
+    {
+     "heading": "Quality Gates Before Memory Writes",
+     "chars": 433
+    },
+    {
+     "heading": "Metadata-First Reading for Agents",
+     "chars": 616
+    },
+    {
+     "heading": "Evaluation as a Pipeline Stage",
+     "chars": 475
+    },
+    {
+     "heading": "Conclusion",
+     "chars": 286
+    }
+   ]
+  },
+  {
+   "id": "okf-rag-fun-rag-foundations",
+   "title": "RAG Foundations: Retrieval as a Precision Filter, Not a Vending Machine",
+   "path": "general/retrieval-augmented-generation/fundamentals/rag-foundations.md",
+   "topic": "retrieval-augmented-generation",
+   "subtopic": "fundamentals",
+   "tags": [],
+   "summary": "Core RAG concepts: vector search with payload filters, curated vs instance ingestion, and RAG as a synthesis engine between knowledge base and instance data.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 542
+    },
+    {
+     "heading": "RAG Foundations: Retrieval as a Precision Filter, Not a Vending Machine",
+     "chars": 73
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 365
+    },
+    {
+     "heading": "The Three Steps",
+     "chars": 595
+    },
+    {
+     "heading": "Embeddings Are Holistic, Entities Are Selective",
+     "chars": 462
+    },
+    {
+     "heading": "Payloads Are the Primary Filter",
+     "chars": 466
+    },
+    {
+     "heading": "Two Ingestion Processes, One Synthesis Engine",
+     "chars": 1038
+    },
+    {
+     "heading": "Conclusion",
+     "chars": 368
+    }
+   ]
+  },
+  {
+   "id": "okf-rag-gra-ontology-driven-graphrag",
+   "title": "Ontology-Driven GraphRAG: From Chunks to a Validated Knowledge Graph",
+   "path": "general/retrieval-augmented-generation/graphrag/ontology-driven-graphrag.md",
+   "topic": "retrieval-augmented-generation",
+   "subtopic": "graphrag",
+   "tags": [],
+   "summary": "Turning flat chunks into an ontology-validated knowledge graph: triple extraction, Leiden communities, multi-hop reasoning with path validation, adaptive taxonomy growth.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 554
+    },
+    {
+     "heading": "Ontology-Driven GraphRAG: From Chunks to a Validated Knowledge Graph",
+     "chars": 70
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 362
+    },
+    {
+     "heading": "Taxonomy vs. Ontology",
+     "chars": 532
+    },
+    {
+     "heading": "The GraphRAG Pipeline",
+     "chars": 512
+    },
+    {
+     "heading": "Binding Extraction to the Ontology",
+     "chars": 625
+    },
+    {
+     "heading": "Adaptive Taxonomy Growth",
+     "chars": 661
+    },
+    {
+     "heading": "Conclusion",
+     "chars": 329
+    }
+   ]
+  },
+  {
+   "id": "okf-rag-hyb-hybrid-search-rrf",
+   "title": "Hybrid Retrieval: BM25, Vector Search and Reciprocal Rank Fusion",
+   "path": "general/retrieval-augmented-generation/hybrid-retrieval/hybrid-search-rrf.md",
+   "topic": "retrieval-augmented-generation",
+   "subtopic": "hybrid-retrieval",
+   "tags": [],
+   "summary": "Combining keyword and vector retrieval with Reciprocal Rank Fusion (k=60), reranking, HyDE for zero-shot queries and multi-source web fetching fallbacks.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 523
+    },
+    {
+     "heading": "Hybrid Retrieval: BM25, Vector Search and Reciprocal Rank Fusion",
+     "chars": 66
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 392
+    },
+    {
+     "heading": "Why Fusion Beats Either Signal",
+     "chars": 652
+    },
+    {
+     "heading": "Reranking the Shortlist",
+     "chars": 384
+    },
+    {
+     "heading": "Global vs. Local Search",
+     "chars": 539
+    },
+    {
+     "heading": "HyDE for Zero-Shot Queries",
+     "chars": 378
+    },
+    {
+     "heading": "Fetching Fresh Sources Reliably",
+     "chars": 602
+    },
+    {
+     "heading": "Conclusion",
+     "chars": 241
+    }
+   ]
+  },
+  {
+   "id": "okf-rag-ver-provable-rag-z3",
+   "title": "Provable RAG: Verifying Retrieval-Augmented Answers with Z3",
+   "path": "general/retrieval-augmented-generation/verification/provable-rag-z3.md",
+   "topic": "retrieval-augmented-generation",
+   "subtopic": "verification",
+   "tags": [],
+   "summary": "A referee-verified RAG pipeline: evidence provenance checks, prior-knowledge UNSAT detection of answer leakage, and Z3-verified reasoning chains with scored outcomes.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 532
+    },
+    {
+     "heading": "Provable RAG: Verifying Retrieval-Augmented Answers with Z3",
+     "chars": 61
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 389
+    },
+    {
+     "heading": "The Referee Pattern",
+     "chars": 446
+    },
+    {
+     "heading": "The Three Formal Checks",
+     "chars": 882
+    },
+    {
+     "heading": "Status Codes and Scoring",
+     "chars": 654
+    },
+    {
+     "heading": "The Z3-DSL Pattern for LLM Outputs",
+     "chars": 697
+    },
+    {
+     "heading": "Beyond the Single Proof",
+     "chars": 608
+    },
+    {
+     "heading": "Limits and When to Use It",
+     "chars": 487
+    },
+    {
+     "heading": "Conclusion",
+     "chars": 362
+    }
+   ]
+  },
+  {
    "id": "okf-sec-gua-guardrails-otel-reference-stack",
    "title": "R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen)",
    "path": "general/security-and-observability/guardrails-and-firewalls/guardrails-otel-reference-stack.md",
@@ -4453,6 +4785,34 @@
    "size": 0
   },
   {
+   "id": "doc:okf-kno-his-fuzzy-logic",
+   "type": "doc",
+   "label": "Fuzzy Logic: Inference with Degrees of Truth",
+   "path": "general/knowledge-engineering/history/fuzzy-logic.md",
+   "size": 8
+  },
+  {
+   "id": "topic:knowledge-engineering",
+   "type": "topic",
+   "label": "knowledge-engineering",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:history",
+   "type": "subtopic",
+   "label": "history",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-kno-his-knowledge-based-systems",
+   "type": "doc",
+   "label": "Knowledge-Based Systems: Facts, Rules and the Inference Machine",
+   "path": "general/knowledge-engineering/history/knowledge-based-systems.md",
+   "size": 9
+  },
+  {
    "id": "doc:okf-llm-age-agent-bridge-self-provisioning",
    "type": "doc",
    "label": "Agent Bridge Self Provisioning",
@@ -4610,6 +4970,83 @@
    "id": "sub:vpn-and-overlay",
    "type": "subtopic",
    "label": "vpn-and-overlay",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-rag-age-agentic-rag-pipelines",
+   "type": "doc",
+   "label": "Agentic RAG Pipelines: Budgets, Gates and Trust Boundaries",
+   "path": "general/retrieval-augmented-generation/agentic-rag/agentic-rag-pipelines.md",
+   "size": 10
+  },
+  {
+   "id": "topic:retrieval-augmented-generation",
+   "type": "topic",
+   "label": "retrieval-augmented-generation",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:agentic-rag",
+   "type": "subtopic",
+   "label": "agentic-rag",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-rag-fun-rag-foundations",
+   "type": "doc",
+   "label": "RAG Foundations: Retrieval as a Precision Filter, Not a Vending Machine",
+   "path": "general/retrieval-augmented-generation/fundamentals/rag-foundations.md",
+   "size": 8
+  },
+  {
+   "id": "sub:fundamentals",
+   "type": "subtopic",
+   "label": "fundamentals",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-rag-gra-ontology-driven-graphrag",
+   "type": "doc",
+   "label": "Ontology-Driven GraphRAG: From Chunks to a Validated Knowledge Graph",
+   "path": "general/retrieval-augmented-generation/graphrag/ontology-driven-graphrag.md",
+   "size": 8
+  },
+  {
+   "id": "sub:graphrag",
+   "type": "subtopic",
+   "label": "graphrag",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-rag-hyb-hybrid-search-rrf",
+   "type": "doc",
+   "label": "Hybrid Retrieval: BM25, Vector Search and Reciprocal Rank Fusion",
+   "path": "general/retrieval-augmented-generation/hybrid-retrieval/hybrid-search-rrf.md",
+   "size": 9
+  },
+  {
+   "id": "sub:hybrid-retrieval",
+   "type": "subtopic",
+   "label": "hybrid-retrieval",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-rag-ver-provable-rag-z3",
+   "type": "doc",
+   "label": "Provable RAG: Verifying Retrieval-Augmented Answers with Z3",
+   "path": "general/retrieval-augmented-generation/verification/provable-rag-z3.md",
+   "size": 10
+  },
+  {
+   "id": "sub:verification",
+   "type": "subtopic",
+   "label": "verification",
    "path": "",
    "size": 0
   },
@@ -5086,6 +5523,22 @@
    "target": "tag:infrastructure]"
   },
   {
+   "source": "topic:knowledge-engineering",
+   "target": "doc:okf-kno-his-fuzzy-logic"
+  },
+  {
+   "source": "sub:history",
+   "target": "doc:okf-kno-his-fuzzy-logic"
+  },
+  {
+   "source": "topic:knowledge-engineering",
+   "target": "doc:okf-kno-his-knowledge-based-systems"
+  },
+  {
+   "source": "sub:history",
+   "target": "doc:okf-kno-his-knowledge-based-systems"
+  },
+  {
    "source": "topic:llm-orchestration-and-routing",
    "target": "doc:okf-llm-age-agent-bridge-self-provisioning"
   },
@@ -5196,6 +5649,46 @@
   {
    "source": "sub:vpn-and-overlay",
    "target": "doc:okf-net-vpn-tailscale-app-certificates"
+  },
+  {
+   "source": "topic:retrieval-augmented-generation",
+   "target": "doc:okf-rag-age-agentic-rag-pipelines"
+  },
+  {
+   "source": "sub:agentic-rag",
+   "target": "doc:okf-rag-age-agentic-rag-pipelines"
+  },
+  {
+   "source": "topic:retrieval-augmented-generation",
+   "target": "doc:okf-rag-fun-rag-foundations"
+  },
+  {
+   "source": "sub:fundamentals",
+   "target": "doc:okf-rag-fun-rag-foundations"
+  },
+  {
+   "source": "topic:retrieval-augmented-generation",
+   "target": "doc:okf-rag-gra-ontology-driven-graphrag"
+  },
+  {
+   "source": "sub:graphrag",
+   "target": "doc:okf-rag-gra-ontology-driven-graphrag"
+  },
+  {
+   "source": "topic:retrieval-augmented-generation",
+   "target": "doc:okf-rag-hyb-hybrid-search-rrf"
+  },
+  {
+   "source": "sub:hybrid-retrieval",
+   "target": "doc:okf-rag-hyb-hybrid-search-rrf"
+  },
+  {
+   "source": "topic:retrieval-augmented-generation",
+   "target": "doc:okf-rag-ver-provable-rag-z3"
+  },
+  {
+   "source": "sub:verification",
+   "target": "doc:okf-rag-ver-provable-rag-z3"
   },
   {
    "source": "topic:security-and-observability",
