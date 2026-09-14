@@ -25,7 +25,7 @@ a{color:var(--cyan)}
 .search a{color:var(--cyan)!important}
 .search .matching-post{border-bottom:1px solid var(--line)}
 /* Graph explorer */
-#grag{border:1px solid var(--line);border-radius:14px;background:rgba(15,23,42,.75);margin:1.5rem 0;overflow:hidden}
+#grag{position:relative;border:1px solid var(--line);border-radius:14px;background:rgba(15,23,42,.75);margin:1.5rem 0;overflow:hidden}
 #grag header{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.72rem;color:var(--muted)}
 #grag header b{color:var(--cyan)}
 #grag .modes{display:flex;gap:.4rem}
@@ -84,7 +84,7 @@ a{color:var(--cyan)}
 window.$docsify={name:'agentic-knowledge',loadSidebar:true,auto2top:true,homepage:'README.md',
   alias:{'/.*/_sidebar.md':'/_sidebar.md'},
   search:{placeholder:'Search knowledge…',noData:'No results',depth:6},
-  plugins:[function(h,a){a.hook.doneEach(function(){if(a.route.path==='/'||a.route.path.includes('README'))bootGraph()})}]};
+  plugins:[function(hook,vm){hook.doneEach(function(){if(vm.route.path==='/'||vm.route.path.includes('README'))bootGraph()})}]};
 
 /* ── state ── */
 let M=null,hop=1,sel=null,G={};
