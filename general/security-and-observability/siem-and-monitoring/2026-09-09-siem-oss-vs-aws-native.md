@@ -2,20 +2,20 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-09-siem-oss-vs-aws-native"
 title: "One Dashboard, Two Security Worlds: Wazuh + Falco vs. AWS GuardDuty + Security Hub"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/security-and-observability"
+subtopic: "siem-and-monitoring"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - security-and-observability
+  - siem-and-monitoring
 summary: "![Title graphic — dark background, the headline 'One Dashboard, Two Security Worlds' with the OSS-vs-AWS question framed around the identity chain, ne"
 ---
 
 # One Dashboard, Two Security Worlds: Wazuh + Falco vs. AWS GuardDuty + Security Hub
 
-![Title graphic — dark background, the headline "One Dashboard, Two Security Worlds" with the OSS-vs-AWS question framed around the identity chain, next to a dark panel showing the always-on controls: nft drop, metadata deny, SIGSTOP](title.svg)
+![Title graphic — dark background, the headline "One Dashboard, Two Security Worlds" with the OSS-vs-AWS question framed around the identity chain, next to a dark panel showing the always-on controls: nft drop, metadata deny, SIGSTOP](https://raw.githubusercontent.com/ji-podhead/articles/main/siem/title.svg)
 
 *Title image: the question this article answers — how does a container platform keep one security API under two completely different provider worlds?*
 
@@ -27,7 +27,7 @@ We are building both paths for The Multi-Provider Gateway (an open-source AI gat
 
 First, the 60-second version, because "SIEM" gets used loosely. A SIEM is not a scanner — it is a **correlate-and-retain engine** over every log source you point at it, with the alert as the output, not the feature.
 
-![Pipeline diagram of how a SIEM works in seven stages — collect (logs, network flow, identity, runtime syscalls, posture) → normalize into one schema (OCSF/ASFF or your own) → detect via rules (signatures, regex, FIM, allowlist violations) and via ML/behavior baselines carrying confidence and model version → correlate and attribute through the identity chain so chained events become one incident → alert to a risk-score-ranked triage queue where an operator decides → respond (revoke, SIGSTOP, blackhole) and retain for the long term](siem_basics.svg)
+![Pipeline diagram of how a SIEM works in seven stages — collect (logs, network flow, identity, runtime syscalls, posture) → normalize into one schema (OCSF/ASFF or your own) → detect via rules (signatures, regex, FIM, allowlist violations) and via ML/behavior baselines carrying confidence and model version → correlate and attribute through the identity chain so chained events become one incident → alert to a risk-score-ranked triage queue where an operator decides → respond (revoke, SIGSTOP, blackhole) and retain for the long term](https://raw.githubusercontent.com/ji-podhead/articles/main/siem/siem_basics.svg)
 
 *Figure 1: The seven stages every SIEM performs — collection, normalization, rule detection, behavioral detection, correlation with attribution, ranked triage, response + retention.*
 
@@ -66,7 +66,7 @@ Before the stacks: the foundation that makes them exchangeable. The Multi-Provid
 
 ## Architecture 1: the open-source stack
 
-![Architecture diagram of the OSS stack — four sensor cards (Falco modern eBPF watching syscalls per container, Suricata XDP packet IDS writing eve.json, Wazuh Agent for FIM and Docker-engine monitoring, The Multi-Provider Gateway built-in scanner/egress/RBAC) flowing into a dark Wazuh Manager card fed by the redacted The Multi-Provider Gateway shipper on TCP 1514 and returning alerts.json through an fsnotify tail into the Ingest Mapper, which enriches rows with project_id and feeds the The Multi-Provider Gateway Security Sidebar showing one threat feed with source badges](oss_stack.svg)
+![Architecture diagram of the OSS stack — four sensor cards (Falco modern eBPF watching syscalls per container, Suricata XDP packet IDS writing eve.json, Wazuh Agent for FIM and Docker-engine monitoring, The Multi-Provider Gateway built-in scanner/egress/RBAC) flowing into a dark Wazuh Manager card fed by the redacted The Multi-Provider Gateway shipper on TCP 1514 and returning alerts.json through an fsnotify tail into the Ingest Mapper, which enriches rows with project_id and feeds the The Multi-Provider Gateway Security Sidebar showing one threat feed with source badges](https://raw.githubusercontent.com/ji-podhead/articles/main/siem/oss_stack.svg)
 
 *Figure 1: The OSS stack — The Multi-Provider Gateway ships redacted metadata to the Wazuh Manager, Wazuh ships alerts back, and the ingest mapper attributes both directions before anything reaches the dashboard.*
 
@@ -82,7 +82,7 @@ How it works end to end:
 
 ## Architecture 2: the AWS-native stack
 
-![Architecture diagram of the AWS-native stack — The Multi-Provider Gateway on EC2/ECS with security groups and nftables flows through Firehose/CloudWatch into OpenSearch Service with Security Analytics, while GuardDuty (ML threat detection over flow logs, DNS and runtime), Inspector (CVEs), CloudTrail (crypto-signed API audit) and Config (drift rules) all aggregate into a dark AWS Security Hub card that feeds Bedrock agentic triage and returns findings via GetFindings to the same The Multi-Provider Gateway Security Sidebar](aws_stack.svg)
+![Architecture diagram of the AWS-native stack — The Multi-Provider Gateway on EC2/ECS with security groups and nftables flows through Firehose/CloudWatch into OpenSearch Service with Security Analytics, while GuardDuty (ML threat detection over flow logs, DNS and runtime), Inspector (CVEs), CloudTrail (crypto-signed API audit) and Config (drift rules) all aggregate into a dark AWS Security Hub card that feeds Bedrock agentic triage and returns findings via GetFindings to the same The Multi-Provider Gateway Security Sidebar](https://raw.githubusercontent.com/ji-podhead/articles/main/siem/aws_stack.svg)
 
 *Figure 2: The AWS-native stack (official AWS Architecture icons, inlined from `repo-assets/providers/aws_svg/`) — managed detection replaces every self-hosted component, and Security Hub becomes both the aggregator and the single findings interface.*
 
@@ -106,7 +106,7 @@ The component-by-component mapping, with what each service actually does:
 
 A WAF is the classic piece SMBs buy first — and the one most often left dumb. Two layers matter:
 
-![WAF flow diagram — clients hit a dark WAF/Shield edge card (OWASP rulesets, rate limits, IP/geo allowlists, bot control, blocking injection sequences and throttling anomalous POST bursts), which forwards to the dark The Multi-Provider Gateway /v1 gateway card (minted session identity, budgets, payload scanning, JWT/mTLS, per-consumer rate limits) and on to egress-allowlisted upstream models, with a feedback loop from both the WAF and the gateway into a learned-baseline card that updates WAF rules — block injection sequences, throttle anomalous POST bursts, detect shadow APIs by diffing gateway traffic against documented routes](waf_flow.svg)
+![WAF flow diagram — clients hit a dark WAF/Shield edge card (OWASP rulesets, rate limits, IP/geo allowlists, bot control, blocking injection sequences and throttling anomalous POST bursts), which forwards to the dark The Multi-Provider Gateway /v1 gateway card (minted session identity, budgets, payload scanning, JWT/mTLS, per-consumer rate limits) and on to egress-allowlisted upstream models, with a feedback loop from both the WAF and the gateway into a learned-baseline card that updates WAF rules — block injection sequences, throttle anomalous POST bursts, detect shadow APIs by diffing gateway traffic against documented routes](https://raw.githubusercontent.com/ji-podhead/articles/main/siem/waf_flow.svg)
 
 *Figure 4: WAF in the path — the edge blocks the noisy attacks, the gateway (the only guaranteed plaintext) checks identity and content, and the learned baseline feeds rule updates back into the WAF.*
 
@@ -118,7 +118,7 @@ The nuance: a WAF sees TLS-terminated L7 traffic, but for AI platforms **the gat
 
 ## The trick: one dashboard, swappable sensors
 
-![Architecture diagram showing The Multi-Provider Gateway as the system of record — workspaces with nftables default-drop and socket-guard flow through the dark K-LAF identity-chain card (container_id → session, minted at provisioning, never self-declared) into an extended security_events schema card (source, raw_id, severity, confidence, model_version), which branches into two small Go interfaces FindingSource/FindingSink (wazuh | securityhub | builtin) and the identical The Multi-Provider Gateway Dashboard API](architecture_kniff.svg)
+![Architecture diagram showing The Multi-Provider Gateway as the system of record — workspaces with nftables default-drop and socket-guard flow through the dark K-LAF identity-chain card (container_id → session, minted at provisioning, never self-declared) into an extended security_events schema card (source, raw_id, severity, confidence, model_version), which branches into two small Go interfaces FindingSource/FindingSink (wazuh | securityhub | builtin) and the identical The Multi-Provider Gateway Dashboard API](https://raw.githubusercontent.com/ji-podhead/articles/main/siem/architecture_kniff.svg)
 
 *Figure 3: The architecture kniff — the dashboard never talks to a SIEM directly, only to The Multi-Provider Gateway's own schema; providers differ only in ingest/sink adapters.*
 
@@ -146,7 +146,7 @@ A single setting (`security_pipeline: builtin | wazuh | aws`) switches source/si
 
 Rules find known patterns. They do not find a compromised API key quietly exfiltrating 40 GB at 3 a.m., because nothing in that behavior trips a regex. This is where the machine-learning layer earns its keep — and where MLOps discipline decides whether it works in six months.
 
-![Pipeline diagram of the MLOps layer — six steps from features extracted from request_log frames (bytes_sent_rolling, unique_dest_ips_10m) through Isolation-Forest training and an evaluation stage with a hard FPR-below-1% gate into a dark model-registry card (v1.0.0, pending manual approval), then a realtime endpoint emitting anomaly scores, into a model monitor comparing live against training distributions, with a red continuous-retrain loop closing back to step 1 and a note that findings carry confidence plus model_version and add to the rule layer](ml_pipeline.svg)
+![Pipeline diagram of the MLOps layer — six steps from features extracted from request_log frames (bytes_sent_rolling, unique_dest_ips_10m) through Isolation-Forest training and an evaluation stage with a hard FPR-below-1% gate into a dark model-registry card (v1.0.0, pending manual approval), then a realtime endpoint emitting anomaly scores, into a model monitor comparing live against training distributions, with a red continuous-retrain loop closing back to step 1 and a note that findings carry confidence plus model_version and add to the rule layer](https://raw.githubusercontent.com/ji-podhead/articles/main/siem/ml_pipeline.svg)
 
 *Figure 4: Anomaly detection as a managed lifecycle — the FPR gate and the retrain loop are what separate MLOps from a Python script.*
 
@@ -158,7 +158,7 @@ The no-mock rule applies with force: an ML finding carries `confidence` and `mod
 
 ## Which one, when
 
-![Comparison table across hosting (self-hosted ~4GB vs. fully managed), cost model (flat hardware vs. volume-based that gets expensive at high log volume), ML detection (open: ML Commons/MLflow/own models vs. GuardDuty ML instantly but black-box), compliance dashboards (Wazuh module vs. Security Hub scoring), and a dark highlighted final row showing that The Multi-Provider Gateway security_events attribution is IDENTICAL in both columns](comparison.svg)
+![Comparison table across hosting (self-hosted ~4GB vs. fully managed), cost model (flat hardware vs. volume-based that gets expensive at high log volume), ML detection (open: ML Commons/MLflow/own models vs. GuardDuty ML instantly but black-box), compliance dashboards (Wazuh module vs. Security Hub scoring), and a dark highlighted final row showing that The Multi-Provider Gateway security_events attribution is IDENTICAL in both columns](https://raw.githubusercontent.com/ji-podhead/articles/main/siem/comparison.svg)
 
 *Figure 5: The same dashboard under both provider worlds — the only row that must not differ is attribution.*
 

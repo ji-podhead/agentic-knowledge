@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-13-gvisor-workspace-isolation-short-post"
 title: "Blog Post — Teaser für den gVisor/VLAN/Identity-Routing-Artikel"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/container-runtime-security"
+subtopic: "sandboxing"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - container-runtime-security
+  - sandboxing
 summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post)."
 ---
 
@@ -19,7 +19,7 @@ summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog pos
 > **Datum:** 13. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
 > ([2026-09-13-gvisor-workspace-isolation-blogpost.md](2026-09-13-gvisor-workspace-isolation-blogpost.md)).
-> Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
+> Bild: `https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
 
@@ -49,8 +49,8 @@ Which of the three does your platform actually have today?
 
 ## Veröffentlichungs-Checkliste
 
-- [ ] `titel.svg` → PNG konvertieren (bereits unter `png/titel.png`) und als Post-Bild anhängen
-- [ ] Alternativ: `three_layers.svg` als zweites Bild (die Kaskade ist der stärkste Save/Share-Hook)
+- [ ] `https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/titel.svg` → PNG konvertieren (bereits unter `https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/png/titel.png`) und als Post-Bild anhängen
+- [ ] Alternativ: `https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/three_layers.svg` als zweites Bild (die Kaskade ist der stärkste Save/Share-Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
 - [ ] Hashtags: 5–7 Stück

@@ -2,20 +2,20 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-09-siem-smb-guide-blogpost"
 title: "You Have Logs. You Don’t Have a SIEM. — How to Build One: AWS-Native vs. Open Source (2026)"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/security-and-observability"
+subtopic: "siem-and-monitoring"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - security-and-observability
+  - siem-and-monitoring
 summary: "![Title graphic — dark background, headline 'SIEM for Growing Teams: Suricata, eBPF, Firewalls, WAF' next to two glowing bar-chart towers, one labeled"
 ---
 
 # You Have Logs. You Don’t Have a SIEM. — How to Build One: AWS-Native vs. Open Source (2026)
 
-![Title graphic — dark background, headline "SIEM for Growing Teams: Suricata, eBPF, Firewalls, WAF" next to two glowing bar-chart towers, one labeled "open source · self-hosted", one labeled "AWS-native · managed", with a terminal snippet showing a dropped firewall connection and a container-to-app-to-risk-score attribution chain](titel.png)
+![Title graphic — dark background, headline "SIEM for Growing Teams: Suricata, eBPF, Firewalls, WAF" next to two glowing bar-chart towers, one labeled "open source · self-hosted", one labeled "AWS-native · managed", with a terminal snippet showing a dropped firewall connection and a container-to-app-to-risk-score attribution chain](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/titel.png)
 
 *Title image: same job, several ways to build it — this article walks through all of them.*
 
@@ -27,7 +27,7 @@ This is the point where most small and mid-sized teams start Googling "SIEM for 
 
 "SIEM" gets used loosely, so first the honest definition: a SIEM (Security Information and Event Management system) is not a scanner and not an alert generator. It's a **correlate-and-retain engine** that sits over every log source you point at it, with the alert as the *output*, not the feature.
 
-![Pipeline diagram of how a SIEM works in seven stages — collect (logs, network, identity, runtime syscalls, posture) → normalize into one schema (OCSF/ASFF or your own) → detect via rules (signatures, regex, FIM, allowlist violations) and via ML/behavior baselines carrying confidence and model version → correlate and attribute so chained events become one incident → alert to a risk-score-ranked triage queue where a human decides → respond and retain for the long term](pipeline.png)
+![Pipeline diagram of how a SIEM works in seven stages — collect (logs, network, identity, runtime syscalls, posture) → normalize into one schema (OCSF/ASFF or your own) → detect via rules (signatures, regex, FIM, allowlist violations) and via ML/behavior baselines carrying confidence and model version → correlate and attribute so chained events become one incident → alert to a risk-score-ranked triage queue where a human decides → respond and retain for the long term](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/pipeline.png)
 
 *Figure 1: The seven stages every SIEM performs, whether you host it yourself or rent it from a cloud provider.*
 
@@ -78,7 +78,7 @@ Once you know the building blocks, there are, realistically, four ways to assemb
 
 ### Approach A: the open-source stack
 
-![Architecture diagram of an open-source SIEM stack — four sensor cards (Suricata network IDS/IPS, an eBPF sensor such as Falco, a host agent such as the Wazuh agent, and firewall logs from nftables/ufw) flowing into a dark SIEM-core card (a manager such as Wazuh doing rules and correlation, roughly 4 GB RAM as a single-node docker-compose stack) which feeds an indexer-and-dashboard card (OpenSearch) for full-text search, retention, and compliance views](stack_oss.png)
+![Architecture diagram of an open-source SIEM stack — four sensor cards (Suricata network IDS/IPS, an eBPF sensor such as Falco, a host agent such as the Wazuh agent, and firewall logs from nftables/ufw) flowing into a dark SIEM-core card (a manager such as Wazuh doing rules and correlation, roughly 4 GB RAM as a single-node docker-compose stack) which feeds an indexer-and-dashboard card (OpenSearch) for full-text search, retention, and compliance views](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/stack_oss.png)
 
 *Figure 2: The open-source stack. Every box here is a real, separately maintained open-source project — nothing here is a single vendor's product.*
 
@@ -94,7 +94,7 @@ The pattern is consistent across most open-source SIEM setups: sensors feed a ma
 
 
 
-![Screenshot of a real Wazuh dashboard — the Incident Response module showing a donut chart of alert groups (connection blocked, process stopped, file quarantined, application removed, ticket opened), an events-over-time histogram, and a table of individual alerts with agent name, rule description, and rule severity level](wazuh-dashboard-incident-response.png)
+![Screenshot of a real Wazuh dashboard — the Incident Response module showing a donut chart of alert groups (connection blocked, process stopped, file quarantined, application removed, ticket opened), an events-over-time histogram, and a table of individual alerts with agent name, rule description, and rule severity level](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/wazuh-dashboard-incident-response.png)
 
 *Figure 2b: What the OSS dashboard actually looks like — Wazuh's Incident Response module. (Illustrative third-party screenshot of the open-source product UI, not our own deployment.)*
 
@@ -109,7 +109,7 @@ Where this **doesn't** apply: the AWS-native stack. CloudWatch Logs and Kinesis 
 
 ### Approach B: the AWS-native stack
 
-![Architecture diagram of an AWS-native security stack, using official AWS architecture icons — an ingest-and-edge row (CloudWatch Logs plus Kinesis Firehose, VPC Flow Logs, and WAF plus Shield at the edge) feeding five managed detection and modeling services (GuardDuty for ML threat detection, Inspector for vulnerability scanning, CloudTrail for signed API audit, Config for configuration drift, and SageMaker for custom ML models), all aggregating into a dark AWS Security Hub card that scores everything against compliance frameworks, branching into an OpenSearch Service dashboard and a Security Lake for long-term OCSF storage](stack_aws.png)
+![Architecture diagram of an AWS-native security stack, using official AWS architecture icons — an ingest-and-edge row (CloudWatch Logs plus Kinesis Firehose, VPC Flow Logs, and WAF plus Shield at the edge) feeding five managed detection and modeling services (GuardDuty for ML threat detection, Inspector for vulnerability scanning, CloudTrail for signed API audit, Config for configuration drift, and SageMaker for custom ML models), all aggregating into a dark AWS Security Hub card that scores everything against compliance frameworks, branching into an OpenSearch Service dashboard and a Security Lake for long-term OCSF storage](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/stack_aws.png)
 
 *Figure 3: The AWS-native stack (official AWS Architecture icons). Every self-hosted component in Figure 2 has a directly managed counterpart here — the trade is operational effort for a usage-based bill.*
 
@@ -141,7 +141,7 @@ One real-world example worth knowing: [CloudiQS](https://cloudiqs.com/solution/s
 
 ### A quick side-by-side
 
-![Table mapping eight security functions to their AWS-native and open-source implementations: network intrusion detection (GuardDuty vs Suricata+Falco/eBPF), central findings and scoring (Security Hub vs Wazuh Manager+OpenSearch), long-term log storage (OpenSearch Service+Security Lake vs self-hosted OpenSearch/ELK), signed API audit trail (CloudTrail vs auditd+syslog), configuration drift detection (AWS Config vs Checkov+periodic checks), vulnerability scanning (Inspector vs Trivy/Grype), web application firewall (AWS WAF+Shield vs Coraza/ModSecurity+OWASP CRS), and AI-assisted triage (Bedrock+SageMaker vs OpenSearch ML Commons+MLflow)](table_mapping.png)
+![Table mapping eight security functions to their AWS-native and open-source implementations: network intrusion detection (GuardDuty vs Suricata+Falco/eBPF), central findings and scoring (Security Hub vs Wazuh Manager+OpenSearch), long-term log storage (OpenSearch Service+Security Lake vs self-hosted OpenSearch/ELK), signed API audit trail (CloudTrail vs auditd+syslog), configuration drift detection (AWS Config vs Checkov+periodic checks), vulnerability scanning (Inspector vs Trivy/Grype), web application firewall (AWS WAF+Shield vs Coraza/ModSecurity+OWASP CRS), and AI-assisted triage (Bedrock+SageMaker vs OpenSearch ML Commons+MLflow)](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/table_mapping.png)
 
 *Figure 4: The same eight functions, two ways to get them. Nothing on the open-source side is a toy — every entry is a production-grade project used at real scale.*
 
@@ -163,7 +163,7 @@ If all of the above still sounds like more than a three-person team needs on day
 
 This is the part most SIEM explainers skip, and it's the one operators actually lose sleep over: which ports are open, to whom, and what happens at the edge before traffic ever reaches your application.
 
-![Traffic-control flow diagram — a client on the internet reaches an edge layer combining a firewall (only required ports open, source-IP allowlist for admin ports) and a WAF (OWASP Core Rule Set, rate limits, geo/IP blocking), which forwards allowed traffic to the application/gateway (identity check, payload inspection, per-user rate limits — the only point that sees decrypted content) and on to the backend, while rejected traffic is blocked and logged rather than silently dropped; a note calls out that a published container port can bypass host firewall rules via NAT as a classic pitfall](traffic_control.png)
+![Traffic-control flow diagram — a client on the internet reaches an edge layer combining a firewall (only required ports open, source-IP allowlist for admin ports) and a WAF (OWASP Core Rule Set, rate limits, geo/IP blocking), which forwards allowed traffic to the application/gateway (identity check, payload inspection, per-user rate limits — the only point that sees decrypted content) and on to the backend, while rejected traffic is blocked and logged rather than silently dropped; a note calls out that a published container port can bypass host firewall rules via NAT as a classic pitfall](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/traffic_control.png)
 
 *Figure 5: Two layers of traffic control, doing two different jobs — the firewall decides who gets to knock, the WAF decides which knocks look malicious.*
 
@@ -197,7 +197,7 @@ Rules catch known patterns. They don't catch a valid, un-revoked API key quietly
 
 To solve this cheaply and accurately, modern Security Operations Centers (SOCs) converge on a two-stage architecture (often called **edge-to-core triage**). The core idea: a small, always-on statistical model does the initial sorting, and the expensive LLM agent only wakes up when the sorter flags something.
 
-![Large two-stage AI security response flowchart with official AWS architecture icons inlined — Stage 1: log streams via CloudWatch feed the always-on anomaly detector (GuardDuty icon, dark card: RCF / embeddings+KNN / SLM distills, statistical not generative), with the normal 99.9% archiving to S3 for retention; Stage 2 (fired only on anomalies): EventBridge-to-Step-Functions orchestration wakes the reasoning agent (SageMaker icon, dark card: DeepSeek-R1 / Claude 5-gen chain-of-thought, Bedrock Agent on AWS, agents-tools+DeepSeek connectors on OSS, RAG over runbooks plus context tools for IP reputation, maintenance windows, identity history and FIM state); verified attacks execute a scoped Lambda playbook — attacker IPs into an eBPF kernel map with XDP_DROP at the NIC, or execve intercepted via LSM returning EACCES/SIGKILL while the container survives for forensics — while false positives feed a red dashed retrain loop back into detector thresholds; includes the cost-math card, the red note that the LLM is the orchestrator never the sensor, and the guardrail band (read-mostly tool catalog, policy-gated irreversible actions, confidence+model_version on every ML finding)](ai_response_flow.png)
+![Large two-stage AI security response flowchart with official AWS architecture icons inlined — Stage 1: log streams via CloudWatch feed the always-on anomaly detector (GuardDuty icon, dark card: RCF / embeddings+KNN / SLM distills, statistical not generative), with the normal 99.9% archiving to S3 for retention; Stage 2 (fired only on anomalies): EventBridge-to-Step-Functions orchestration wakes the reasoning agent (SageMaker icon, dark card: DeepSeek-R1 / Claude 5-gen chain-of-thought, Bedrock Agent on AWS, agents-tools+DeepSeek connectors on OSS, RAG over runbooks plus context tools for IP reputation, maintenance windows, identity history and FIM state); verified attacks execute a scoped Lambda playbook — attacker IPs into an eBPF kernel map with XDP_DROP at the NIC, or execve intercepted via LSM returning EACCES/SIGKILL while the container survives for forensics — while false positives feed a red dashed retrain loop back into detector thresholds; includes the cost-math card, the red note that the LLM is the orchestrator never the sensor, and the guardrail band (read-mostly tool catalog, policy-gated irreversible actions, confidence+model_version on every ML finding)](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/ai_response_flow.png)
 
 *Figure 6: The two-stage model (official AWS Architecture icons, large format). Stage 1 (RCF/embedding/SLM sorting — statistical and ~free) runs 24/7; Stage 2 (the reasoning agent, costing cents per call) fires only on the ~0.1% of events that get flagged. The sorter knows "pod B is sending 400× its 14-day baseline" — it has no idea what an SQL injection *is*; the agent provides the semantics.*
 
@@ -205,7 +205,7 @@ To solve this cheaply and accurately, modern Security Operations Centers (SOCs) 
 
 At Stage 1, we want maximum coverage at minimum cost. We model a mathematical baseline of your traffic and raise alerts when live patterns deviate from it. This stage is unsupervised, statistical, and runs per-event at ~zero marginal cost.
 
-![Pipeline diagram of an anomaly-detection MLOps lifecycle — six steps from features extracted from gateway/app logs (bytes sent, unique destination IPs) through model training (Isolation Forest / Random Cut Forest via SageMaker or MLflow) and an evaluation stage gated on false-positive rate below 1%, into a model registry awaiting manual approval, then a realtime inference endpoint emitting anomaly scores, into a model monitor comparing live traffic against training distributions, with a continuous-retrain loop closing back to feature extraction and a note that findings carry confidence and model version and only ever add to the rule layer](mlops_pipeline.png)
+![Pipeline diagram of an anomaly-detection MLOps lifecycle — six steps from features extracted from gateway/app logs (bytes sent, unique destination IPs) through model training (Isolation Forest / Random Cut Forest via SageMaker or MLflow) and an evaluation stage gated on false-positive rate below 1%, into a model registry awaiting manual approval, then a realtime inference endpoint emitting anomaly scores, into a model monitor comparing live traffic against training distributions, with a continuous-retrain loop closing back to feature extraction and a note that findings carry confidence and model version and only ever add to the rule layer](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/mlops_pipeline.png)
 
 *Figure 6a: Anomaly detection as a managed lifecycle. The false-positive gate and the retrain loop are what separate this from a one-off notebook.*
 
@@ -238,7 +238,7 @@ It's one thing to name the services, another to describe how a finding actually 
 
 This is not a hypothetical architecture — AWS itself published it as a buildable reference ("Automate cloud security vulnerability assessment and alerting using Amazon Bedrock", ML Blog, Nov 2024 — saved locally at `docs/reference/aws/ai_security.md`), and its workflow steps are worth knowing cold:
 
-![Screenshot of the AWS-published reference architecture for AI-assisted security response — GuardDuty findings flow through an EventBridge rule (severity-filtered) into a Step Functions state machine, which invokes a Lambda function that prompts Anthropic Claude 3 via Amazon Bedrock APIs for finding summarization and mitigation steps, exports findings to S3, and notifies the operations team through an SNS email subscription, with Step Functions and Lambda logs flowing into CloudWatch](aws-bedrock-triage-architecture.png)
+![Screenshot of the AWS-published reference architecture for AI-assisted security response — GuardDuty findings flow through an EventBridge rule (severity-filtered) into a Step Functions state machine, which invokes a Lambda function that prompts Anthropic Claude 3 via Amazon Bedrock APIs for finding summarization and mitigation steps, exports findings to S3, and notifies the operations team through an SNS email subscription, with Step Functions and Lambda logs flowing into CloudWatch](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/aws-bedrock-triage-architecture.png)
 
 *Figure 6a: AWS's own published pattern (source: AWS Machine Learning Blog, Nov 2024 — used with attribution). The workflow: GuardDuty invokes an EventBridge rule (severity-filterable — their example filters level 8+), findings are also exported to S3 for retention, the rule invokes a Step Functions workflow, which calls a Lambda that builds a prompt from the finding details and calls Claude via Bedrock APIs for a summarization-plus-remediation response, then notifies the operations team through SNS. Note what this reference pattern deliberately does: it stops at triage-by-notification — the LLM summarizes and recommends, and a human acts.*
 
@@ -248,7 +248,7 @@ That last point is the design line between AWS's reference architecture and the 
 
 To see this Two-Stage AI architecture in action at an enterprise scale, we can look at the recently published joint reference architecture by AWS and Elastic: **"Automate security and observability with Elastic and Amazon Bedrock"** (June 2026). This integration represents the managed, commercial equivalent of the two-stage AI-SOC pattern we detailed above.
 
-![AWS-Elastic Bedrock security and observability automation architecture — showing AWS log streams (VPC Flow Logs, CloudTrail, Security Hub) flowing into Elastic Cloud, which integrates with Amazon Bedrock via an LLM connector to power the Elastic AI Assistant, the Elastic Agent Builder, and Elastic Workflows for automated threat triage and playbook execution](elastic_bedrock_architecture.png)
+![AWS-Elastic Bedrock security and observability automation architecture — showing AWS log streams (VPC Flow Logs, CloudTrail, Security Hub) flowing into Elastic Cloud, which integrates with Amazon Bedrock via an LLM connector to power the Elastic AI Assistant, the Elastic Agent Builder, and Elastic Workflows for automated threat triage and playbook execution](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/elastic_bedrock_architecture.png)
 
 *Figure 2a: Joint AWS & Elastic reference architecture for AI-powered security operations (Source: AWS Partner Network Blog, June 2026 — used with attribution).*
 
@@ -312,7 +312,7 @@ Vendor decks (CloudMatos, Wiz, Prisma) describe the same playbook. After CloudMa
 
 **Compliance automation with AI** — how the posture layer closes the loop between policy and enforcement, per CloudMatos' own diagram: a **Compliance Engine** (HIPAA, PCI, NIST) ↔ an **AI Policy Mapper** (matches controls to findings) ↔ a **Cloud Resource Scanner** (IaC + runtime assets) → **audit-ready Compliance Reports**. The AI's job is the mapping, not the magic: automatically linking detections and fixes to controls, and generating auditor-readable narratives with linked evidence (controls → assets → logs → changes).
 
-![Diagram 4 from the CloudMatos guide — Compliance Automation with AI: a compliance engine covering HIPAA, PCI and NIST bidirectionally linked to an AI policy mapper that matches controls, linked to a cloud resource scanner covering both IaC and runtime assets, feeding audit-ready compliance reports](cloudmatos-config-recipes.png)
+![Diagram 4 from the CloudMatos guide — Compliance Automation with AI: a compliance engine covering HIPAA, PCI and NIST bidirectionally linked to an AI policy mapper that matches controls, linked to a cloud resource scanner covering both IaC and runtime assets, feeding audit-ready compliance reports](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/cloudmatos-config-recipes.png)
 
 *Figure 7a: Compliance automation with AI (source: CloudMatos, "AI for SMB Cloud Security" — used with attribution). This is how AWS resources get scanned from both directions: IaC files before deployment and live runtime assets after — and how every finding gets mapped back to the control frameworks the auditor asks about.*
 
@@ -402,18 +402,18 @@ What does your team actually run today — self-hosted, managed, or the "we'll g
 
 **Market segments / customer types**
 
-![Glossary of Market Segments & Customer Types](glossary_market_segments.png)
+![Glossary of Market Segments & Customer Types](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/glossary_market_segments.png)
 
 **Platform categories (the CNAPP alphabet)**
 
-![Glossary of Platform Categories (The CNAPP Alphabet)](glossary_platforms.png)
+![Glossary of Platform Categories (The CNAPP Alphabet)](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/glossary_platforms.png)
 
 **Detection & response concepts**
 
-![Glossary of Detection & Response Concepts](glossary_concepts.png)
+![Glossary of Detection & Response Concepts](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/glossary_concepts.png)
 
 **Frameworks / certifications**
 
-![Glossary of Frameworks & Certifications](glossary_frameworks.png)
+![Glossary of Frameworks & Certifications](https://raw.githubusercontent.com/ji-podhead/articles/main/siem-smb-guide/glossary_frameworks.png)
 
 The terms in this glossary are the ones every vendor deck, every partner assessment, and every SOC interview will assume you know — the guide uses them deliberately, so that the open-source path and the AWS path can be discussed in one language.
