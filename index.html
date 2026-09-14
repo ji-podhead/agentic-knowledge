@@ -77,15 +77,22 @@ a{color:var(--cyan)}
   <div class="msgs" id="msgs"><div class="m a">Hello! I retrieve from the OKF knowledge base. Ask about gVisor, LLM routing, SIEM, MCP… (add a key for live answers; without one I show retrieved chunks only.)</div></div>
   <div class="ft"><input id="q" placeholder="Ask a question…"><button onclick="ask()">➤</button></div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-<script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
+/* Docsify config MUST be defined before docsify.min.js and its plugins load —
+   both docsify core and the search plugin read window.$docsify synchronously
+   at script-execution time, not reactively. Defining it after the library
+   scripts left window.$docsify undefined when they ran, which crashed the
+   search plugin outright ("Uncaught ReferenceError: $docsify is not defined")
+   and left docsify core running on empty defaults — nothing rendered. */
 window.$docsify={name:'agentic-knowledge',loadSidebar:true,auto2top:true,homepage:'README.md',
   alias:{'/.*/_sidebar.md':'/_sidebar.md'},
   search:{placeholder:'Search knowledge…',noData:'No results',depth:6},
   plugins:[function(hook,vm){hook.doneEach(function(){if(vm.route.path==='/'||vm.route.path.includes('README'))bootGraph()})}]};
-
+</script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
 /* ── state ── */
 let M=null,hop=1,sel=null,G={};
 const TYPE={topic:{c:'#38bdf8',r:13},subtopic:{c:'#818cf8',r:9},tag:{c:'#34d399',r:7},doc:{c:'#f59e0b',r:10}};
