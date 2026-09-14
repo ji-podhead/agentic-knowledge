@@ -69,9 +69,12 @@
   - [Hybrid Retrieval: BM25, Vector Search and Reciprocal Rank Fusion (hybrid retrieval)](/general/retrieval-augmented-generation/hybrid-retrieval/hybrid-search-rrf.md)
   - [Provable RAG: Verifying Retrieval-Augmented Answers with Z3 (verification)](/general/retrieval-augmented-generation/verification/provable-rag-z3.md)
 - **Security And Observability**
+  - [Cyberspace Search Engines: Shodan, Censys, FOFA, ZoomEye and the OSINT Recon Stack (attack surface management)](/general/security-and-observability/attack-surface-management/cyberspace-search-engines.md)
+  - [Hardening Checklist: Closing Attack-Surface Gaps Found by OSINT Scanners (attack surface management)](/general/security-and-observability/attack-surface-management/hardening-exposed-services.md)
   - [R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen) (guardrails and firewalls)](/general/security-and-observability/guardrails-and-firewalls/guardrails-otel-reference-stack.md)
   - [R19 — LLM-Firewall-Landschaft & Kernel-nahes Injection-Tracking (guardrails and firewalls)](/general/security-and-observability/guardrails-and-firewalls/llm-firewall-landscape.md)
   - [R40 — Voll-Audit: Misalignments gegen die System Administrator-Vision (14.9.2026) (guardrails and firewalls)](/general/security-and-observability/guardrails-and-firewalls/llm-misalignment-audits.md)
+  - [RAG Poisoning and the Agentic Kill Chain: From Open Port to Agent Takeover (guardrails and firewalls)](/general/security-and-observability/guardrails-and-firewalls/rag-poisoning-agentic-killchain.md)
   - [Sast Precommit Kernel Security (guardrails and firewalls)](/general/security-and-observability/guardrails-and-firewalls/sast-precommit-kernel-security.md)
   - [Aws Siem Integration (siem and monitoring)](/general/security-and-observability/siem-and-monitoring/aws-siem-integration.md)
   - [Siem Architecture (siem and monitoring)](/general/security-and-observability/siem-and-monitoring/siem-architecture.md)

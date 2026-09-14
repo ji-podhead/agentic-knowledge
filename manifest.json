@@ -3949,6 +3949,94 @@
    ]
   },
   {
+   "id": "okf-sec-asm-cyberspace-search-engines",
+   "title": "Cyberspace Search Engines: Shodan, Censys, FOFA, ZoomEye and the OSINT Recon Stack",
+   "path": "general/security-and-observability/attack-surface-management/cyberspace-search-engines.md",
+   "topic": "security-and-observability",
+   "subtopic": "attack-surface-management",
+   "tags": [],
+   "summary": "Reference catalog of the public internet-wide scanning platforms (Western and Chinese), how mass port scanning + banner grabbing + fingerprinting works, ASN-based hosting-provider ",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 669
+    },
+    {
+     "heading": "Cyberspace Search Engines: Shodan, Censys, FOFA, ZoomEye and the OSINT Recon Sta",
+     "chars": 84
+    },
+    {
+     "heading": "Mechanism",
+     "chars": 394
+    },
+    {
+     "heading": "Platform catalog",
+     "chars": 1009
+    },
+    {
+     "heading": "Query patterns",
+     "chars": 473
+    },
+    {
+     "heading": "JARM fingerprinting",
+     "chars": 364
+    },
+    {
+     "heading": "AI infrastructure fingerprints",
+     "chars": 628
+    },
+    {
+     "heading": "Secret/leak discovery (separate tooling stack)",
+     "chars": 646
+    },
+    {
+     "heading": "Source article",
+     "chars": 186
+    },
+    {
+     "heading": "Sources",
+     "chars": 469
+    }
+   ]
+  },
+  {
+   "id": "okf-sec-asm-hardening-exposed-services",
+   "title": "Hardening Checklist: Closing Attack-Surface Gaps Found by OSINT Scanners",
+   "path": "general/security-and-observability/attack-surface-management/hardening-exposed-services.md",
+   "topic": "security-and-observability",
+   "subtopic": "attack-surface-management",
+   "tags": [],
+   "summary": "Defensive playbook mirroring the cyberspace-search-engine reconnaissance techniques: self-audit cadence, cloud config auditing, default-deny network posture, AI-infra bind/auth/iso",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 655
+    },
+    {
+     "heading": "Hardening Checklist: Closing Attack-Surface Gaps Found by OSINT Scanners",
+     "chars": 226
+    },
+    {
+     "heading": "By category",
+     "chars": 2657
+    },
+    {
+     "heading": "The common thread",
+     "chars": 304
+    },
+    {
+     "heading": "Source article",
+     "chars": 152
+    },
+    {
+     "heading": "Sources",
+     "chars": 375
+    }
+   ]
+  },
+  {
    "id": "okf-sec-gua-guardrails-otel-reference-stack",
    "title": "R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen)",
    "path": "general/security-and-observability/guardrails-and-firewalls/guardrails-otel-reference-stack.md",
@@ -4065,6 +4153,50 @@
     {
      "heading": "R40-Appendix A — AIM-Comparison (opena2a/agent-identity-management, 14.9.)",
      "chars": 2149
+    }
+   ]
+  },
+  {
+   "id": "okf-sec-guard-rag-poisoning-killchain",
+   "title": "RAG Poisoning and the Agentic Kill Chain: From Open Port to Agent Takeover",
+   "path": "general/security-and-observability/guardrails-and-firewalls/rag-poisoning-agentic-killchain.md",
+   "topic": "security-and-observability",
+   "subtopic": "guardrails-and-firewalls",
+   "tags": [],
+   "summary": "RAG/vector-database poisoning mechanism (PoisonedRAG), how it differs structurally from token glitches and malicious skill execution, and the 4-phase kill chain that combines an in",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 701
+    },
+    {
+     "heading": "RAG Poisoning and the Agentic Kill Chain: From Open Port to Agent Takeover",
+     "chars": 76
+    },
+    {
+     "heading": "Mechanism (RAG poisoning / indirect prompt injection via retrieval)",
+     "chars": 1094
+    },
+    {
+     "heading": "Three distinct failure modes (frequently conflated)",
+     "chars": 943
+    },
+    {
+     "heading": "The 4-phase kill chain",
+     "chars": 934
+    },
+    {
+     "heading": "Defense-in-depth, mapped to phase",
+     "chars": 747
+    },
+    {
+     "heading": "Source article",
+     "chars": 149
+    },
+    {
+     "heading": "Sources",
+     "chars": 300
     }
    ]
   },
@@ -5051,11 +5183,11 @@
    "size": 0
   },
   {
-   "id": "doc:okf-sec-gua-guardrails-otel-reference-stack",
+   "id": "doc:okf-sec-asm-cyberspace-search-engines",
    "type": "doc",
-   "label": "R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen)",
-   "path": "general/security-and-observability/guardrails-and-firewalls/guardrails-otel-reference-stack.md",
-   "size": 8
+   "label": "Cyberspace Search Engines: Shodan, Censys, FOFA, ZoomEye and the OSINT Recon Stack",
+   "path": "general/security-and-observability/attack-surface-management/cyberspace-search-engines.md",
+   "size": 10
   },
   {
    "id": "topic:security-and-observability",
@@ -5063,6 +5195,27 @@
    "label": "security-and-observability",
    "path": "",
    "size": 0
+  },
+  {
+   "id": "sub:attack-surface-management",
+   "type": "subtopic",
+   "label": "attack-surface-management",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-sec-asm-hardening-exposed-services",
+   "type": "doc",
+   "label": "Hardening Checklist: Closing Attack-Surface Gaps Found by OSINT Scanners",
+   "path": "general/security-and-observability/attack-surface-management/hardening-exposed-services.md",
+   "size": 6
+  },
+  {
+   "id": "doc:okf-sec-gua-guardrails-otel-reference-stack",
+   "type": "doc",
+   "label": "R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen)",
+   "path": "general/security-and-observability/guardrails-and-firewalls/guardrails-otel-reference-stack.md",
+   "size": 8
   },
   {
    "id": "sub:guardrails-and-firewalls",
@@ -5084,6 +5237,13 @@
    "label": "R40 — Voll-Audit: Misalignments gegen die System Administrator-Vision (14.9.2026)",
    "path": "general/security-and-observability/guardrails-and-firewalls/llm-misalignment-audits.md",
    "size": 6
+  },
+  {
+   "id": "doc:okf-sec-guard-rag-poisoning-killchain",
+   "type": "doc",
+   "label": "RAG Poisoning and the Agentic Kill Chain: From Open Port to Agent Takeover",
+   "path": "general/security-and-observability/guardrails-and-firewalls/rag-poisoning-agentic-killchain.md",
+   "size": 8
   },
   {
    "id": "doc:okf-sec-gua-sast-precommit-kernel-security",
@@ -5692,6 +5852,22 @@
   },
   {
    "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-asm-cyberspace-search-engines"
+  },
+  {
+   "source": "sub:attack-surface-management",
+   "target": "doc:okf-sec-asm-cyberspace-search-engines"
+  },
+  {
+   "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-asm-hardening-exposed-services"
+  },
+  {
+   "source": "sub:attack-surface-management",
+   "target": "doc:okf-sec-asm-hardening-exposed-services"
+  },
+  {
+   "source": "topic:security-and-observability",
    "target": "doc:okf-sec-gua-guardrails-otel-reference-stack"
   },
   {
@@ -5713,6 +5889,14 @@
   {
    "source": "sub:guardrails-and-firewalls",
    "target": "doc:okf-sec-gua-llm-misalignment-audits"
+  },
+  {
+   "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-guard-rag-poisoning-killchain"
+  },
+  {
+   "source": "sub:guardrails-and-firewalls",
+   "target": "doc:okf-sec-guard-rag-poisoning-killchain"
   },
   {
    "source": "topic:security-and-observability",
