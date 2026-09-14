@@ -109,6 +109,9 @@ knowledge/general/
 
 ---
 
+| **awesome-ai-ml-dl** | Curated Index | Curated MCP servers, AI agent resources, and ML time-series libraries |  |
+| **agentic-knowledge** | Research Store | Open Knowledge Format (OKF v1.0) 2-tier general research repository |  |
+
 ## Sources & References
 
 - All specifications under `general/` and `skills/` directories in this knowledge base.
