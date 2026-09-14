@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-08-learning-router-short-post"
 title: "Blog-Post — Teaser für den Learning-Router-Artikel"
-topic: "general/llm-orchestration-and-routing"
-subtopic: "routing-algorithms"
+topic: "general/articles"
+subtopic: "technical-blogs"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - llm-orchestration-and-routing
-  - routing-algorithms
+  - general/articles
+  - technical-blogs
 summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post)."
 ---
 
@@ -19,7 +19,7 @@ summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog pos
 > **Datum:** 8. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
 > ([2026-09-08-learning-router-blogpost.md](2026-09-08-learning-router-blogpost.md)).
-> Bild: `https://raw.githubusercontent.com/ji-podhead/articles/main/learning-router/titel.svg` (als PNG exportiert) als Post-Bild.
+> Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
 
@@ -49,8 +49,8 @@ What does your gateway do when a paid key and a free key rate-limit at the same 
 
 ## Veröffentlichungs-Checkliste
 
-- [ ] `https://raw.githubusercontent.com/ji-podhead/articles/main/learning-router/titel.svg` → PNG konvertieren (Snippet im Hauptartikel-Anhang) und als Post-Bild anhängen
-- [ ] Alternativ: `https://raw.githubusercontent.com/ji-podhead/articles/main/learning-router/layers.svg` als zweites Bild (die 3-Layer-Struktur ist der visuelle Hook)
+- [ ] `titel.svg` → PNG konvertieren (Snippet im Hauptartikel-Anhang) und als Post-Bild anhängen
+- [ ] Alternativ: `layers.svg` als zweites Bild (die 3-Layer-Struktur ist der visuelle Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
 - [ ] Hashtags: 5 Stück (3–5 work best)

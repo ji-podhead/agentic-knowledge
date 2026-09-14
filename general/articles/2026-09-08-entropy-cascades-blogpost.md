@@ -2,20 +2,20 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-08-entropy-cascades-blogpost"
 title: "The Cheapest Confidence Signal Is Already in Your Response: Entropy-Gated Model Cascades"
-topic: "general/llm-orchestration-and-routing"
-subtopic: "routing-algorithms"
+topic: "general/articles"
+subtopic: "technical-blogs"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - llm-orchestration-and-routing
-  - routing-algorithms
+  - general/articles
+  - technical-blogs
 summary: "![Title graphic — dark background, the headline 'Entropy-Gated Cascades' next to a probability distribution collapsing from flat (uncertain) to spiked"
 ---
 
 # The Cheapest Confidence Signal Is Already in Your Response: Entropy-Gated Model Cascades
 
-![Title graphic — dark background, the headline "Entropy-Gated Cascades" next to a probability distribution collapsing from flat (uncertain) to spiked (confident), with the formula H/log₂(k) and a 0.45 threshold line](https://raw.githubusercontent.com/ji-podhead/articles/main/entropy-cascades/titel.svg)
+![Title graphic — dark background, the headline "Entropy-Gated Cascades" next to a probability distribution collapsing from flat (uncertain) to spiked (confident), with the formula H/log₂(k) and a 0.45 threshold line](titel.svg)
 
 *Title image: the model's own token distribution is the router — no classifier required.*
 
@@ -27,7 +27,7 @@ We took a different path, and it fits in one paragraph of math.
 
 ## The signal: the model already tells you when it's guessing
 
-![Diagram: request → small routing model with logprobs enabled → average normalized Shannon entropy H/log₂(k) over all output tokens → below 0.45: serve the cheap answer; at or above: discard the entire generated answer and re-route through the normal chain to the reasoning model](https://raw.githubusercontent.com/ji-podhead/articles/main/entropy-cascades/pipeline.svg)
+![Diagram: request → small routing model with logprobs enabled → average normalized Shannon entropy H/log₂(k) over all output tokens → below 0.45: serve the cheap answer; at or above: discard the entire generated answer and re-route through the normal chain to the reasoning model](pipeline.svg)
 
 *Figure 1: The two-phase entropy gate. Phase 1 is a full normal call — it goes through bandit routing, quota tracking, and the feedback loop like any other request.*
 
@@ -96,7 +96,7 @@ The threshold is the risk dial. Lower it and you escalate more — more quality,
 
 ## Where this sits in the landscape
 
-![Comparison table of four cost-control approaches: Always-big-model (perfect quality, maximum cost, zero tuning); Static routing by rule (cheap, but wrong on exceptions); FrugalGPT-style cascade (learned confidence scorer g(query, answer), needs labeled data); Trained router like RouteLLM (strong, needs preference data and a router model); Entropy gate (ours: zero training, zero labeled data, zero extra infrastructure — uses the logprobs the API already returns)](https://raw.githubusercontent.com/ji-podhead/articles/main/entropy-cascades/table_approaches.svg)
+![Comparison table of four cost-control approaches: Always-big-model (perfect quality, maximum cost, zero tuning); Static routing by rule (cheap, but wrong on exceptions); FrugalGPT-style cascade (learned confidence scorer g(query, answer), needs labeled data); Trained router like RouteLLM (strong, needs preference data and a router model); Entropy gate (ours: zero training, zero labeled data, zero extra infrastructure — uses the logprobs the API already returns)](table_approaches.svg)
 
 *Figure 2: The cascade spectrum. The entropy gate trades a little wasted compute (discarded answers) for the absence of any trained component.*
 

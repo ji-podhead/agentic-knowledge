@@ -2,20 +2,20 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-13-gvisor-workspace-isolation-blogpost"
 title: "The Bouncer, the Wall, and the Straitjacket: How Multi-Tenant Sandboxes Actually Stay Isolated"
-topic: "general/container-runtime-security"
-subtopic: "sandboxing"
+topic: "general/articles"
+subtopic: "technical-blogs"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - container-runtime-security
-  - sandboxing
+  - general/articles
+  - technical-blogs
 summary: "![Title graphic — dark background, headline 'The Bouncer, the Wall, and the Straitjacket' next to three stacked colored blocks labeled Identity Proxy "
 ---
 
 # The Bouncer, the Wall, and the Straitjacket: How Multi-Tenant Sandboxes Actually Stay Isolated
 
-![Title graphic — dark background, headline "The Bouncer, the Wall, and the Straitjacket" next to three stacked colored blocks labeled Identity Proxy (no exposed ports), VLAN/ipvlan (local L2 segmentation), and gVisor (kernel-syscall sandbox), with a terminal snippet showing a gVisor runtime class, a VLAN tag check, and a proxy header verification](https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/titel.svg)
+![Title graphic — dark background, headline "The Bouncer, the Wall, and the Straitjacket" next to three stacked colored blocks labeled Identity Proxy (no exposed ports), VLAN/ipvlan (local L2 segmentation), and gVisor (kernel-syscall sandbox), with a terminal snippet showing a gVisor runtime class, a VLAN tag check, and a proxy header verification](titel.svg)
 
 *Title image: three independent gates, none of them sufficient alone — this article explains why.*
 
@@ -39,7 +39,7 @@ None of these three is a substitute for either of the other two. That's not a he
 
 gVisor is a container runtime (`runsc`) that intercepts your application's syscalls — the low-level requests a program makes to the operating system, like "open this file" or "send this network packet" — and answers them itself, in its own isolated process, instead of letting them reach the real Linux kernel underneath.
 
-![Architecture diagram of gVisor's internals — an untrusted app process fires a syscall, which is intercepted by a Systrap stub or KVM platform before reaching the host kernel, redirected into the Sentry (a Go userspace kernel emulating 300+ Linux syscalls, with an embedded Netstack building L2/L3 packets entirely in Go), which communicates with a separate per-container Gofer process over a shared-memory ring buffer for filesystem access, with both Sentry and Gofer seccomp-bpf caged so only narrowly restricted syscalls ever reach the real privileged host kernel](https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/gvisor_architecture.svg)
+![Architecture diagram of gVisor's internals — an untrusted app process fires a syscall, which is intercepted by a Systrap stub or KVM platform before reaching the host kernel, redirected into the Sentry (a Go userspace kernel emulating 300+ Linux syscalls, with an embedded Netstack building L2/L3 packets entirely in Go), which communicates with a separate per-container Gofer process over a shared-memory ring buffer for filesystem access, with both Sentry and Gofer seccomp-bpf caged so only narrowly restricted syscalls ever reach the real privileged host kernel](gvisor_architecture.svg)
 
 *Figure 1: The application never talks to the real host kernel. Every arrow in this diagram is the redirection that guarantees it.*
 
@@ -77,7 +77,7 @@ This is the layer most teams get wrong first, because the intuitive move — giv
 
 The model that replaced it: the application keeps running on its natural port, *inside* its own container, untouched — and one shared reverse proxy routes by **identity**, not by port. The URL encodes both the target port and the workspace (e.g. `3000-ws-abc123x.platform.example`); the proxy validates the requester's session/JWT, looks up an in-memory table (`workspace_id → {ownerID, backendIP}`), and only forwards if the requester's identity matches the workspace's owner.
 
-![Diagram of one request passing through three independent gates in sequence — first the Identity Proxy (the bouncer), which terminates TLS, verifies the session/JWT, and never exposes a raw port, but cannot see what a legitimate authenticated user does once inside their own workspace; then the VLAN/ipvlan layer (the soundproof wall), which makes cross-tenant packets physically unroutable but cannot stop a host kernel escape; then gVisor (the straitjacket), which stops application syscalls from ever reaching the real host kernel but cannot stop a sandboxed app from scanning an unsegmented local network — with a closing note that each layer's blind spot is exactly the next layer's job](https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/three_layers.svg)
+![Diagram of one request passing through three independent gates in sequence — first the Identity Proxy (the bouncer), which terminates TLS, verifies the session/JWT, and never exposes a raw port, but cannot see what a legitimate authenticated user does once inside their own workspace; then the VLAN/ipvlan layer (the soundproof wall), which makes cross-tenant packets physically unroutable but cannot stop a host kernel escape; then gVisor (the straitjacket), which stops application syscalls from ever reaching the real host kernel but cannot stop a sandboxed app from scanning an unsegmented local network — with a closing note that each layer's blind spot is exactly the next layer's job](three_layers.svg)
 
 *Figure 2: The same request, three independent checks — and the specific thing each one is blind to.*
 
@@ -97,7 +97,7 @@ The practical takeaway isn't "build three chatbots that talk to each other" (the
 
 Each of the three (four, with egress) layers isn't just a defense — it's also a log source, and combining them is what turns "nothing happened" into "here's exactly what almost happened." A proxy denial, a VLAN-tagged packet trying to cross into another tenant's segment, and an anomalous syscall inside the same sandbox are three unremarkable-looking events in isolation. Correlated by the same workspace/owner identity within a few seconds of each other, they're one incident.
 
-![Diagram showing each isolation layer as a log source feeding a SIEM correlation engine — the Identity Proxy contributes gateway-style audit logs of denied auth attempts, the VLAN/ipvlan layer contributes network-IDS findings (e.g. from Suricata watching each VLAN) when a packet tries to cross tenant boundaries, and the gVisor sandbox contributes runtime-security findings from an eBPF sensor like Falco watching syscalls — all three correlating by workspace/owner identity into one risk-ranked incident](https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/siem_integration.svg)
+![Diagram showing each isolation layer as a log source feeding a SIEM correlation engine — the Identity Proxy contributes gateway-style audit logs of denied auth attempts, the VLAN/ipvlan layer contributes network-IDS findings (e.g. from Suricata watching each VLAN) when a packet tries to cross tenant boundaries, and the gVisor sandbox contributes runtime-security findings from an eBPF sensor like Falco watching syscalls — all three correlating by workspace/owner identity into one risk-ranked incident](siem_integration.svg)
 
 *Figure 3: The same three layers, now doubling as a detection surface — this is standard SIEM correlation, not a new concept, just applied to isolation infrastructure specifically. (See our companion piece on SIEM fundamentals for the full detection-pipeline picture — collection, normalization, correlation, response.)*
 
@@ -105,7 +105,7 @@ Concretely: an eBPF-based runtime sensor like **Falco** watches the sandbox's sy
 
 ## The pattern is not novel — three production examples
 
-![Table comparing three real platforms across the three layers — Kubernetes Agent Sandbox (CNCF SIG, 2026) uses gVisor via runtimeClassName, host-level L2/L3 segmentation, and a Sandbox Router with X-Sandbox-ID header routing; Gitpod/Ona uses gVisor by default, Cilium eBPF network policies with dedicated tunnels, and Envoy ingress with subdomain and session-cookie routing; Fly.io uses Firecracker microVMs, a proprietary L2 network called 6PN, and a Rust-based fly-proxy doing TLS termination and identity-based routing straight into the VM](https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/prior_art.svg)
+![Table comparing three real platforms across the three layers — Kubernetes Agent Sandbox (CNCF SIG, 2026) uses gVisor via runtimeClassName, host-level L2/L3 segmentation, and a Sandbox Router with X-Sandbox-ID header routing; Gitpod/Ona uses gVisor by default, Cilium eBPF network policies with dedicated tunnels, and Envoy ingress with subdomain and session-cookie routing; Fly.io uses Firecracker microVMs, a proprietary L2 network called 6PN, and a Rust-based fly-proxy doing TLS termination and identity-based routing straight into the VM](prior_art.svg)
 
 *Figure 4: The same three-layer shape, independently arrived at by three different production platforms.*
 
@@ -121,7 +121,7 @@ Three unrelated engineering teams, solving the same problem, converged on the sa
 
 Talk is easier than shipping, so here's what this actually looks like in a real system we operate — including the parts that aren't built yet.
 
-![Diagram of an AI-agent gateway shown two ways — today, a real and shipped setup where a browser or coding agent talks to a gateway backend that does auth and budget checks, then reaches a remote SSH target over an SSH tunnel with no published port, direct-dialing into a gVisor-sandboxed agent container with an active egress allowlist, honestly noting the current gap that there's no VLAN segmentation yet between two workspaces on the same remote server; and target, a planned identity-router sitting in front of two VLAN-segmented, gVisor-sandboxed workspaces on the same host with no route between their VLANs; below both, a further-out vision of one central control plane reachable over a WireGuard mesh provisioning this same three-layer stack on either the customer's own hardware or an AWS/GCP node, so a customer picks where a workload runs without changing how they reach it](https://raw.githubusercontent.com/ji-podhead/articles/main/gvisor-workspace-isolation/example_deployment.svg)
+![Diagram of an AI-agent gateway shown two ways — today, a real and shipped setup where a browser or coding agent talks to a gateway backend that does auth and budget checks, then reaches a remote SSH target over an SSH tunnel with no published port, direct-dialing into a gVisor-sandboxed agent container with an active egress allowlist, honestly noting the current gap that there's no VLAN segmentation yet between two workspaces on the same remote server; and target, a planned identity-router sitting in front of two VLAN-segmented, gVisor-sandboxed workspaces on the same host with no route between their VLANs; below both, a further-out vision of one central control plane reachable over a WireGuard mesh provisioning this same three-layer stack on either the customer's own hardware or an AWS/GCP node, so a customer picks where a workload runs without changing how they reach it](example_deployment.svg)
 
 *Figure 5: Today's shipped path (left) is honestly one host at a time — the VLAN layer isn't built yet. The target (right) and the eventual multi-cloud mesh (bottom) are the direction, not a claim about what exists now.*
 
