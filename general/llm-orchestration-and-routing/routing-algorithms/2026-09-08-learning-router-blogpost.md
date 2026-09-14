@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-08-learning-router-blogpost"
 title: "We Didn't Build a Router. We Built an Economy."
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/llm-orchestration-and-routing"
+subtopic: "routing-algorithms"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - llm-orchestration-and-routing
+  - routing-algorithms
 summary: "![Title graphic — dark background, the headline 'We didn't build a router. We built an economy.' next to a ledger-style table of API keys with price-d"
 ---
 

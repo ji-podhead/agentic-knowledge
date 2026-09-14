@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-13-gvisor-workspace-isolation-blogpost"
 title: "The Bouncer, the Wall, and the Straitjacket: How Multi-Tenant Sandboxes Actually Stay Isolated"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/container-runtime-security"
+subtopic: "sandboxing"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - container-runtime-security
+  - sandboxing
 summary: "![Title graphic — dark background, headline 'The Bouncer, the Wall, and the Straitjacket' next to three stacked colored blocks labeled Identity Proxy "
 ---
 

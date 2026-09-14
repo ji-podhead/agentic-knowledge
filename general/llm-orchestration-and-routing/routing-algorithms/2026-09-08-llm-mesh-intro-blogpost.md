@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-08-llm-mesh-intro-blogpost"
 title: "One API Key to Route Them All: What an LLM Mesh Is (and Why Your Apps Shouldn't Talk to Providers Directly)"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/llm-orchestration-and-routing"
+subtopic: "routing-algorithms"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - llm-orchestration-and-routing
+  - routing-algorithms
 summary: "![Title graphic — dark blue tech background with grid, the headline 'One API Key to Route Them All', a monospace curl snippet against a local OpenAI-c"
 ---
 

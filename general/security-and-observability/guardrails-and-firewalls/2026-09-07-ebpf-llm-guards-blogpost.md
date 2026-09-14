@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-07-ebpf-llm-guards-blogpost"
 title: "Stopping Prompt Injection at the Kernel Level: How eBPF + LLM Guards Actually Work"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/security-and-observability"
+subtopic: "guardrails-and-firewalls"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - security-and-observability
+  - guardrails-and-firewalls
 summary: "![Title graphic — dark background, the headline 'Stopping Prompt Injection at the Kernel Level' next to a stylized eBPF bee inside a security shield, "
 ---
 

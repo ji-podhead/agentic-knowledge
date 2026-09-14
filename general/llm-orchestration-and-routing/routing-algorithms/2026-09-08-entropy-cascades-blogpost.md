@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-08-entropy-cascades-blogpost"
 title: "The Cheapest Confidence Signal Is Already in Your Response: Entropy-Gated Model Cascades"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/llm-orchestration-and-routing"
+subtopic: "routing-algorithms"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - llm-orchestration-and-routing
+  - routing-algorithms
 summary: "![Title graphic — dark background, the headline 'Entropy-Gated Cascades' next to a probability distribution collapsing from flat (uncertain) to spiked"
 ---
 

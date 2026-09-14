@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-07-ebpf-llm-guards-short-post"
 title: "Blog-Post — Teaser für den Hauptartikel"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/security-and-observability"
+subtopic: "guardrails-and-firewalls"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - security-and-observability
+  - guardrails-and-firewalls
 summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post)."
 ---
 

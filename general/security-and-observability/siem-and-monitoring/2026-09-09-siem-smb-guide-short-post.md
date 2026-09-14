@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-09-siem-smb-guide-short-post"
 title: "Blog Post — Teaser für den SIEM-SMB-Guide"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/security-and-observability"
+subtopic: "siem-and-monitoring"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - security-and-observability
+  - siem-and-monitoring
 summary: "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post)."
 ---
 

@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-09-siem-smb-guide-blogpost"
 title: "You Have Logs. You Don’t Have a SIEM. — How to Build One: AWS-Native vs. Open Source (2026)"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/security-and-observability"
+subtopic: "siem-and-monitoring"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - security-and-observability
+  - siem-and-monitoring
 summary: "![Title graphic — dark background, headline 'SIEM for Growing Teams: Suricata, eBPF, Firewalls, WAF' next to two glowing bar-chart towers, one labeled"
 ---
 

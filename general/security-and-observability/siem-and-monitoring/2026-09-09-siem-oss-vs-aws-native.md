@@ -2,14 +2,14 @@
 okf_version: "1.0"
 id: "okf-art-gen-2026-09-09-siem-oss-vs-aws-native"
 title: "One Dashboard, Two Security Worlds: Wazuh + Falco vs. AWS GuardDuty + Security Hub"
-topic: "general/articles"
-subtopic: "technical-blogs"
+topic: "general/security-and-observability"
+subtopic: "siem-and-monitoring"
 status: "published"
 visibility: "public"
 created_at: "2026-09-14"
 tags:
-  - general/articles
-  - technical-blogs
+  - security-and-observability
+  - siem-and-monitoring
 summary: "![Title graphic — dark background, the headline 'One Dashboard, Two Security Worlds' with the OSS-vs-AWS question framed around the identity chain, ne"
 ---
 
