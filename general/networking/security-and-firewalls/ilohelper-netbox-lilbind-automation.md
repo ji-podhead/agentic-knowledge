@@ -124,3 +124,9 @@ WantedBy=multi-user.target
 - [x] `ilohelper` power state check returns `On` within 10 seconds.
 - [x] NetBox REST API responds on `http://127.0.0.1:8080/api/` with HTTP 200.
 - [x] `lil_bind` container successfully resolves internal A records via `dig @127.0.0.1 host.infra.internal`.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/ilohelper-collection](https://github.com/ji-podhead/ilohelper-collection)
+- [https://github.com/ji-podhead/netbox_docker_podman_collection](https://github.com/ji-podhead/netbox_docker_podman_collection)
+- [https://github.com/ji-podhead/lil_bind](https://github.com/ji-podhead/lil_bind)

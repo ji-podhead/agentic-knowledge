@@ -121,3 +121,8 @@ class SANFIS(nn.Module):
 - [x] **Decoupled State Inputs**: S-ANFIS enables separate state-conditioned gating without forcing high-dimensional feature space into fuzzy rules.
 - [x] **Gradient Propagation**: Verified end-to-end autodiff through bell membership parameters $(a, b, c)$ using PyTorch standard autograd engine.
 - [x] **Numerical Stability**: Added $\epsilon = 10^{-6}$ epsilon guards against zero-division in firing strength normalization.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/S-ANFIS-PyTorch](https://github.com/ji-podhead/S-ANFIS-PyTorch)
+- [https://github.com/ji-podhead/anfis-pytorch](https://github.com/ji-podhead/anfis-pytorch)

@@ -138,3 +138,7 @@ The `ji_podhead.ovs_bridge` Ansible collection automates the host creation of OV
 - [x] **VLAN Tagging Validation**: Verify frame tags using `tcpdump -e -n -i eno1 vlan 10`.
 - [x] **Inter-VLAN Leakage**: Confirm packets between `vlan10` and `vlan20` are blocked without explicit routing.
 - [x] **OVS Flow Table Inspection**: `ovs-ofctl dump-flows ovs-br0` verified.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/ovs-bridge-collection](https://github.com/ji-podhead/ovs-bridge-collection)

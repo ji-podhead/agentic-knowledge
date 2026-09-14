@@ -103,3 +103,7 @@ protobuffctl rollback --service UserService --target-version v1.1.0
 - [x] Dynamic loading parses complex `.proto` files containing nested `oneof` and `enum` types.
 - [x] Multi-platform binary compilation supports Node.js, Alpine Linux, and distroless container execution.
 - [x] Schema hash verification prevents backward-incompatible breaking gRPC changes.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/protobuffctl](https://github.com/ji-podhead/protobuffctl)

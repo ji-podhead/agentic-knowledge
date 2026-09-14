@@ -115,3 +115,7 @@ hammer discovery-rule create \
 - [x] **SmartProxy Health**: `curl -k https://127.0.0.1:9090/features` returns `["dhcp", "dns", "tftp", "discovery"]`.
 - [x] **TFTP Verification**: `tftp 10.50.0.10 -c get pxelinux.0` succeeds.
 - [x] **Discovered Hosts Ingestion**: Discovered nodes appear under `hammer discovery list`.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/RHEL_9_Foreman_Guide](https://github.com/ji-podhead/RHEL_9_Foreman_Guide)

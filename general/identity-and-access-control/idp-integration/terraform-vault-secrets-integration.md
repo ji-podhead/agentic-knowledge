@@ -133,3 +133,7 @@ resource "postgresql_role" "app_user" {
 - [x] **Zero Hardcoded Secrets**: Ensure `Gitleaks` or `Semgrep` static analysis scans verify no raw passwords or token strings exist in `.tf` files.
 - [x] **Short-Lived Token Lease**: Set maximum TTL on AppRole tokens to <= 30 minutes.
 - [x] **State File Encryption**: Configure encrypted S3/GCS backends with KMS server-side encryption since state files hold resolved dynamic secrets.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/DevOps](https://github.com/ji-podhead/DevOps)

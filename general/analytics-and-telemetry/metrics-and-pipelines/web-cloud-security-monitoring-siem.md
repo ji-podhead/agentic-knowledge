@@ -102,3 +102,7 @@ outputs:
 - [x] **Suricata Rule Verification**: `suricata -T -c /etc/suricata/suricata.yaml` passes syntax validation.
 - [x] **Metadata SSRF Alert**: Simulated query to `http://169.254.169.254` triggers `sid:1000001` in `eve.json`.
 - [x] **SIEM Parsing**: Confirmed `eve.alert.signature_id` correlates correctly across OpenSearch index patterns.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/Web-And-CloudSecurity](https://github.com/ji-podhead/Web-And-CloudSecurity)

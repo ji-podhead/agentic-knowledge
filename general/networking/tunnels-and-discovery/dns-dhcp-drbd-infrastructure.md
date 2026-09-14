@@ -147,3 +147,7 @@ resource dns_state {
 - [x] **DNS Resolution**: `dig @10.50.0.2 node-01.infra.internal +short +dnssec`
 - [x] **Dynamic Journaling**: Inspect `/var/lib/bind/db.infra.internal.jnl` using `named-checkzone`.
 - [x] **DRBD Sync Status**: `drbdadm status dns_state` verified in `Established` / `SyncSource` / `SyncTarget` modes.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/Network-Guides](https://github.com/ji-podhead/Network-Guides)

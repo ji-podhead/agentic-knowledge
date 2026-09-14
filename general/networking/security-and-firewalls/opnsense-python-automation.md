@@ -133,3 +133,9 @@ def inspect_script_functions(file_path: str):
 - [x] OPNsense API authentication verified with basic API key/secret header encoding.
 - [x] Interface reconfiguration calls verified against OPNsense 24.x REST endpoints.
 - [x] AST parser extracts non-standard script parameters for Sphinx HTML generation.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/opnsense-scripts-autodocs](https://github.com/ji-podhead/opnsense-scripts-autodocs)
+- [https://github.com/ji-podhead/opnsense-helper](https://github.com/ji-podhead/opnsense-helper)
+- [https://github.com/ji-podhead/opnsense-api-client](https://github.com/ji-podhead/opnsense-api-client)

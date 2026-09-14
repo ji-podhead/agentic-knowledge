@@ -118,3 +118,7 @@ class DistilBertModerator:
 - [x] Sanitizer correctly redacts `sk-` and `gho_` secret tokens.
 - [x] ONNX runtime loads in isolated non-root container environment.
 - [x] Zero network calls made during input inspection pass.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/SharkGuard](https://github.com/ji-podhead/SharkGuard)

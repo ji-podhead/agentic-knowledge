@@ -125,3 +125,7 @@ docker exec -it onpremctl-vault vault operator init -key-shares=1 -key-threshold
 - [x] Tailscale container registers with control server and advertises host subnet `10.50.0.0/16`.
 - [x] Vault listens locally on `:8200` with non-swappable memory (`IPC_LOCK`).
 - [x] Container restart policies survive hard edge node power loss.
+
+## Sources & References
+
+- [https://github.com/ji-podhead/onpremctl](https://github.com/ji-podhead/onpremctl)
