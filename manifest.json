@@ -1,0 +1,5249 @@
+{
+ "docs": [
+  {
+   "id": "okf-age-bro-agent-browser-control",
+   "title": "R12 — Agent Browser Control: Utility Model steuert The Multi-Provider Gateway Dashboard + Iframes",
+   "path": "general/agent-systems-and-browser-automation/browser-automation/agent-browser-control.md",
+   "topic": "agent-systems-and-browser-automation",
+   "subtopic": "browser-automation",
+   "tags": [],
+   "summary": "Das utility model and die engine sollen direkt den browser kontrollieren können:",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 486
+    },
+    {
+     "heading": "R12 — Agent Browser Control: Utility Model steuert The Multi-Provider Gateway Da",
+     "chars": 99
+    },
+    {
+     "heading": "Die Königsdisziplin",
+     "chars": 377
+    },
+    {
+     "heading": "1. Browser Automation Frameworks",
+     "chars": 721
+    },
+    {
+     "heading": "2. Agent Control Architecture",
+     "chars": 845
+    },
+    {
+     "heading": "3. Iframe Control (DSH, OpenCode, Terminal)",
+     "chars": 826
+    },
+    {
+     "heading": "4. Task Planning + Subagent Coordination",
+     "chars": 725
+    },
+    {
+     "heading": "5. Mutual Control (Project ↔ Agent ↔ Dashboard)",
+     "chars": 557
+    },
+    {
+     "heading": "6. Integration with bestehender Architektur",
+     "chars": 695
+    },
+    {
+     "heading": "7. xdg-open Fix (Sidebar Issue)",
+     "chars": 583
+    },
+    {
+     "heading": "Architecture",
+     "chars": 617
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7600
+    },
+    {
+     "heading": "Sendet den Pfad per cURL an den lokalen The Multi-Provider Gateway-Proxy statt e",
+     "chars": 507
+    }
+   ]
+  },
+  {
+   "id": "okf-age-fra-agent-framework-comparison",
+   "title": "R5 — Framework Comparison: CrewAI vs LangGraph vs Custom Orchestration",
+   "path": "general/agent-systems-and-browser-automation/framework-evaluations/agent-framework-comparison.md",
+   "topic": "agent-systems-and-browser-automation",
+   "subtopic": "framework-evaluations",
+   "tags": [],
+   "summary": "Welches framework for multi-agent orchestration? Custom The Multi-Provider Gateway-native or",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 482
+    },
+    {
+     "heading": "R5 — Framework Comparison: CrewAI vs LangGraph vs Custom Orchestration",
+     "chars": 72
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 170
+    },
+    {
+     "heading": "1. CrewAI",
+     "chars": 539
+    },
+    {
+     "heading": "2. LangGraph",
+     "chars": 486
+    },
+    {
+     "heading": "3. AutoGen",
+     "chars": 336
+    },
+    {
+     "heading": "4. Instructor (Structured Output)",
+     "chars": 378
+    },
+    {
+     "heading": "5. Custom The Multi-Provider Gateway-Native Orchestration",
+     "chars": 447
+    },
+    {
+     "heading": "6. Vergleichs-Matrix",
+     "chars": 629
+    },
+    {
+     "heading": "7. Hybrider Ansatz?",
+     "chars": 302
+    },
+    {
+     "heading": "Output Format",
+     "chars": 291
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 139
+    },
+    {
+     "heading": "1. Grid Layout Library compare",
+     "chars": 563
+    },
+    {
+     "heading": "2. Iframe Embedding",
+     "chars": 413
+    },
+    {
+     "heading": "3. Layout Persistence",
+     "chars": 251
+    },
+    {
+     "heading": "4. Single-Deploy Mandat",
+     "chars": 227
+    },
+    {
+     "heading": "Output Format",
+     "chars": 6565
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 109
+    },
+    {
+     "heading": "1. Deployment Types catalog",
+     "chars": 857
+    },
+    {
+     "heading": "2. Config Editor",
+     "chars": 305
+    },
+    {
+     "heading": "3. Restart Mechanism",
+     "chars": 298
+    },
+    {
+     "heading": "4. Settings Button UX",
+     "chars": 202
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5763
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 160
+    },
+    {
+     "heading": "1. Ziel-Formate",
+     "chars": 811
+    },
+    {
+     "heading": "2. Provisioning API",
+     "chars": 483
+    },
+    {
+     "heading": "3. Model-Namens-Mapping",
+     "chars": 481
+    },
+    {
+     "heading": "4. Mouse-Click Provisioning",
+     "chars": 346
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5557
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 201
+    },
+    {
+     "heading": "1. Nemotron Architecture verstehen",
+     "chars": 541
+    },
+    {
+     "heading": "2. Entropy-Based Routing Implementation",
+     "chars": 802
+    },
+    {
+     "heading": "3. Planner Model Selection",
+     "chars": 531
+    },
+    {
+     "heading": "4. Latency Impact",
+     "chars": 471
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7820
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 170
+    },
+    {
+     "heading": "1. CrewAI",
+     "chars": 539
+    },
+    {
+     "heading": "2. LangGraph",
+     "chars": 486
+    },
+    {
+     "heading": "3. AutoGen",
+     "chars": 336
+    },
+    {
+     "heading": "4. Instructor (Structured Output)",
+     "chars": 378
+    },
+    {
+     "heading": "5. Custom The Multi-Provider Gateway-Native Orchestration",
+     "chars": 447
+    },
+    {
+     "heading": "6. Vergleichs-Matrix",
+     "chars": 629
+    },
+    {
+     "heading": "7. Hybrider Ansatz?",
+     "chars": 302
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7746
+    }
+   ]
+  },
+  {
+   "id": "okf-age-fra-llm-framework-synthesis",
+   "title": "Llm Framework Synthesis",
+   "path": "general/agent-systems-and-browser-automation/framework-evaluations/llm-framework-synthesis.md",
+   "topic": "agent-systems-and-browser-automation",
+   "subtopic": "framework-evaluations",
+   "tags": [],
+   "summary": "│ Dimension             │ Gewähltes Open-Source-Package     │ Primäre Rolle im The Multi-Provider Gateway-Core           │",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 462
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 46970
+    }
+   ]
+  },
+  {
+   "id": "okf-age-ski-dap-skills-and-memory",
+   "title": "R21 — DAP-Vorlage: Skills-Hub, Skill-Security & Memory",
+   "path": "general/agent-systems-and-browser-automation/skills-and-memory/dap-skills-and-memory.md",
+   "topic": "agent-systems-and-browser-automation",
+   "subtopic": "skills-and-memory",
+   "tags": [],
+   "summary": "> **Status:** ✅ erledigt (6.9.2026) — Quell-Repo geklont and gelesen (48 Dateien, ~2.800 Zeilen Kernspezifikation)",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 475
+    },
+    {
+     "heading": "R21 — DAP-Vorlage: Skills-Hub, Skill-Security & Memory",
+     "chars": 1032
+    },
+    {
+     "heading": "1. Was DAP ist (3 Layer, sauber getrennt)",
+     "chars": 797
+    },
+    {
+     "heading": "2.1 Skills-Hub — `skills.md`, `tool-skill-binding.md`",
+     "chars": 1090
+    },
+    {
+     "heading": "2.2 Skill-Security — `acl.md`, `store-permissions.md`",
+     "chars": 1684
+    },
+    {
+     "heading": "2.3 Memory — `crew-memory.md`, `rag.md`",
+     "chars": 1084
+    },
+    {
+     "heading": "2.4 Bonus: Tool-Registry — `tool-registration.md` (Milestone/18 direkt)",
+     "chars": 424
+    },
+    {
+     "heading": "3. Verwertung for The Multi-Provider Gateway (Mapping)",
+     "chars": 1737
+    },
+    {
+     "heading": "4. Nicht übernehmen / ehrliche Grenzen",
+     "chars": 470
+    },
+    {
+     "heading": "5. Querverweise",
+     "chars": 387
+    },
+    {
+     "heading": "6. Offene Punkte",
+     "chars": 808
+    }
+   ]
+  },
+  {
+   "id": "okf-ana-mes-auto-provisioning-mesh-endpoints",
+   "title": "R3 — Auto-Provision: Mesh Endpoints in Coding Deployments",
+   "path": "general/analytics-and-telemetry/mesh-endpoints/auto-provisioning-mesh-endpoints.md",
+   "topic": "analytics-and-telemetry",
+   "subtopic": "mesh-endpoints",
+   "tags": [],
+   "summary": "Wie provisionieren wir automatisch unsere mesh fallback endpoints + models als",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 421
+    },
+    {
+     "heading": "R3 — Auto-Provision: Mesh Endpoints in Coding Deployments",
+     "chars": 59
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 160
+    },
+    {
+     "heading": "1. Ziel-Formate",
+     "chars": 811
+    },
+    {
+     "heading": "2. Provisioning API",
+     "chars": 483
+    },
+    {
+     "heading": "3. Model-Namens-Mapping",
+     "chars": 481
+    },
+    {
+     "heading": "4. Mouse-Click Provisioning",
+     "chars": 346
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5564
+    }
+   ]
+  },
+  {
+   "id": "okf-ana-mes-mesh-endpoint-configuration",
+   "title": "R2 — Coding Deployment Config: Redeploy vs Hot-Reload",
+   "path": "general/analytics-and-telemetry/mesh-endpoints/mesh-endpoint-configuration.md",
+   "topic": "analytics-and-telemetry",
+   "subtopic": "mesh-endpoints",
+   "tags": [],
+   "summary": "Welche deployments brauchen redeploy vs hot-reload? Wie editieren wir config files?",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 417
+    },
+    {
+     "heading": "R2 — Coding Deployment Config: Redeploy vs Hot-Reload",
+     "chars": 55
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 109
+    },
+    {
+     "heading": "1. Deployment Types catalog",
+     "chars": 857
+    },
+    {
+     "heading": "2. Config Editor",
+     "chars": 305
+    },
+    {
+     "heading": "3. Restart Mechanism",
+     "chars": 298
+    },
+    {
+     "heading": "4. Settings Button UX",
+     "chars": 202
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5770
+    }
+   ]
+  },
+  {
+   "id": "okf-ana-met-model-statistics-pipeline",
+   "title": "R10 — Model Stats Pipeline: Static Facts + Dynamic Parameters + Fuzzy Fallback",
+   "path": "general/analytics-and-telemetry/metrics-and-pipelines/model-statistics-pipeline.md",
+   "topic": "analytics-and-telemetry",
+   "subtopic": "metrics-and-pipelines",
+   "tags": [],
+   "summary": "Wie nutzen wir OpenRouter stats, künstliche analyse, and SearXNG als fallback",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 448
+    },
+    {
+     "heading": "R10 — Model Stats Pipeline: Static Facts + Dynamic Parameters + Fuzzy Fallback",
+     "chars": 80
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 212
+    },
+    {
+     "heading": "1. OpenRouter Stats (wir nutzen sie GAR NICHT aktuell)",
+     "chars": 1082
+    },
+    {
+     "heading": "2. Artificial Analysis (künstliche Analyse als Fallback)",
+     "chars": 531
+    },
+    {
+     "heading": "3. SearXNG als letzter Fallback",
+     "chars": 937
+    },
+    {
+     "heading": "4. Static Facts vs Dynamic Parameters",
+     "chars": 978
+    },
+    {
+     "heading": "5. Enrichment Pipeline Architecture",
+     "chars": 765
+    },
+    {
+     "heading": "6. Utility Model for SearXNG Extraction",
+     "chars": 532
+    },
+    {
+     "heading": "7. Fuzzy Model Deduplication",
+     "chars": 487
+    },
+    {
+     "heading": "Fuzzy Matching Pipeline",
+     "chars": 431
+    },
+    {
+     "heading": "Static Facts JSON",
+     "chars": 286
+    },
+    {
+     "heading": "Dynamic Facts JSON",
+     "chars": 238
+    },
+    {
+     "heading": "Academic References (see `docs/REFERENCES.md`)",
+     "chars": 334
+    },
+    {
+     "heading": "R10 — Model Stats Pipeline: Static Facts + Dynamic Parameters + Fuzzy Fallback",
+     "chars": 80
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 212
+    },
+    {
+     "heading": "1. OpenRouter Stats (wir nutzen sie GAR NICHT aktuell)",
+     "chars": 1082
+    },
+    {
+     "heading": "2. Artificial Analysis (künstliche Analyse als Fallback)",
+     "chars": 531
+    },
+    {
+     "heading": "3. SearXNG als letzter Fallback",
+     "chars": 937
+    },
+    {
+     "heading": "4. Static Facts vs Dynamic Parameters",
+     "chars": 978
+    },
+    {
+     "heading": "5. Enrichment Pipeline Architecture",
+     "chars": 765
+    },
+    {
+     "heading": "6. Utility Model for SearXNG Extraction",
+     "chars": 532
+    },
+    {
+     "heading": "7. Fuzzy Model Deduplication",
+     "chars": 487
+    },
+    {
+     "heading": "Fuzzy Matching Pipeline",
+     "chars": 431
+    },
+    {
+     "heading": "Static Facts JSON",
+     "chars": 286
+    },
+    {
+     "heading": "Dynamic Facts JSON",
+     "chars": 238
+    },
+    {
+     "heading": "Academic References (see `docs/REFERENCES.md`)",
+     "chars": 329
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-07-ebpf-llm-guards-blogpost",
+   "title": "Stopping Prompt Injection at the Kernel Level: How eBPF + LLM Guards Actually Work",
+   "path": "general/articles/2026-09-07-ebpf-llm-guards-blogpost.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "![Title graphic — dark background, the headline 'Stopping Prompt Injection at the Kernel Level' next to a stylized eBPF bee inside a security shield, ",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 501
+    },
+    {
+     "heading": "Stopping Prompt Injection at the Kernel Level: How eBPF + LLM Guards Actually Wo",
+     "chars": 873
+    },
+    {
+     "heading": "The semantic gap nobody talks about",
+     "chars": 1218
+    },
+    {
+     "heading": "How eBPF-based interception actually works",
+     "chars": 1818
+    },
+    {
+     "heading": "The honest limits (that vendor slides won't tell you)",
+     "chars": 775
+    },
+    {
+     "heading": "The actual option landscape",
+     "chars": 668
+    },
+    {
+     "heading": "The part that actually matters: identity",
+     "chars": 1645
+    },
+    {
+     "heading": "Our takeaways",
+     "chars": 1521
+    },
+    {
+     "heading": "Sources (verified as of Sep 7, 2026)",
+     "chars": 1888
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-07-ebpf-llm-guards-short-post",
+   "title": "Blog-Post — Teaser für den Hauptartikel",
+   "path": "general/articles/2026-09-07-ebpf-llm-guards-short-post.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 382
+    },
+    {
+     "heading": "Blog-Post — Teaser für den Hauptartikel",
+     "chars": 2160
+    },
+    {
+     "heading": "Veröffentlichungs-Checkliste",
+     "chars": 550
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-08-entropy-cascades-blogpost",
+   "title": "The Cheapest Confidence Signal Is Already in Your Response: Entropy-Gated Model Cascades",
+   "path": "general/articles/2026-09-08-entropy-cascades-blogpost.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "![Title graphic — dark background, the headline 'Entropy-Gated Cascades' next to a probability distribution collapsing from flat (uncertain) to spiked",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 508
+    },
+    {
+     "heading": "The Cheapest Confidence Signal Is Already in Your Response: Entropy-Gated Model ",
+     "chars": 1104
+    },
+    {
+     "heading": "The signal: the model already tells you when it's guessing",
+     "chars": 1529
+    },
+    {
+     "heading": "The streaming variant: pull the ripcord mid-flight",
+     "chars": 826
+    },
+    {
+     "heading": "First, the provider question: does your API even return logprobs?",
+     "chars": 3085
+    },
+    {
+     "heading": "What it actually costs",
+     "chars": 865
+    },
+    {
+     "heading": "The honest limits",
+     "chars": 1140
+    },
+    {
+     "heading": "Where this sits in the landscape",
+     "chars": 959
+    },
+    {
+     "heading": "Takeaways",
+     "chars": 871
+    },
+    {
+     "heading": "Sources (verified as of Sep 8, 2026)",
+     "chars": 2789
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-08-entropy-cascades-short-post",
+   "title": "Blog-Post — Teaser für den Entropy-Cascades-Artikel",
+   "path": "general/articles/2026-09-08-entropy-cascades-short-post.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 395
+    },
+    {
+     "heading": "Blog-Post — Teaser für den Entropy-Cascades-Artikel",
+     "chars": 2551
+    },
+    {
+     "heading": "Veröffentlichungs-Checkliste",
+     "chars": 432
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-08-learning-router-blogpost",
+   "title": "We Didn't Build a Router. We Built an Economy.",
+   "path": "general/articles/2026-09-08-learning-router-blogpost.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "![Title graphic — dark background, the headline 'We didn't build a router. We built an economy.' next to a ledger-style table of API keys with price-d",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 465
+    },
+    {
+     "heading": "We Didn't Build a Router. We Built an Economy.",
+     "chars": 1493
+    },
+    {
+     "heading": "Layer 1: The model bandit (with memory that decays)",
+     "chars": 1925
+    },
+    {
+     "heading": "Layer 2: The key pool — punishment scaled to price",
+     "chars": 1553
+    },
+    {
+     "heading": "Layer 3: The quota truth (headers nobody reads)",
+     "chars": 1307
+    },
+    {
+     "heading": "Fallback chains: the walk nobody watches",
+     "chars": 1458
+    },
+    {
+     "heading": "The feedback loop that ties it together",
+     "chars": 719
+    },
+    {
+     "heading": "Where this sits against the landscape",
+     "chars": 1030
+    },
+    {
+     "heading": "Takeaways",
+     "chars": 945
+    },
+    {
+     "heading": "Sources (verified as of Sep 8, 2026)",
+     "chars": 977
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-08-learning-router-short-post",
+   "title": "Blog-Post — Teaser für den Learning-Router-Artikel",
+   "path": "general/articles/2026-09-08-learning-router-short-post.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 393
+    },
+    {
+     "heading": "Blog-Post — Teaser für den Learning-Router-Artikel",
+     "chars": 2209
+    },
+    {
+     "heading": "Veröffentlichungs-Checkliste",
+     "chars": 428
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-08-llm-mesh-intro-blogpost",
+   "title": "One API Key to Route Them All: What an LLM Mesh Is (and Why Your Apps Shouldn't Talk to Providers Directly)",
+   "path": "general/articles/2026-09-08-llm-mesh-intro-blogpost.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "![Title graphic — dark blue tech background with grid, the headline 'One API Key to Route Them All', a monospace curl snippet against a local OpenAI-c",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 525
+    },
+    {
+     "heading": "One API Key to Route Them All: What an LLM Mesh Is (and Why Your Apps Shouldn't ",
+     "chars": 1217
+    },
+    {
+     "heading": "What it actually is",
+     "chars": 3165
+    },
+    {
+     "heading": "The routing methods, honestly surveyed",
+     "chars": 2209
+    },
+    {
+     "heading": "The token-saving point everyone skips",
+     "chars": 797
+    },
+    {
+     "heading": "When you don't need one",
+     "chars": 495
+    },
+    {
+     "heading": "Takeaways",
+     "chars": 941
+    },
+    {
+     "heading": "Sources (verified as of Sep 8, 2026)",
+     "chars": 1068
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-08-llm-mesh-intro-short-post",
+   "title": "Blog-Post — Teaser für den LLM-Mesh-Intro-Artikel",
+   "path": "general/articles/2026-09-08-llm-mesh-intro-short-post.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 391
+    },
+    {
+     "heading": "Blog-Post — Teaser für den LLM-Mesh-Intro-Artikel",
+     "chars": 2432
+    },
+    {
+     "heading": "Veröffentlichungs-Checkliste",
+     "chars": 345
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-09-siem-oss-vs-aws-native",
+   "title": "One Dashboard, Two Security Worlds: Wazuh + Falco vs. AWS GuardDuty + Security Hub",
+   "path": "general/articles/2026-09-09-siem-oss-vs-aws-native.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "![Title graphic — dark background, the headline 'One Dashboard, Two Security Worlds' with the OSS-vs-AWS question framed around the identity chain, ne",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 499
+    },
+    {
+     "heading": "One Dashboard, Two Security Worlds: Wazuh + Falco vs. AWS GuardDuty + Security H",
+     "chars": 1232
+    },
+    {
+     "heading": "What a SIEM actually does (for an SMB team)",
+     "chars": 2016
+    },
+    {
+     "heading": "What an SMB is actually defending against",
+     "chars": 1868
+    },
+    {
+     "heading": "The three-layer model underneath everything",
+     "chars": 592
+    },
+    {
+     "heading": "Architecture 1: the open-source stack",
+     "chars": 2476
+    },
+    {
+     "heading": "Architecture 2: the AWS-native stack",
+     "chars": 3551
+    },
+    {
+     "heading": "The WAF layer — and how a WAF learns",
+     "chars": 1953
+    },
+    {
+     "heading": "The trick: one dashboard, swappable sensors",
+     "chars": 1937
+    },
+    {
+     "heading": "The MLOps layer: anomaly detection as a lifecycle, not a script",
+     "chars": 2296
+    },
+    {
+     "heading": "Which one, when",
+     "chars": 1207
+    },
+    {
+     "heading": "The MSP/MSSP view (and what \"good\" looks like after 90 days)",
+     "chars": 1182
+    },
+    {
+     "heading": "Our takeaways",
+     "chars": 1212
+    },
+    {
+     "heading": "Sources (verified as of Sep 9, 2026)",
+     "chars": 1914
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-09-siem-smb-guide-blogpost",
+   "title": "You Have Logs. You Don’t Have a SIEM. — How to Build One: AWS-Native vs. Open Source (2026)",
+   "path": "general/articles/2026-09-09-siem-smb-guide-blogpost.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "![Title graphic — dark background, headline 'SIEM for Growing Teams: Suricata, eBPF, Firewalls, WAF' next to two glowing bar-chart towers, one labeled",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 509
+    },
+    {
+     "heading": "You Have Logs. You Don’t Have a SIEM. — How to Build One: AWS-Native vs. Open So",
+     "chars": 1595
+    },
+    {
+     "heading": "What a SIEM actually does (the 60-second version)",
+     "chars": 2328
+    },
+    {
+     "heading": "What small and mid-sized teams are actually defending against",
+     "chars": 1875
+    },
+    {
+     "heading": "The building blocks: what each sensor is actually for",
+     "chars": 2351
+    },
+    {
+     "heading": "Four ways to build it: self-hosted, managed cloud-native, managed SaaS, or minim",
+     "chars": 293
+    },
+    {
+     "heading": "Approach A: the open-source stack",
+     "chars": 5891
+    },
+    {
+     "heading": "Approach B: the AWS-native stack",
+     "chars": 6562
+    },
+    {
+     "heading": "A quick side-by-side",
+     "chars": 856
+    },
+    {
+     "heading": "A third path: fully managed, cloud-agnostic SaaS SIEM",
+     "chars": 2641
+    },
+    {
+     "heading": "A fourth, lighter option: start smaller than any of these",
+     "chars": 701
+    },
+    {
+     "heading": "Controlling traffic: ports, IP allowlists, and the WAF layer",
+     "chars": 3379
+    },
+    {
+     "heading": "Catching misconfiguration before it ships: IaC scanning",
+     "chars": 1532
+    },
+    {
+     "heading": "Attributing a threat to one deployment, not \"the platform\"",
+     "chars": 1410
+    },
+    {
+     "heading": "The Two-Stage AI Security Response: Cheap Detection, Expensive Thinking",
+     "chars": 2217
+    },
+    {
+     "heading": "Stage 1: The Statistical & Anomaly Detection Engine",
+     "chars": 2188
+    },
+    {
+     "heading": "Stage 2: The Agentic Reasoning & Semantic Triage",
+     "chars": 1677
+    },
+    {
+     "heading": "How the wiring actually looks, end to end",
+     "chars": 2157
+    },
+    {
+     "heading": "The AWS-published version of this exact pattern",
+     "chars": 2199
+    },
+    {
+     "heading": "Elastic Security + Amazon Bedrock Agentic AI",
+     "chars": 1968
+    },
+    {
+     "heading": "The OpenSearch-native wiring (Stage 1 + Stage 2 in one cluster)",
+     "chars": 1710
+    },
+    {
+     "heading": "The response path: how an attack actually gets stopped — end to end",
+     "chars": 4471
+    },
+    {
+     "heading": "The CNAPP playbook: what the AI-security vendors actually automate",
+     "chars": 6701
+    },
+    {
+     "heading": "Takeaways",
+     "chars": 1404
+    },
+    {
+     "heading": "Sources",
+     "chars": 4963
+    },
+    {
+     "heading": "Glossary — the alphabet soup, explained once",
+     "chars": 744
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-09-siem-smb-guide-short-post",
+   "title": "Blog Post — Teaser für den SIEM-SMB-Guide",
+   "path": "general/articles/2026-09-09-siem-smb-guide-short-post.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 383
+    },
+    {
+     "heading": "Blog Post — Teaser für den SIEM-SMB-Guide",
+     "chars": 2652
+    },
+    {
+     "heading": "Veröffentlichungs-Checkliste",
+     "chars": 735
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-13-gvisor-workspace-isolation-blogpost",
+   "title": "The Bouncer, the Wall, and the Straitjacket: How Multi-Tenant Sandboxes Actually Stay Isolated",
+   "path": "general/articles/2026-09-13-gvisor-workspace-isolation-blogpost.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "![Title graphic — dark background, headline 'The Bouncer, the Wall, and the Straitjacket' next to three stacked colored blocks labeled Identity Proxy ",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 524
+    },
+    {
+     "heading": "The Bouncer, the Wall, and the Straitjacket: How Multi-Tenant Sandboxes Actually",
+     "chars": 559
+    },
+    {
+     "heading": "Why you should care even if you've never touched a VLAN",
+     "chars": 1041
+    },
+    {
+     "heading": "The three layers, in plain English",
+     "chars": 1201
+    },
+    {
+     "heading": "Layer 1: gVisor — what it actually does (and does not do)",
+     "chars": 2350
+    },
+    {
+     "heading": "How gVisor's filesystem isolation actually works",
+     "chars": 2742
+    },
+    {
+     "heading": "Layer 2: local network segmentation (VLANs)",
+     "chars": 1852
+    },
+    {
+     "heading": "Layer 3: identity-based proxy routing (and why \"random port per user\" is wrong)",
+     "chars": 2307
+    },
+    {
+     "heading": "The fourth thing nobody puts in the diagram: egress",
+     "chars": 1025
+    },
+    {
+     "heading": "A worked example: multi-agent AI systems, sandboxed for real",
+     "chars": 1459
+    },
+    {
+     "heading": "Putting it together with a SIEM: three silent gates become one visible story",
+     "chars": 2069
+    },
+    {
+     "heading": "The pattern is not novel — three production examples",
+     "chars": 2461
+    },
+    {
+     "heading": "A worked example: what this looks like in a real gateway, honestly",
+     "chars": 2769
+    },
+    {
+     "heading": "The honest failure mode of having only one or two layers",
+     "chars": 1528
+    },
+    {
+     "heading": "Takeaways",
+     "chars": 1795
+    },
+    {
+     "heading": "Sources (verified as of Sep 13, 2026)",
+     "chars": 2025
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-2026-09-13-gvisor-workspace-isolation-short-post",
+   "title": "Blog Post — Teaser für den gVisor/VLAN/Identity-Routing-Artikel",
+   "path": "general/articles/2026-09-13-gvisor-workspace-isolation-short-post.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 417
+    },
+    {
+     "heading": "Blog Post — Teaser für den gVisor/VLAN/Identity-Routing-Artikel",
+     "chars": 2458
+    },
+    {
+     "heading": "Veröffentlichungs-Checkliste",
+     "chars": 421
+    }
+   ]
+  },
+  {
+   "id": "okf-art-gen-agentic-knowledge-porting",
+   "title": "Porting Heterogeneous Engineering Research into Open Knowledge Format (OKF v1.0) for Autonomous Agents & GraphRAG",
+   "path": "general/articles/2026-09-14-okf-agentic-knowledge-porting-blogpost.md",
+   "topic": "articles",
+   "subtopic": "technical-blogs",
+   "tags": [],
+   "summary": "Detailed technical article describing how heterogeneous engineering research, chat transcripts, and internal project notes were transformed into standardized Open Knowledge Format ",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 683
+    },
+    {
+     "heading": "Porting Heterogeneous Engineering Research into Open Knowledge Format (OKF v1.0)",
+     "chars": 115
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 932
+    },
+    {
+     "heading": "1. The Challenge: Unstructured Research Slop in Agent Pipelines",
+     "chars": 1268
+    },
+    {
+     "heading": "2. The Open Knowledge Format (OKF v1.0) Architecture",
+     "chars": 422
+    },
+    {
+     "heading": "2.1 The Two-Tier Directory Taxonomy",
+     "chars": 928
+    },
+    {
+     "heading": "2.2 YAML Frontmatter Schema",
+     "chars": 555
+    },
+    {
+     "heading": "3. The 8-Stage Slop-to-Knowledge Pipeline",
+     "chars": 272
+    },
+    {
+     "heading": "Pipeline Stages Breakdown",
+     "chars": 1122
+    },
+    {
+     "heading": "4. Multi-Hop GraphRAG & Entity Graph Traversal",
+     "chars": 533
+    },
+    {
+     "heading": "Entity-Relation Triple Extraction Examples",
+     "chars": 268
+    },
+    {
+     "heading": "5. Case Study: Transformation Before & After",
+     "chars": 675
+    },
+    {
+     "heading": "6. Conclusion & Best Practices",
+     "chars": 465
+    }
+   ]
+  },
+  {
+   "id": "okf-con-mcp-container-registry-mcp-discovery",
+   "title": "R13 — Container Registry + MCP + Auto-Discovery + Tool Registry + Roadmap Graph",
+   "path": "general/container-runtime-security/mcp-integrations/container-registry-mcp-discovery.md",
+   "topic": "container-runtime-security",
+   "subtopic": "mcp-integrations",
+   "tags": [],
+   "summary": "Agents and Humans arbeiten grenzenlos in einem Project:",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 430
+    },
+    {
+     "heading": "R13 — Container Registry + MCP + Auto-Discovery + Tool Registry + Roadmap Graph",
+     "chars": 81
+    },
+    {
+     "heading": "Vision",
+     "chars": 507
+    },
+    {
+     "heading": "1. Container/Environment Registry",
+     "chars": 1168
+    },
+    {
+     "heading": "2. MCP (Model Context Protocol) Integration",
+     "chars": 1284
+    },
+    {
+     "heading": "3. Auto-Discovery (Container + Apps → Deployments + Tools)",
+     "chars": 1274
+    },
+    {
+     "heading": "4. Agent Tool Registry",
+     "chars": 999
+    },
+    {
+     "heading": "5. Project Roadmap Visualization",
+     "chars": 894
+    },
+    {
+     "heading": "6. Icon System (dev-icons / react-icons)",
+     "chars": 1387
+    },
+    {
+     "heading": "7. Was fehlt zur Vision?",
+     "chars": 1084
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7650
+    }
+   ]
+  },
+  {
+   "id": "okf-con-mcp-docker-mcp-integration",
+   "title": "Docker MCP Integration — Verified Connectors as Bridge",
+   "path": "general/container-runtime-security/mcp-integrations/docker-mcp-integration.md",
+   "topic": "container-runtime-security",
+   "subtopic": "mcp-integrations",
+   "tags": [],
+   "summary": "Docker announced MCP (Model Context Protocol) support with:",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 399
+    },
+    {
+     "heading": "Docker MCP Integration — Verified Connectors as Bridge",
+     "chars": 56
+    },
+    {
+     "heading": "Docker MCP Toolkit Overview",
+     "chars": 380
+    },
+    {
+     "heading": "How it works",
+     "chars": 672
+    },
+    {
+     "heading": "Key advantages for The Multi-Provider Gateway",
+     "chars": 597
+    },
+    {
+     "heading": "List available MCP servers in the catalog",
+     "chars": 67
+    },
+    {
+     "heading": "Add/install an MCP server",
+     "chars": 120
+    },
+    {
+     "heading": "List installed MCP servers",
+     "chars": 51
+    },
+    {
+     "heading": "Run the MCP gateway (agents connect to this)",
+     "chars": 69
+    },
+    {
+     "heading": "Inspect an MCP server's tools",
+     "chars": 64
+    },
+    {
+     "heading": "Remove an MCP server",
+     "chars": 63
+    },
+    {
+     "heading": "Docker MCP Catalog — Known Connectors",
+     "chars": 899
+    },
+    {
+     "heading": "The Multi-Provider Gateway + Docker MCP Integration Architecture",
+     "chars": 67
+    },
+    {
+     "heading": "1. The Multi-Provider Gateway as MCP Server",
+     "chars": 696
+    },
+    {
+     "heading": "2. The Multi-Provider Gateway as MCP Client",
+     "chars": 462
+    },
+    {
+     "heading": "3. Network Discovery → MCP Auto-Detection",
+     "chars": 326
+    },
+    {
+     "heading": "4. User Flow",
+     "chars": 429
+    },
+    {
+     "heading": "MCP Server (Go)",
+     "chars": 534
+    },
+    {
+     "heading": "MCP Client (Go)",
+     "chars": 330
+    },
+    {
+     "heading": "Discovery via Docker CLI",
+     "chars": 324
+    },
+    {
+     "heading": "Dockerfile for The Multi-Provider Gateway MCP Server",
+     "chars": 315
+    },
+    {
+     "heading": "Docker Compose for MCP Gateway",
+     "chars": 425
+    },
+    {
+     "heading": "MCP Tool Schema for The Multi-Provider Gateway",
+     "chars": 2302
+    },
+    {
+     "heading": "Discovery Flow",
+     "chars": 863
+    },
+    {
+     "heading": "Discovery DB Schema",
+     "chars": 586
+    },
+    {
+     "heading": "Discovery → Promotion Flow",
+     "chars": 440
+    },
+    {
+     "heading": "Complete Connector Registry",
+     "chars": 9900
+    }
+   ]
+  },
+  {
+   "id": "okf-con-san-gvisor-architecture",
+   "title": "Basics",
+   "path": "general/container-runtime-security/sandboxing/gvisor-architecture.md",
+   "topic": "container-runtime-security",
+   "subtopic": "sandboxing",
+   "tags": [],
+   "summary": "Describe gVisor's internal architecture precisely enough that I can draw a correct technical diagram: the exact relationship between the Sentry (the u",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 427
+    },
+    {
+     "heading": "Basics",
+     "chars": 29435
+    },
+    {
+     "heading": "Basic machine setup: Docker/gVisor/NVIDIA drivers",
+     "chars": 1172
+    },
+    {
+     "heading": "NVIDIA driver",
+     "chars": 332
+    },
+    {
+     "heading": "Docker",
+     "chars": 648
+    },
+    {
+     "heading": "NVIDIA container toolkit",
+     "chars": 974
+    },
+    {
+     "heading": "gVisor",
+     "chars": 897
+    },
+    {
+     "heading": "Self-hosted Matrix.org server + Cinny web frontend setup",
+     "chars": 391
+    },
+    {
+     "heading": "Generate homeserver.yaml",
+     "chars": 227
+    },
+    {
+     "heading": "Run server",
+     "chars": 188
+    },
+    {
+     "heading": "Create admin user",
+     "chars": 143
+    },
+    {
+     "heading": "Run cinny (Matrix client)",
+     "chars": 172
+    },
+    {
+     "heading": "Access Cinny web UI at http://localhost:8084",
+     "chars": 46
+    },
+    {
+     "heading": "Self-hosted inference server: Ollama",
+     "chars": 509
+    },
+    {
+     "heading": "Pull and load some models.",
+     "chars": 557
+    },
+    {
+     "heading": "Make sure they all fit together in VRAM, otherwise you'll get bad performance.",
+     "chars": 482
+    },
+    {
+     "heading": "Containerized OpenClaw setup with Browser Use",
+     "chars": 5070
+    },
+    {
+     "heading": "Browser Use",
+     "chars": 753
+    },
+    {
+     "heading": "Containerized PicoClaw with web and GitHub skills",
+     "chars": 2758
+    },
+    {
+     "heading": "Restart PicoClaw to apply config changes.",
+     "chars": 70
+    },
+    {
+     "heading": "You can re-attach to an interactive CLI for PicoClaw with:",
+     "chars": 856
+    },
+    {
+     "heading": "Modularized & sandboxed Hermes Agent setup",
+     "chars": 1675
+    },
+    {
+     "heading": "Setting up Docker-in-gVisor for code execution",
+     "chars": 763
+    },
+    {
+     "heading": "Reload *host* dockerd configuration to make it notice the new runtime we just ad",
+     "chars": 117
+    },
+    {
+     "heading": "Note: The \\`--cap-add=all\\` flag does *not* grant the container any",
+     "chars": 69
+    },
+    {
+     "heading": "capabilities on the host. It only enables the sandboxed workload to use",
+     "chars": 73
+    },
+    {
+     "heading": "elevated privileges **within the sandbox**.",
+     "chars": 45
+    },
+    {
+     "heading": "This is necessary to be able to run \\`dockerd\\` inside a container.",
+     "chars": 379
+    },
+    {
+     "heading": "Verify that we can talk to the \\`dockerd\\` server running in gVisor.",
+     "chars": 70
+    },
+    {
+     "heading": "We need --security-opt=seccomp=unconfined here, because otherwise",
+     "chars": 67
+    },
+    {
+     "heading": "Docker's default seccomp profile would block the \\`syslog(2)\\` syscall that",
+     "chars": 77
+    },
+    {
+     "heading": "the \\`dmesg\\` process uses to read the kernel logs (which here is actually",
+     "chars": 76
+    },
+    {
+     "heading": "reading the gVisor kernel logs). This is not a security problem, since we",
+     "chars": 75
+    },
+    {
+     "heading": "are still all running in gVisor.",
+     "chars": 182
+    },
+    {
+     "heading": "[...]",
+     "chars": 132
+    },
+    {
+     "heading": "Building Camofox Docker image in Docker-in-gVisor",
+     "chars": 1201
+    },
+    {
+     "heading": "Start Docker-in-gVisor with large-enough /var/lib/docker tmpfs",
+     "chars": 404
+    },
+    {
+     "heading": "Build image within the in-gVisor Docker.",
+     "chars": 42
+    },
+    {
+     "heading": "The \\`make\\` command will run \\`docker build\\` in-sandbox.",
+     "chars": 272
+    },
+    {
+     "heading": "Extract the image out of the container and import as host Docker image.",
+     "chars": 73
+    },
+    {
+     "heading": "The \\`docker save\\` command dumps the image to stdout, which gets piped",
+     "chars": 73
+    },
+    {
+     "heading": "to the out-of-sandbox \\`docker load\\` command.",
+     "chars": 160
+    },
+    {
+     "heading": "You now have the image on the host Docker:",
+     "chars": 147
+    },
+    {
+     "heading": "Clean up.",
+     "chars": 227
+    },
+    {
+     "heading": "Camofox binds on port 3000 by default; we don't need to expose it",
+     "chars": 67
+    },
+    {
+     "heading": "to the host though, as we will use inter-container networking.",
+     "chars": 64
+    },
+    {
+     "heading": "Nonetheless, let's make sure it works:",
+     "chars": 610
+    },
+    {
+     "heading": "Running self-hosted Firecrawl in gVisor",
+     "chars": 5179
+    },
+    {
+     "heading": "Run.",
+     "chars": 78
+    },
+    {
+     "heading": "Make sure it works:",
+     "chars": 646
+    },
+    {
+     "heading": "Putting it all together",
+     "chars": 357
+    },
+    {
+     "heading": "Register Matrix user.",
+     "chars": 153
+    },
+    {
+     "heading": "Hermes requires a non-root user for its home directory.",
+     "chars": 208
+    },
+    {
+     "heading": "Build Docker image with extra packages.",
+     "chars": 118
+    },
+    {
+     "heading": "Install basic packages.",
+     "chars": 153
+    },
+    {
+     "heading": "Install dependencies for Hermes Agent's Matrix.org support.",
+     "chars": 278
+    },
+    {
+     "heading": "Install espeak-ng and NeuTTS model for local text-to-speech capabilities.",
+     "chars": 201
+    },
+    {
+     "heading": "Install Docker; not required for dockerd since that's running in a separate",
+     "chars": 77
+    },
+    {
+     "heading": "container, but Hermes Agent still needs the Docker **client** CLI.",
+     "chars": 2633
+    },
+    {
+     "heading": "Watch this command while asking Hermes Agent to run \\`curl https://gvisor.dev\\`:",
+     "chars": 1330
+    },
+    {
+     "heading": "Putting these agents in a room",
+     "chars": 666
+    },
+    {
+     "heading": "Sandboxing agents: What actually makes sense?",
+     "chars": 5473
+    },
+    {
+     "heading": "Should I use gVisor to sandbox my agent?",
+     "chars": 1838
+    }
+   ]
+  },
+  {
+   "id": "okf-con-san-tetragon-gvisor-kata-comparison",
+   "title": "R25 — Tetragon + gVisor / Kata Containers: Verification & Einordnung for Milestone",
+   "path": "general/container-runtime-security/sandboxing/tetragon-gvisor-kata-comparison.md",
+   "topic": "container-runtime-security",
+   "subtopic": "sandboxing",
+   "tags": [],
+   "summary": "> Source: System Administrator-Research (8.9.2026, KI-Antworttext) + own Verification per",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 454
+    },
+    {
+     "heading": "R25 — Tetragon + gVisor / Kata Containers: Verification & Einordnung for Milesto",
+     "chars": 415
+    },
+    {
+     "heading": "Tetragon (Cilium) — real, non-K8s nutzbar",
+     "chars": 836
+    },
+    {
+     "heading": "gVisor trace points (seccheck) — real, aber **nur Beobachtung**",
+     "chars": 918
+    },
+    {
+     "heading": "Kata Containers + eBPF im Gast-Kernel (AntCWPP) — real, produktionsreif",
+     "chars": 901
+    },
+    {
+     "heading": "2. Corrections am Source Specification (wichtig)",
+     "chars": 1322
+    },
+    {
+     "heading": "3. Konsequenz: Enforcement-Matrix pro Isolationstier (Milestone)",
+     "chars": 1098
+    },
+    {
+     "heading": "4. Sources (verifiziert 8.9.2026)",
+     "chars": 936
+    }
+   ]
+  },
+  {
+   "id": "okf-con-ter-terminal-tmux-vnc-workspaces",
+   "title": "R23 — Terminal-Only Deployment, OpenCode, tmux/VNC",
+   "path": "general/container-runtime-security/terminal-workspaces/terminal-tmux-vnc-workspaces.md",
+   "topic": "container-runtime-security",
+   "subtopic": "terminal-workspaces",
+   "tags": [],
+   "summary": "Braucht The Multi-Provider Gateway einen simplen 'nur Terminal'-Deployment-Typ, ist 'OpenCode' schon",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 448
+    },
+    {
+     "heading": "R23 — Terminal-Only Deployment, OpenCode, tmux/VNC",
+     "chars": 52
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 307
+    },
+    {
+     "heading": "1.1 Plain-terminal deployment — does NOT exist as a deploy option",
+     "chars": 2718
+    },
+    {
+     "heading": "1.2 OpenCode — real and working, but VNC-desktop shaped, not \"just a CLI\"",
+     "chars": 2016
+    },
+    {
+     "heading": "1.3 tmux — no backend/frontend usage at all in this repo",
+     "chars": 436
+    },
+    {
+     "heading": "1.4 VNC — wired only for the OpenCode framework, with a known auth gap",
+     "chars": 461
+    },
+    {
+     "heading": "2. What Requirement / R9 already say, and implementation status",
+     "chars": 66
+    },
+    {
+     "heading": "R9 (`docs/research/R9-iframe-cache-http3-terminal-deploy.md`, §6 \"Terminal",
+     "chars": 2335
+    },
+    {
+     "heading": "Requirement (`docs/tasks/Requirement.md`)",
+     "chars": 1275
+    },
+    {
+     "heading": "3. Utility-deployment-on-new-SSH-endpoint — nothing found",
+     "chars": 2116
+    },
+    {
+     "heading": "4. Findings from saits-crew / llm-mesh-gateway-crew (sibling repos)",
+     "chars": 5037
+    },
+    {
+     "heading": "5. Proposal — scoped first version",
+     "chars": 6160
+    }
+   ]
+  },
+  {
+   "id": "okf-con-ter-vnc-workspace-alternatives",
+   "title": "OpenCode Abhängigkeiten and ein gutes Terminal installieren",
+   "path": "general/container-runtime-security/terminal-workspaces/vnc-workspace-alternatives.md",
+   "topic": "container-runtime-security",
+   "subtopic": "terminal-workspaces",
+   "tags": [],
+   "summary": "alternative zu vnc um interactive shells wie opencode die mouse input supporten im web denyamisch nutzbar zu machenFür die dynamische Nutzung interakt",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 505
+    },
+    {
+     "heading": "OpenCode Abhängigkeiten and ein gutes Terminal installieren",
+     "chars": 61
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 11523
+    },
+    {
+     "heading": "Openbox so konfigurieren, dass es das Terminal maximiert startet",
+     "chars": 110
+    },
+    {
+     "heading": "n.eko anweisen, das Terminal als Hauptanwendung zu nutzen",
+     "chars": 6562
+    }
+   ]
+  },
+  {
+   "id": "okf-fro-das-multi-window-dashboard",
+   "title": "R1 — Multi-Window Dashboard Grid",
+   "path": "general/frontend-and-ui-architecture/dashboard-and-widgets/multi-window-dashboard.md",
+   "topic": "frontend-and-ui-architecture",
+   "subtopic": "dashboard-and-widgets",
+   "tags": [],
+   "summary": "Wie bauen wir ein Multi-Window Dashboard wo man HTTP-Projekte als iframe einbettet",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 414
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 139
+    },
+    {
+     "heading": "1. Grid Layout Library compare",
+     "chars": 563
+    },
+    {
+     "heading": "2. Iframe Embedding",
+     "chars": 413
+    },
+    {
+     "heading": "3. Layout Persistence",
+     "chars": 251
+    },
+    {
+     "heading": "4. Single-Deploy Mandat",
+     "chars": 227
+    },
+    {
+     "heading": "Output Format",
+     "chars": 174
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 139
+    },
+    {
+     "heading": "1. Grid Layout Library compare",
+     "chars": 563
+    },
+    {
+     "heading": "2. Iframe Embedding",
+     "chars": 413
+    },
+    {
+     "heading": "3. Layout Persistence",
+     "chars": 251
+    },
+    {
+     "heading": "4. Single-Deploy Mandat",
+     "chars": 227
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5263
+    }
+   ]
+  },
+  {
+   "id": "okf-fro-das-widget-presets-and-security-vault",
+   "title": "R16 — Widget Presets, App Categories, Security/SecOps & Vault",
+   "path": "general/frontend-and-ui-architecture/dashboard-and-widgets/widget-presets-and-security-vault.md",
+   "topic": "frontend-and-ui-architecture",
+   "subtopic": "dashboard-and-widgets",
+   "tags": [],
+   "summary": "The Multi-Provider Gateway dashboard wird widget-based (wie leobot2 trading bot):",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 453
+    },
+    {
+     "heading": "R16 — Widget Presets, App Categories, Security/SecOps & Vault",
+     "chars": 63
+    },
+    {
+     "heading": "Vision",
+     "chars": 427
+    },
+    {
+     "heading": "1. Widget Registry Pattern (adapted from leobot2)",
+     "chars": 52
+    },
+    {
+     "heading": "Categories",
+     "chars": 444
+    },
+    {
+     "heading": "Widget Registry (The Multi-Provider Gateway-specific)",
+     "chars": 3067
+    },
+    {
+     "heading": "Dashboard Presets (The Multi-Provider Gateway)",
+     "chars": 790
+    },
+    {
+     "heading": "2. App Categories (Pseudo-Layer for Sidebar)",
+     "chars": 458
+    },
+    {
+     "heading": "Smart Suggestions",
+     "chars": 332
+    },
+    {
+     "heading": "DB Schema",
+     "chars": 420
+    },
+    {
+     "heading": "Auto-Categorization",
+     "chars": 575
+    },
+    {
+     "heading": "Traffic Debug Widget",
+     "chars": 336
+    },
+    {
+     "heading": "Network Topology Widget",
+     "chars": 309
+    },
+    {
+     "heading": "Security Audit Widget",
+     "chars": 311
+    },
+    {
+     "heading": "Vault Access Widget",
+     "chars": 185
+    },
+    {
+     "heading": "4. Vault (Gateway-Based Secret Access)",
+     "chars": 41
+    },
+    {
+     "heading": "Architecture",
+     "chars": 414
+    },
+    {
+     "heading": "Rules",
+     "chars": 377
+    },
+    {
+     "heading": "Vault API",
+     "chars": 532
+    },
+    {
+     "heading": "MCP Tool",
+     "chars": 374
+    },
+    {
+     "heading": "DB Schema",
+     "chars": 990
+    },
+    {
+     "heading": "Environment Registry (from R13, now with Vault integration)",
+     "chars": 295
+    },
+    {
+     "heading": "Build Priority",
+     "chars": 294
+    },
+    {
+     "heading": "6. Tech Ontology (Static Knowledge Base)",
+     "chars": 43
+    },
+    {
+     "heading": "Scientific Foundation",
+     "chars": 250
+    },
+    {
+     "heading": "Implementation",
+     "chars": 366
+    },
+    {
+     "heading": "API: `GET /api/ontology?port=5432` or `?image=postgres` or `?category=Databases`",
+     "chars": 84
+    },
+    {
+     "heading": "Stale-While-Revalidate",
+     "chars": 210
+    }
+   ]
+  },
+  {
+   "id": "okf-fro-per-frontend-performance-audit",
+   "title": "R39 — Frontend-Slop-Audit + Lücken-Register (Requirement)",
+   "path": "general/frontend-and-ui-architecture/performance-and-rendering/frontend-performance-audit.md",
+   "topic": "frontend-and-ui-architecture",
+   "subtopic": "performance-and-rendering",
+   "tags": [],
+   "summary": "**Datum:** 14.9.2026 · **Agent:** Requirement (Dokumentier-Lane, nur docs/) · **Basis:** Arbeitsbaum `main` @ commit-hash + Live-Stack (Backend :19091, Fro",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 524
+    },
+    {
+     "heading": "R39 — Frontend-Slop-Audit + Lücken-Register (Requirement)",
+     "chars": 951
+    },
+    {
+     "heading": "1) Summary",
+     "chars": 1060
+    },
+    {
+     "heading": "2) View-Register (29 Views — Status · Fundstelle · Fix · Priorität)",
+     "chars": 207
+    },
+    {
+     "heading": "OK (19) — negative Funde gezählt, nichts fabriziert",
+     "chars": 1815
+    },
+    {
+     "heading": "SLOP (2 Views, 6 Funde)",
+     "chars": 3732
+    },
+    {
+     "heading": "LÜCKE (8 Views)",
+     "chars": 3447
+    },
+    {
+     "heading": "3) Dead-Code-Funde (Komponenten; Views ausgeschlossen)",
+     "chars": 1041
+    },
+    {
+     "heading": "4) Geplant-vs-gebaut-Register gegen die Referenz-Sources",
+     "chars": 4036
+    },
+    {
+     "heading": "5) Konsistenz: i18n & Theme",
+     "chars": 1051
+    },
+    {
+     "heading": "6) 051-in-flight (Arbeitsbaum, uncommittet) — Warnung for Review/Merge",
+     "chars": 1088
+    },
+    {
+     "heading": "7) TOP-10-Fix-Liste for die nächste Frontend-Welle",
+     "chars": 2555
+    },
+    {
+     "heading": "8) Fundstellen-Zählung",
+     "chars": 1175
+    }
+   ]
+  },
+  {
+   "id": "okf-fro-per-iframe-caching-and-http3",
+   "title": "R9 — Server-Side Iframe Cache with HTTP/3",
+   "path": "general/frontend-and-ui-architecture/performance-and-rendering/iframe-caching-and-http3.md",
+   "topic": "frontend-and-ui-architecture",
+   "subtopic": "performance-and-rendering",
+   "tags": [],
+   "summary": "Wäre es schlauer den iframe cache server-side zu machen and about HTTP/3 zu",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 426
+    },
+    {
+     "heading": "R9 — Server-Side Iframe Cache with HTTP/3",
+     "chars": 43
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 174
+    },
+    {
+     "heading": "1. HTTP/3 (QUIC) for iframe caching",
+     "chars": 1056
+    },
+    {
+     "heading": "2. Server-Side Cache Strategien",
+     "chars": 690
+    },
+    {
+     "heading": "3. Client-Side vs Server-Side Comparison",
+     "chars": 733
+    },
+    {
+     "heading": "4. Hybrid Approach?",
+     "chars": 502
+    },
+    {
+     "heading": "5. Implementation Complexity",
+     "chars": 544
+    },
+    {
+     "heading": "6. Terminal Deployment Type",
+     "chars": 532
+    },
+    {
+     "heading": "6. Layered Deployment Schemas (EXTENSIBLE)",
+     "chars": 3147
+    },
+    {
+     "heading": "1. HTTP/3 Server-Side Iframe Cache",
+     "chars": 1217
+    },
+    {
+     "heading": "2. Layered Deployment Schema Icons",
+     "chars": 326
+    },
+    {
+     "heading": "3. Composition Schema",
+     "chars": 572
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 139
+    },
+    {
+     "heading": "1. Grid Layout Library compare",
+     "chars": 563
+    },
+    {
+     "heading": "2. Iframe Embedding",
+     "chars": 413
+    },
+    {
+     "heading": "3. Layout Persistence",
+     "chars": 251
+    },
+    {
+     "heading": "4. Single-Deploy Mandat",
+     "chars": 227
+    },
+    {
+     "heading": "Output Format",
+     "chars": 6565
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 109
+    },
+    {
+     "heading": "1. Deployment Types catalog",
+     "chars": 857
+    },
+    {
+     "heading": "2. Config Editor",
+     "chars": 305
+    },
+    {
+     "heading": "3. Restart Mechanism",
+     "chars": 298
+    },
+    {
+     "heading": "4. Settings Button UX",
+     "chars": 202
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5763
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 160
+    },
+    {
+     "heading": "1. Ziel-Formate",
+     "chars": 811
+    },
+    {
+     "heading": "2. Provisioning API",
+     "chars": 483
+    },
+    {
+     "heading": "3. Model-Namens-Mapping",
+     "chars": 481
+    },
+    {
+     "heading": "4. Mouse-Click Provisioning",
+     "chars": 346
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5557
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 201
+    },
+    {
+     "heading": "1. Nemotron Architecture verstehen",
+     "chars": 541
+    },
+    {
+     "heading": "2. Entropy-Based Routing Implementation",
+     "chars": 802
+    },
+    {
+     "heading": "3. Planner Model Selection",
+     "chars": 531
+    },
+    {
+     "heading": "4. Latency Impact",
+     "chars": 471
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7820
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 170
+    },
+    {
+     "heading": "1. CrewAI",
+     "chars": 539
+    },
+    {
+     "heading": "2. LangGraph",
+     "chars": 486
+    },
+    {
+     "heading": "3. AutoGen",
+     "chars": 336
+    },
+    {
+     "heading": "4. Instructor (Structured Output)",
+     "chars": 378
+    },
+    {
+     "heading": "5. Custom The Multi-Provider Gateway-Native Orchestration",
+     "chars": 447
+    },
+    {
+     "heading": "6. Vergleichs-Matrix",
+     "chars": 629
+    },
+    {
+     "heading": "7. Hybrider Ansatz?",
+     "chars": 302
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7746
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 175
+    },
+    {
+     "heading": "1. Agent-Level MoE verstehen",
+     "chars": 481
+    },
+    {
+     "heading": "2. Gating Agent Design",
+     "chars": 409
+    },
+    {
+     "heading": "3. Expert Agent Definition",
+     "chars": 507
+    },
+    {
+     "heading": "4. Execution Modes",
+     "chars": 463
+    },
+    {
+     "heading": "5. Result Aggregation",
+     "chars": 312
+    },
+    {
+     "heading": "6. DB Schema",
+     "chars": 276
+    },
+    {
+     "heading": "7. DSH Plugin Integration",
+     "chars": 323
+    },
+    {
+     "heading": "Output Format",
+     "chars": 11847
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 178
+    },
+    {
+     "heading": "1. DSH Plugin System verstehen",
+     "chars": 614
+    },
+    {
+     "heading": "2. Orchestration Mode Design",
+     "chars": 529
+    },
+    {
+     "heading": "3. Mesh Route Integration",
+     "chars": 591
+    },
+    {
+     "heading": "4. Orchestration API",
+     "chars": 815
+    },
+    {
+     "heading": "5. Plugin Packaging",
+     "chars": 326
+    },
+    {
+     "heading": "6. Security & Isolation",
+     "chars": 286
+    },
+    {
+     "heading": "Output Format",
+     "chars": 8293
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 142
+    },
+    {
+     "heading": "1. Speculative Decoding",
+     "chars": 684
+    },
+    {
+     "heading": "2. Logprobs",
+     "chars": 553
+    },
+    {
+     "heading": "3. Reasoning Models (o1, DeepSeek-R1, Nemotron)",
+     "chars": 621
+    },
+    {
+     "heading": "4. Entropy als Routing Signal",
+     "chars": 696
+    },
+    {
+     "heading": "5. Token-Level Cost Optimization",
+     "chars": 461
+    },
+    {
+     "heading": "6. Provider-Spezifische Features",
+     "chars": 389
+    },
+    {
+     "heading": "Output Format",
+     "chars": 24661
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 174
+    },
+    {
+     "heading": "1. HTTP/3 (QUIC) for iframe caching",
+     "chars": 1056
+    },
+    {
+     "heading": "2. Server-Side Cache Strategien",
+     "chars": 690
+    },
+    {
+     "heading": "3. Client-Side vs Server-Side Comparison",
+     "chars": 733
+    },
+    {
+     "heading": "4. Hybrid Approach?",
+     "chars": 502
+    },
+    {
+     "heading": "5. Implementation Complexity",
+     "chars": 544
+    },
+    {
+     "heading": "6. Terminal Deployment Type",
+     "chars": 532
+    },
+    {
+     "heading": "6. Layered Deployment Schemas (EXTENSIBLE)",
+     "chars": 3147
+    },
+    {
+     "heading": "1. HTTP/3 Server-Side Iframe Cache",
+     "chars": 13130
+    }
+   ]
+  },
+  {
+   "id": "okf-ide-idp-external-idp-integration",
+   "title": "R22 — Identity Broker & External-IdP Federation (B2B/AWS-Self-Host)",
+   "path": "general/identity-and-access-control/idp-integration/external-idp-integration.md",
+   "topic": "identity-and-access-control",
+   "subtopic": "idp-integration",
+   "tags": [],
+   "summary": "> **Entschieden 7.9.2026: Keycloak, jetzt deployt — not die 'Kontrakt",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 424
+    },
+    {
+     "heading": "R22 — Identity Broker & External-IdP Federation (B2B/AWS-Self-Host)",
+     "chars": 1844
+    },
+    {
+     "heading": "1. Bestehender Befund, on dem das aufbaut (R20/Requirement, Requirement)",
+     "chars": 1052
+    },
+    {
+     "heading": "2. Geminis Vorschlag (zusammengefasst, Original-Argumentation erhalten)",
+     "chars": 2882
+    },
+    {
+     "heading": "3. Kritische Einordnung gegen den bestehenden The Multi-Provider Gateway-Stand (",
+     "chars": 2201
+    },
+    {
+     "heading": "4. Offene Fragen / Blockierende Decision (System Administrator)",
+     "chars": 1496
+    },
+    {
+     "heading": "5. Nicht Teil dieser Decision",
+     "chars": 288
+    }
+   ]
+  },
+  {
+   "id": "okf-ide-idp-hosted-app-auth-integration",
+   "title": "R42 — Superadmin Visibility into a Hosted App's Own Auth/RBAC: Design Synthesis",
+   "path": "general/identity-and-access-control/idp-integration/hosted-app-auth-integration.md",
+   "topic": "identity-and-access-control",
+   "subtopic": "idp-integration",
+   "tags": [],
+   "summary": "**Source:** System Administrator-Frage 14.9.2026 ('wir wollen als superadmin auch direkt",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 458
+    },
+    {
+     "heading": "R42 — Superadmin Visibility into a Hosted App's Own Auth/RBAC: Design Synthesis",
+     "chars": 766
+    },
+    {
+     "heading": "1. Das Problem, präzise gefasst",
+     "chars": 645
+    },
+    {
+     "heading": "2. Die zuerst naheliegende Idee war falsch — warum",
+     "chars": 2646
+    },
+    {
+     "heading": "3. Die Admin-API-Alternative — auch not der richtige Default",
+     "chars": 1585
+    },
+    {
+     "heading": "4. Der empfohlene v1-Ansatz: passives JWT-Claim-Lesen am Gateway",
+     "chars": 2547
+    },
+    {
+     "heading": "5. v2 (später, not jetzt): eine generische `UserManager`-Schnittstelle",
+     "chars": 2660
+    },
+    {
+     "heading": "6. Rechtliche Einordnung (DSGVO) — muss before jedem Produktivfeature geklärt se",
+     "chars": 1659
+    },
+    {
+     "heading": "7. Recommendation / nächste Steps",
+     "chars": 1125
+    },
+    {
+     "heading": "Sources (Gemini-Research, 14.9.2026, roh in `R42_multi.md`/`R42_multi2.md`)",
+     "chars": 927
+    }
+   ]
+  },
+  {
+   "id": "okf-infra-dns-protection",
+   "title": "DNS Protection: TSIG, DNSSEC, and Dynamic Updates with RNDC",
+   "path": "general/infrastructure-automation/dns-dhcp-storage/dns-protection-guide.md",
+   "topic": "infrastructure-automation",
+   "subtopic": "dns-dhcp-storage",
+   "tags": [
+    "[dns",
+    "bind9",
+    "dnssec",
+    "tsig",
+    "rndc",
+    "dhcp",
+    "storage",
+    "zfs",
+    "iscsi]"
+   ],
+   "summary": "Running and protecting a private DNS: knowledge base, install, debug, dynamic updates, attack vectors, and defense.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 449
+    },
+    {
+     "heading": "Problem",
+     "chars": 134
+    },
+    {
+     "heading": "Approach: Layered DNS Defense",
+     "chars": 443
+    },
+    {
+     "heading": "Storage Layer",
+     "chars": 139
+    },
+    {
+     "heading": "References",
+     "chars": 89
+    }
+   ]
+  },
+  {
+   "id": "okf-infra-netsec-layer2",
+   "title": "Layer-2 Attack Surface in Multi-VM Environments: DNS, DHCP, MAC, SSH",
+   "path": "general/infrastructure-automation/network-security/layer2-attack-surface.md",
+   "topic": "infrastructure-automation",
+   "subtopic": "network-security",
+   "tags": [
+    "[network-security",
+    "layer2",
+    "dns",
+    "dhcp",
+    "suricata",
+    "ids",
+    "segmentation]"
+   ],
+   "summary": "Why VMs on the same host share a Layer-2 attack surface and how to segment, detect, and protect.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 445
+    },
+    {
+     "heading": "Layer-2 Attack Surface in Multi-VM Environments",
+     "chars": 49
+    },
+    {
+     "heading": "Problem",
+     "chars": 216
+    },
+    {
+     "heading": "Attack Vectors",
+     "chars": 508
+    },
+    {
+     "heading": "Defense: Network Segmentation",
+     "chars": 217
+    },
+    {
+     "heading": "Defense: IDS with Suricata",
+     "chars": 325
+    },
+    {
+     "heading": "References",
+     "chars": 184
+    }
+   ]
+  },
+  {
+   "id": "okf-infra-prov-foreman-pxe",
+   "title": "Bare-Metal Provisioning with Foreman: PXE, DHCP, TFTP, and Discovery",
+   "path": "general/infrastructure-automation/provisioning/foreman-pxe-provisioning.md",
+   "topic": "infrastructure-automation",
+   "subtopic": "provisioning",
+   "tags": [
+    "[foreman",
+    "pxe",
+    "provisioning",
+    "katello",
+    "infrastructure]"
+   ],
+   "summary": "Complete lifecycle management: PXE boot, DHCP/TFTP, auto-discovery, and bare-metal provisioning.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 431
+    },
+    {
+     "heading": "Problem",
+     "chars": 122
+    },
+    {
+     "heading": "Approach",
+     "chars": 296
+    },
+    {
+     "heading": "Key Components",
+     "chars": 337
+    },
+    {
+     "heading": "Trade-offs",
+     "chars": 206
+    },
+    {
+     "heading": "References",
+     "chars": 157
+    }
+   ]
+  },
+  {
+   "id": "okf-llm-age-agent-bridge-self-provisioning",
+   "title": "Agent Bridge Self Provisioning",
+   "path": "general/llm-orchestration-and-routing/agent-architectures/agent-bridge-self-provisioning.md",
+   "topic": "llm-orchestration-and-routing",
+   "subtopic": "agent-architectures",
+   "tags": [],
+   "summary": "weißt du was noch ultimativ geil wäre? dsa sich ein agent about die bridge dsa deplyoen kann was er for enen task braucht and die subagents and utzt d",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 486
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 20614
+    }
+   ]
+  },
+  {
+   "id": "okf-llm-age-browser-agent-integrations",
+   "title": "requirements: pip install camoufox playwright",
+   "path": "general/llm-orchestration-and-routing/agent-architectures/browser-agent-integrations.md",
+   "topic": "llm-orchestration-and-routing",
+   "subtopic": "agent-architectures",
+   "tags": [],
+   "summary": "KI‑Modus",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 355
+    },
+    {
+     "heading": "requirements: pip install camoufox playwright",
+     "chars": 47
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 20226
+    },
+    {
+     "heading": "requirements: pip install crewai",
+     "chars": 332
+    },
+    {
+     "heading": "Agenten definieren, der das Tool nutzt",
+     "chars": 520
+    },
+    {
+     "heading": "requirements: pip install langgraph langchain-core deepagents",
+     "chars": 547
+    },
+    {
+     "heading": "Tools in den LangGraph-Workflow einbinden",
+     "chars": 111
+    },
+    {
+     "heading": "Dein LLM-Modell (z.B. GPT-4o or Claude) an die Tools binden",
+     "chars": 114
+    },
+    {
+     "heading": "Danach bindest du den tool_node wie gewohnt in deinen StateGraph ein.",
+     "chars": 4878
+    },
+    {
+     "heading": "Ein LLM-Modell initialisieren",
+     "chars": 66
+    },
+    {
+     "heading": "Der Agent registriert sich and nutzt dafür seine integrierte Session-Mailbox",
+     "chars": 838
+    },
+    {
+     "heading": "1. Das Tool, with dem die KI die SMS abfragen kann",
+     "chars": 641
+    },
+    {
+     "heading": "2. Einbindung in den Agent-Workflow (z.B. CrewAI)",
+     "chars": 51
+    },
+    {
+     "heading": "Der Agent füllt das Login-Formular from -> merkt, dass ein SMS-Feld da ist ->",
+     "chars": 79
+    },
+    {
+     "heading": "ruft `fetch_latest_sms_otp` on -> tippt den Code ein.",
+     "chars": 22105
+    },
+    {
+     "heading": "mcp_browser.py",
+     "chars": 7558
+    }
+   ]
+  },
+  {
+   "id": "okf-llm-age-mixture-of-experts-agents",
+   "title": "R6 — Model of Experts (MoE) for Agents",
+   "path": "general/llm-orchestration-and-routing/agent-architectures/mixture-of-experts-agents.md",
+   "topic": "llm-orchestration-and-routing",
+   "subtopic": "agent-architectures",
+   "tags": [],
+   "summary": "Wie bauen wir ein Model-of-Experts pattern for agents? Mehrere spezialisierte agents",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 423
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 175
+    },
+    {
+     "heading": "1. Agent-Level MoE verstehen",
+     "chars": 481
+    },
+    {
+     "heading": "2. Gating Agent Design",
+     "chars": 409
+    },
+    {
+     "heading": "3. Expert Agent Definition",
+     "chars": 507
+    },
+    {
+     "heading": "4. Execution Modes",
+     "chars": 463
+    },
+    {
+     "heading": "5. Result Aggregation",
+     "chars": 312
+    },
+    {
+     "heading": "6. DB Schema",
+     "chars": 276
+    },
+    {
+     "heading": "7. DSH Plugin Integration",
+     "chars": 323
+    },
+    {
+     "heading": "Output Format",
+     "chars": 278
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 139
+    },
+    {
+     "heading": "1. Grid Layout Library compare",
+     "chars": 563
+    },
+    {
+     "heading": "2. Iframe Embedding",
+     "chars": 413
+    },
+    {
+     "heading": "3. Layout Persistence",
+     "chars": 251
+    },
+    {
+     "heading": "4. Single-Deploy Mandat",
+     "chars": 227
+    },
+    {
+     "heading": "Output Format",
+     "chars": 6565
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 109
+    },
+    {
+     "heading": "1. Deployment Types catalog",
+     "chars": 857
+    },
+    {
+     "heading": "2. Config Editor",
+     "chars": 305
+    },
+    {
+     "heading": "3. Restart Mechanism",
+     "chars": 298
+    },
+    {
+     "heading": "4. Settings Button UX",
+     "chars": 202
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5763
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 160
+    },
+    {
+     "heading": "1. Ziel-Formate",
+     "chars": 811
+    },
+    {
+     "heading": "2. Provisioning API",
+     "chars": 483
+    },
+    {
+     "heading": "3. Model-Namens-Mapping",
+     "chars": 481
+    },
+    {
+     "heading": "4. Mouse-Click Provisioning",
+     "chars": 346
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5557
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 201
+    },
+    {
+     "heading": "1. Nemotron Architecture verstehen",
+     "chars": 541
+    },
+    {
+     "heading": "2. Entropy-Based Routing Implementation",
+     "chars": 802
+    },
+    {
+     "heading": "3. Planner Model Selection",
+     "chars": 531
+    },
+    {
+     "heading": "4. Latency Impact",
+     "chars": 471
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7820
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 170
+    },
+    {
+     "heading": "1. CrewAI",
+     "chars": 539
+    },
+    {
+     "heading": "2. LangGraph",
+     "chars": 486
+    },
+    {
+     "heading": "3. AutoGen",
+     "chars": 336
+    },
+    {
+     "heading": "4. Instructor (Structured Output)",
+     "chars": 378
+    },
+    {
+     "heading": "5. Custom The Multi-Provider Gateway-Native Orchestration",
+     "chars": 447
+    },
+    {
+     "heading": "6. Vergleichs-Matrix",
+     "chars": 629
+    },
+    {
+     "heading": "7. Hybrider Ansatz?",
+     "chars": 302
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7746
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 175
+    },
+    {
+     "heading": "1. Agent-Level MoE verstehen",
+     "chars": 481
+    },
+    {
+     "heading": "2. Gating Agent Design",
+     "chars": 409
+    },
+    {
+     "heading": "3. Expert Agent Definition",
+     "chars": 507
+    },
+    {
+     "heading": "4. Execution Modes",
+     "chars": 463
+    },
+    {
+     "heading": "5. Result Aggregation",
+     "chars": 312
+    },
+    {
+     "heading": "6. DB Schema",
+     "chars": 276
+    },
+    {
+     "heading": "7. DSH Plugin Integration",
+     "chars": 323
+    },
+    {
+     "heading": "Output Format",
+     "chars": 11847
+    }
+   ]
+  },
+  {
+   "id": "okf-llm-age-plugin-orchestration",
+   "title": "R7 — DeepSeek Harness Plugin: Orchestration Mode Architecture",
+   "path": "general/llm-orchestration-and-routing/agent-architectures/plugin-orchestration.md",
+   "topic": "llm-orchestration-and-routing",
+   "subtopic": "agent-architectures",
+   "tags": [],
+   "summary": "Wie bauen wir ein DSH (DeepSeek Harness) plugin das The Multi-Provider Gateway mesh routes for agent",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 457
+    },
+    {
+     "heading": "R7 — DeepSeek Harness Plugin: Orchestration Mode Architecture",
+     "chars": 63
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 178
+    },
+    {
+     "heading": "1. DSH Plugin System verstehen",
+     "chars": 614
+    },
+    {
+     "heading": "2. Orchestration Mode Design",
+     "chars": 529
+    },
+    {
+     "heading": "3. Mesh Route Integration",
+     "chars": 591
+    },
+    {
+     "heading": "4. Orchestration API",
+     "chars": 815
+    },
+    {
+     "heading": "5. Plugin Packaging",
+     "chars": 326
+    },
+    {
+     "heading": "6. Security & Isolation",
+     "chars": 286
+    },
+    {
+     "heading": "Output Format",
+     "chars": 8300
+    }
+   ]
+  },
+  {
+   "id": "okf-llm-cdc-change-data-capture-synthesis",
+   "title": "R38 — CDC final: geschichtete Synthese (v1 inline + Enterprise Hub-and-Spoke)",
+   "path": "general/llm-orchestration-and-routing/cdc-and-synthesis/change-data-capture-synthesis.md",
+   "topic": "llm-orchestration-and-routing",
+   "subtopic": "cdc-and-synthesis",
+   "tags": [],
+   "summary": "**Source:** System Administrator 13.9.2026 („without Debezium geht uns einiges verloren…",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 466
+    },
+    {
+     "heading": "R38 — CDC final: geschichtete Synthese (v1 inline + Enterprise Hub-and-Spoke)",
+     "chars": 437
+    },
+    {
+     "heading": "1. Die Decision: DREI Schichten, not entweder/or",
+     "chars": 1104
+    },
+    {
+     "heading": "2. KORREKTUR 1 — Router-als-Tunnel (das fehlende Puzzlestück)",
+     "chars": 659
+    },
+    {
+     "heading": "3. KORREKTUR 2 — Auth-Präzision (standardwebhooks ≠ Debezium-Sink)",
+     "chars": 475
+    },
+    {
+     "heading": "4. Randbedingungen (unverändert, beide Wege)",
+     "chars": 551
+    },
+    {
+     "heading": "5. MCP-Flip akzeptiert (mark3labs)",
+     "chars": 362
+    },
+    {
+     "heading": "6. Damit final geschlossen (Research-Phase ENDE)",
+     "chars": 739
+    }
+   ]
+  },
+  {
+   "id": "okf-llm-rou-entropy-based-llm-routing",
+   "title": "R4 — Nemotron Instruct Principle + Entropy-Based Routing",
+   "path": "general/llm-orchestration-and-routing/routing-algorithms/entropy-based-llm-routing.md",
+   "topic": "llm-orchestration-and-routing",
+   "subtopic": "routing-algorithms",
+   "tags": [],
+   "summary": "Wie funktioniert NVIDIA's 'instruct' principle (kleines model routet, großes model",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 437
+    },
+    {
+     "heading": "R4 — Nemotron Instruct Principle + Entropy-Based Routing",
+     "chars": 58
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 201
+    },
+    {
+     "heading": "1. Nemotron Architecture verstehen",
+     "chars": 541
+    },
+    {
+     "heading": "2. Entropy-Based Routing Implementation",
+     "chars": 802
+    },
+    {
+     "heading": "3. Planner Model Selection",
+     "chars": 531
+    },
+    {
+     "heading": "4. Latency Impact",
+     "chars": 471
+    },
+    {
+     "heading": "Output Format",
+     "chars": 7826
+    }
+   ]
+  },
+  {
+   "id": "okf-llm-rou-mesh-routing-protocols",
+   "title": "SPRINT-PLANUNG & NETZWERK-RESEARCH: Zero-Trust & Layer-0 Routing",
+   "path": "general/llm-orchestration-and-routing/routing-algorithms/mesh-routing-protocols.md",
+   "topic": "llm-orchestration-and-routing",
+   "subtopic": "routing-algorithms",
+   "tags": [],
+   "summary": "---",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 363
+    },
+    {
+     "heading": "SPRINT-PLANUNG & NETZWERK-RESEARCH: Zero-Trust & Layer-0 Routing",
+     "chars": 317
+    },
+    {
+     "heading": "🌐 1. Technologie-Evaluierung: Wer schlägt klassisches WireGuard?",
+     "chars": 452
+    },
+    {
+     "heading": "A. Octelium (Der AI- & Identity-First Standard 2026)",
+     "chars": 621
+    },
+    {
+     "heading": "B. OpenZiti (Die unhackerbare \"Dark\" Infrastruktur)",
+     "chars": 698
+    },
+    {
+     "heading": "C. Cilium ClusterMesh (eBPF-Kernel-Routing)",
+     "chars": 570
+    },
+    {
+     "heading": "📋 2. Die Sprint-Roadmap (Phasen & Research-Aufgaben)",
+     "chars": 125
+    },
+    {
+     "heading": "🚀 SPRINT 34: Globales Renaming & Networks Tab Blueprint (Diese Woche)",
+     "chars": 353
+    },
+    {
+     "heading": "🧪 SPRINT 35: Deep Research & Prototyping Overlay-Engines (Nächste Woche)",
+     "chars": 587
+    },
+    {
+     "heading": "🔒 SPRINT 36: Zero-Port Go-Core & Direct-SSH-Dialing Integration",
+     "chars": 478
+    },
+    {
+     "heading": "🛠️ SPRINT 37: Scanopy Filesystem Sharing & Live Networks View",
+     "chars": 400
+    }
+   ]
+  },
+  {
+   "id": "okf-llm-rou-speculative-decoding",
+   "title": "R8 — Speculative Decoding & Advanced Model Features",
+   "path": "general/llm-orchestration-and-routing/routing-algorithms/speculative-decoding.md",
+   "topic": "llm-orchestration-and-routing",
+   "subtopic": "routing-algorithms",
+   "tags": [],
+   "summary": "Welche advanced model features (speculative decoding, logprobs, reasoning) können",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 426
+    },
+    {
+     "heading": "R8 — Speculative Decoding & Advanced Model Features",
+     "chars": 53
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 142
+    },
+    {
+     "heading": "1. Speculative Decoding",
+     "chars": 684
+    },
+    {
+     "heading": "2. Logprobs",
+     "chars": 553
+    },
+    {
+     "heading": "3. Reasoning Models (o1, DeepSeek-R1, Nemotron)",
+     "chars": 621
+    },
+    {
+     "heading": "4. Entropy als Routing Signal",
+     "chars": 696
+    },
+    {
+     "heading": "5. Token-Level Cost Optimization",
+     "chars": 461
+    },
+    {
+     "heading": "6. Provider-Spezifische Features",
+     "chars": 389
+    },
+    {
+     "heading": "Output Format",
+     "chars": 8581
+    }
+   ]
+  },
+  {
+   "id": "okf-net-con-gvisor-container-networking",
+   "title": "2. Aktiviere das Interface im Kernel",
+   "path": "general/networking/container-networking/gvisor-container-networking.md",
+   "topic": "networking",
+   "subtopic": "container-networking",
+   "tags": [],
+   "summary": "I'm building a platform that provisions an isolated network segment per customer project on a single physical server with a single NIC — each project'",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 453
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 23942
+    },
+    {
+     "heading": "Architectural Analysis: Overlay ACLs vs. Local Network Isolation",
+     "chars": 274
+    },
+    {
+     "heading": "1. Why Overlay Network ACLs Cannot Replace Local Isolation",
+     "chars": 826
+    },
+    {
+     "heading": "2. Separation of Responsibilities",
+     "chars": 30647
+    },
+    {
+     "heading": "Metrics Visualisation & Control Plane Integration",
+     "chars": 186
+    },
+    {
+     "heading": "Summary",
+     "chars": 1940
+    },
+    {
+     "heading": "2. Weise diese Regel dem Router deiner App zu",
+     "chars": 4445
+    },
+    {
+     "heading": "Docker übergibt standardmäßig die Container-ID als Teil der Argumente.",
+     "chars": 72
+    },
+    {
+     "heading": "Wir extrahieren die ID, um zu wissen, welcher Container gerade startet.",
+     "chars": 193
+    },
+    {
+     "heading": "Standard-VLAN falls keins gefunden wird",
+     "chars": 53
+    },
+    {
+     "heading": "Dein Go-Backend hat die VLAN-ID vorab in eine ultraschnelle In-Memory-Datenbank",
+     "chars": 81
+    },
+    {
+     "heading": "(wie Redis or eine lokale SQLite/Datei) unter der Container-ID gespeichert.",
+     "chars": 271
+    },
+    {
+     "heading": "Jetzt rufen wir das echte gVisor (runsc) on and brennen die VLAN-ID",
+     "chars": 69
+    },
+    {
+     "heading": "dynamisch als Argument hinein!",
+     "chars": 1390
+    }
+   ]
+  },
+  {
+   "id": "okf-net-con-gvisor-ssh-networking",
+   "title": "R29: gVisor Networking, NAT Control, and SSH Agent Forwarding Overhaul",
+   "path": "general/networking/container-networking/gvisor-ssh-networking.md",
+   "topic": "networking",
+   "subtopic": "container-networking",
+   "tags": [],
+   "summary": "The user requested a massive architectural change to resolve ongoing Docker networking isolation issues (where workspace containers could not reach th",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 481
+    },
+    {
+     "heading": "R29: gVisor Networking, NAT Control, and SSH Agent Forwarding Overhaul",
+     "chars": 72
+    },
+    {
+     "heading": "1. Executive Summary",
+     "chars": 656
+    },
+    {
+     "heading": "2. Database Schema Updates",
+     "chars": 533
+    },
+    {
+     "heading": "3. SSH Agent Forwarding (Docker Compose)",
+     "chars": 553
+    },
+    {
+     "heading": "4. Deployment Logic Updates (`projects_ssh.go`)",
+     "chars": 1095
+    },
+    {
+     "heading": "5. Frontend Updates (the Workspace Management View)",
+     "chars": 373
+    },
+    {
+     "heading": "Next Steps",
+     "chars": 216
+    }
+   ]
+  },
+  {
+   "id": "okf-net-sec-gvisor-docker-ufw-security",
+   "title": "The The Multi-Provider Gateway Ultimate Security, Architecture & Forensic Master Document",
+   "path": "general/networking/security-and-firewalls/gvisor-docker-ufw-security.md",
+   "topic": "networking",
+   "subtopic": "security-and-firewalls",
+   "tags": [],
+   "summary": "**Kategorie:** Deep-Dive System Analysis & Architecture Blueprint",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 424
+    },
+    {
+     "heading": "The The Multi-Provider Gateway Ultimate Security, Architecture & Forensic Master",
+     "chars": 592
+    },
+    {
+     "heading": "Table of Contents",
+     "chars": 772
+    },
+    {
+     "heading": "1. Deep-Dive: Wie gVisor (runsc) wirklich funktioniert",
+     "chars": 233
+    },
+    {
+     "heading": "1.1 Der Standard-Linux-Kernel and `runc`",
+     "chars": 783
+    },
+    {
+     "heading": "1.2 Die gVisor Architektur: Sentry and Gofer",
+     "chars": 1613
+    },
+    {
+     "heading": "1.3 Interaktionsplattformen: ptrace vs. KVM",
+     "chars": 695
+    },
+    {
+     "heading": "2. Deep-Dive: Docker Networks & Der UFW Bypass",
+     "chars": 206
+    },
+    {
+     "heading": "2.1 Linux Network Namespaces and Veth Pairs",
+     "chars": 515
+    },
+    {
+     "heading": "2.2 Iptables and Netfilter: Der Paketfluss",
+     "chars": 528
+    },
+    {
+     "heading": "2.3 Der Anatomie des Docker UFW-Bypass",
+     "chars": 1177
+    },
+    {
+     "heading": "3. Deep-Dive: UFW Mechanics & Iptables",
+     "chars": 41
+    },
+    {
+     "heading": "3.1 Wie UFW arbeitet",
+     "chars": 536
+    },
+    {
+     "heading": "3.2 Die DOCKER-USER Kette",
+     "chars": 623
+    },
+    {
+     "heading": "4. Anti-Hacking: Wie man sich not hacken lässt",
+     "chars": 178
+    },
+    {
+     "heading": "4.1 Least Privilege & Rootless Docker",
+     "chars": 465
+    },
+    {
+     "heading": "4.2 Dropping Capabilities",
+     "chars": 339
+    },
+    {
+     "heading": "4.3 Seccomp Profile",
+     "chars": 358
+    },
+    {
+     "heading": "4.4 eBPF Runtime Enforcement (Tetragon / Cilium)",
+     "chars": 427
+    },
+    {
+     "heading": "5. Die The Multi-Provider Gateway-Vision: Was wir eigentlich bauen wollten",
+     "chars": 168
+    },
+    {
+     "heading": "5.1 Die Architektur-Vision (Layer-0 Routing)",
+     "chars": 684
+    },
+    {
+     "heading": "5.2 Der UI/UX Plan",
+     "chars": 350
+    },
+    {
+     "heading": "6. Sichere Netzwerkkonfiguration: Der Praxis-Guide",
+     "chars": 899
+    },
+    {
+     "heading": "7. Forensic Teardown: Das \"Höllen-Skript\" (`gateway_ws_perms`)",
+     "chars": 199
+    },
+    {
+     "heading": "7.1 Das fehlerhafte Original-Skript",
+     "chars": 509
+    },
+    {
+     "heading": "7.2 Wie OpenSSH (`sshd`) Berechtigungen prüft (C-Code Analyse)",
+     "chars": 806
+    },
+    {
+     "heading": "7.3 Der Fehler im Skript",
+     "chars": 1162
+    },
+    {
+     "heading": "7.4 Wie man es niemals machen sollte",
+     "chars": 250
+    },
+    {
+     "heading": "7.5 Die harte Sicherung im The Multi-Provider Gateway Code",
+     "chars": 878
+    }
+   ]
+  },
+  {
+   "id": "okf-net-sec-ufw-bypass-and-firewall-audits",
+   "title": "Incident Audit Report: 11. September 2026 (Incident V3)",
+   "path": "general/networking/security-and-firewalls/ufw-bypass-and-firewall-audits.md",
+   "topic": "networking",
+   "subtopic": "security-and-firewalls",
+   "tags": [],
+   "summary": "**Thema:** Remote SSH Lockout, POSIX Scripting Syntax-Errors & Docker-UFW-Firewall Bypass.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 419
+    },
+    {
+     "heading": "Incident Audit Report: 11. September 2026 (Incident V3)",
+     "chars": 307
+    },
+    {
+     "heading": "🔍 I. Warum umgehen Docker-Container die UFW-Firewall? (Die Iptables-Schwachstell",
+     "chars": 406
+    },
+    {
+     "heading": "1. Der technische Ablauf im Linux-Kernel:",
+     "chars": 915
+    },
+    {
+     "heading": "2. Das Ergebnis at HOST_BIND=0.0.0.0:",
+     "chars": 722
+    },
+    {
+     "heading": "3. Die einzig sichere Behebung:",
+     "chars": 482
+    },
+    {
+     "heading": "📋 II. Lückenlose Aufstellung aller heutigen Fehler (The Forensic Audit)",
+     "chars": 221
+    },
+    {
+     "heading": "1. Der Berechtigungs-Lockout (V1, V2 & V3)",
+     "chars": 1286
+    },
+    {
+     "heading": "2. Der POSIX-Chaining Syntaxfehler (Hängende Deployments)",
+     "chars": 671
+    },
+    {
+     "heading": "3. Das hardcodierte Bridge-Netzwerk (Remote-Fehlschläge)",
+     "chars": 819
+    },
+    {
+     "heading": "4. Der Trailing-Slash-Fehler (Iframe-404)",
+     "chars": 367
+    },
+    {
+     "heading": "5. Der fehlende WebSocket-Proxy in Vite (Black Screens)",
+     "chars": 409
+    },
+    {
+     "heading": "🛡️ III. Ergriffene Sofort-Maßnahmen (Reverted & Gehärtet)",
+     "chars": 994
+    }
+   ]
+  },
+  {
+   "id": "okf-net-tun-port-detection-and-ssh-tunnels",
+   "title": "R11 — Port Detection + SSH Tunnel Bridge + E2E Deployment",
+   "path": "general/networking/tunnels-and-discovery/port-detection-and-ssh-tunnels.md",
+   "topic": "networking",
+   "subtopic": "tunnels-and-discovery",
+   "tags": [],
+   "summary": "Kann der Go backend ports on dem remote target erkennen, SSH tunnel for",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 400
+    },
+    {
+     "heading": "R11 — Port Detection + SSH Tunnel Bridge + E2E Deployment",
+     "chars": 59
+    },
+    {
+     "heading": "Architectural Question",
+     "chars": 276
+    },
+    {
+     "heading": "1. Port Detection via SSH",
+     "chars": 748
+    },
+    {
+     "heading": "2. SSH Tunnel Bridge (Go als Proxy, not Browser)",
+     "chars": 1092
+    },
+    {
+     "heading": "3. E2E Deployment (Auto-Generate Dockerfiles + Compose)",
+     "chars": 1763
+    },
+    {
+     "heading": "4. The Multi-Provider Gateway als Bridge for Connectors + Monitoring",
+     "chars": 1101
+    },
+    {
+     "heading": "5. Streaming through SSH Tunnel",
+     "chars": 590
+    },
+    {
+     "heading": "Architecture Overview",
+     "chars": 664
+    },
+    {
+     "heading": "Output Format",
+     "chars": 5192
+    },
+    {
+     "heading": "Addon Layer: Claude Code",
+     "chars": 110
+    },
+    {
+     "heading": "Addon Layer: The Multi-Provider Gateway Auto-Provision Config Invalidation",
+     "chars": 2697
+    }
+   ]
+  },
+  {
+   "id": "okf-net-vpn-tailscale-app-certificates",
+   "title": "R42 — App-Certs-Plan: Tailscale-Magic-Certs + Wazuh-Fallback (14.9.)",
+   "path": "general/networking/vpn-and-overlay/tailscale-app-certificates.md",
+   "topic": "networking",
+   "subtopic": "vpn-and-overlay",
+   "tags": [],
+   "summary": "**Source:** System Administrator 14.9. („wieso haben wir eigentlich no certs for unsere",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 411
+    },
+    {
+     "heading": "R42 — App-Certs-Plan: Tailscale-Magic-Certs + Wazuh-Fallback (14.9.)",
+     "chars": 316
+    },
+    {
+     "heading": "Fakten (verifiziert)",
+     "chars": 790
+    },
+    {
+     "heading": "Der Plan (zukünftige Tasks)",
+     "chars": 133
+    },
+    {
+     "heading": "TASK-080 — App-Certs via Tailscale-Magic-DNS (WURZEL-LÖSUNG, P0)",
+     "chars": 278
+    },
+    {
+     "heading": "Requirement — App-Certs via Tailscale-Magic-DNS (WURZEL-LÖSUNG, P0)",
+     "chars": 685
+    },
+    {
+     "heading": "Requirement — Wazuh-localhost-Fallback (P1, for offline/without-Tailnet)",
+     "chars": 471
+    },
+    {
+     "heading": "Requirement — Keycloak-TLS (P2, optional)",
+     "chars": 257
+    },
+    {
+     "heading": "Decision (System Administrator): Tailscale SaaS vs. Headscale self-hosted",
+     "chars": 1126
+    },
+    {
+     "heading": "Wazuh-iframe-Revisit (Requirement after Requirement)",
+     "chars": 205
+    },
+    {
+     "heading": "Erweiterung (14.9., System Administrator-Frage): Extern via Cloudflare + Router-",
+     "chars": 88
+    },
+    {
+     "heading": "Requirement — Extern via Cloudflare-Tunnel (P0 for Extern, after 080)",
+     "chars": 826
+    },
+    {
+     "heading": "Requirement — Router-Port-Forwarding (Networking-Task, P2)",
+     "chars": 597
+    },
+    {
+     "heading": "Integration der Certs (das Anliegen des Operators)",
+     "chars": 195
+    },
+    {
+     "heading": "Integration der Certs (das Anliegen des System Administrators)",
+     "chars": 594
+    },
+    {
+     "heading": "Die Port-Schichten (System Administrator-Frage 14.9.: „Ports machen wir about di",
+     "chars": 1493
+    },
+    {
+     "heading": "Requirement (neu, Networking): Exposed-Ports-Default-WAF + Ports-UI",
+     "chars": 493
+    }
+   ]
+  },
+  {
+   "id": "okf-sec-gua-guardrails-otel-reference-stack",
+   "title": "R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen)",
+   "path": "general/security-and-observability/guardrails-and-firewalls/guardrails-otel-reference-stack.md",
+   "topic": "security-and-observability",
+   "subtopic": "guardrails-and-firewalls",
+   "tags": [],
+   "summary": "**Source:** System Administrator 13.9.2026 („Guardrails + OTel implementieren falls es",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 470
+    },
+    {
+     "heading": "R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen)",
+     "chars": 305
+    },
+    {
+     "heading": "1. Guardrails-Frameworks — alle Python, Enforcement bleibt at uns in Go",
+     "chars": 1109
+    },
+    {
+     "heading": "2. OpenTelemetry — lohnt, with einer Nuance",
+     "chars": 1444
+    },
+    {
+     "heading": "3. Phoenix (Arize) — Elastic License 2.0, nur Referenz",
+     "chars": 416
+    },
+    {
+     "heading": "4. MCP-Go-SDKs — zwei Kandidaten, beide nutzbar",
+     "chars": 600
+    },
+    {
+     "heading": "5. DB-Router-Referenzen — Referenz-Only (Lizenzen)",
+     "chars": 716
+    },
+    {
+     "heading": "6. Debezium-Envelope (vom System Administrator bestätigt, Fundstelle ergänzt)",
+     "chars": 344
+    }
+   ]
+  },
+  {
+   "id": "okf-sec-gua-llm-firewall-landscape",
+   "title": "R19 — LLM-Firewall-Landschaft & Kernel-nahes Injection-Tracking",
+   "path": "general/security-and-observability/guardrails-and-firewalls/llm-firewall-landscape.md",
+   "topic": "security-and-observability",
+   "subtopic": "guardrails-and-firewalls",
+   "tags": [],
+   "summary": "> Source: Nutzer-Research per KI-Suche (September 2026). Sortiert gegen",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 436
+    },
+    {
+     "heading": "R19 — LLM-Firewall-Landschaft & Kernel-nahes Injection-Tracking",
+     "chars": 679
+    },
+    {
+     "heading": "1. Marktkarte",
+     "chars": 1555
+    },
+    {
+     "heading": "2. Kernel-nahes Injection-Tracking (Mechanik, Work Package-relevant)",
+     "chars": 2101
+    },
+    {
+     "heading": "3. Leichtgewichtige Alternativen zum Modell-Scanner",
+     "chars": 477
+    },
+    {
+     "heading": "4. Bereits entschieden — no Änderung nötig",
+     "chars": 1681
+    },
+    {
+     "heading": "5. Offene Fragen",
+     "chars": 670
+    }
+   ]
+  },
+  {
+   "id": "okf-sec-gua-llm-misalignment-audits",
+   "title": "R40 — Voll-Audit: Misalignments gegen die System Administrator-Vision (14.9.2026)",
+   "path": "general/security-and-observability/guardrails-and-firewalls/llm-misalignment-audits.md",
+   "topic": "security-and-observability",
+   "subtopic": "guardrails-and-firewalls",
+   "tags": [],
+   "summary": "**Source:** System Administrator 14.9. („alles kacke … ich wollte das als ganzes anders,",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 472
+    },
+    {
+     "heading": "R40 — Voll-Audit: Misalignments gegen die System Administrator-Vision (14.9.2026",
+     "chars": 905
+    },
+    {
+     "heading": "Misalignment-Register (alle with Fundstelle)",
+     "chars": 4696
+    },
+    {
+     "heading": "Korrektheit bestätigt (NICHT misaligned — zählt auch)",
+     "chars": 516
+    },
+    {
+     "heading": "Abgeleitete Fix-Reihenfolge",
+     "chars": 1037
+    },
+    {
+     "heading": "R40-Appendix A — AIM-Comparison (opena2a/agent-identity-management, 14.9.)",
+     "chars": 2149
+    }
+   ]
+  },
+  {
+   "id": "okf-sec-gua-sast-precommit-kernel-security",
+   "title": "Sast Precommit Kernel Security",
+   "path": "general/security-and-observability/guardrails-and-firewalls/sast-precommit-kernel-security.md",
+   "topic": "security-and-observability",
+   "subtopic": "guardrails-and-firewalls",
+   "tags": [],
+   "summary": "precommit hooks on kerelebene ebpfPre-Commit-Hooks on Kernelebene existieren technisch gesehen not als Git-Feature, da Git ein reines Userspace-Werkze",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 490
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 13739
+    }
+   ]
+  },
+  {
+   "id": "okf-sec-sie-aws-siem-integration",
+   "title": "Aws Siem Integration",
+   "path": "general/security-and-observability/siem-and-monitoring/aws-siem-integration.md",
+   "topic": "security-and-observability",
+   "subtopic": "siem-and-monitoring",
+   "tags": [],
+   "summary": "welche alternative gibt es hierfür with aws? Milestone — SIEM & Defense-in-Depth: kompletter Umsetzungsplan",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 417
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 14309
+    },
+    {
+     "heading": "Pipeline Execution Steps",
+     "chars": 14178
+    }
+   ]
+  },
+  {
+   "id": "okf-sec-sie-siem-architecture",
+   "title": "Siem Architecture",
+   "path": "general/security-and-observability/siem-and-monitoring/siem-architecture.md",
+   "topic": "security-and-observability",
+   "subtopic": "siem-and-monitoring",
+   "tags": [],
+   "summary": "was ist wazuh? https://documentation.wazuh.com/current/getting-started/index.htmlWazuh ist eine kostenlose Open-Source-Sicherheitsplattform, die Funkt",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 454
+    },
+    {
+     "heading": "Executive Summary",
+     "chars": 6213
+    }
+   ]
+  },
+  {
+   "id": "okf-skl-doc-creation-guide",
+   "title": "Open Knowledge Format (OKF v1.0) Specification & Creation Guide",
+   "path": "skills/okf-document-creation.md",
+   "topic": "skills",
+   "subtopic": "documentation-standards",
+   "tags": [],
+   "summary": "Comprehensive guide and specification for creating, formatting, and validating Open Knowledge Format (OKF v1.0) documents across General Knowledge and Gateway Specifications.",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 483
+    },
+    {
+     "heading": "Open Knowledge Format (OKF v1.0) Specification & Creation Guide",
+     "chars": 65
+    },
+    {
+     "heading": "Overview",
+     "chars": 399
+    },
+    {
+     "heading": "1. Two-Tier Taxonomy Architecture",
+     "chars": 1030
+    },
+    {
+     "heading": "2. YAML Frontmatter Specification",
+     "chars": 943
+    },
+    {
+     "heading": "3. Verification Checklist & Validation Script",
+     "chars": 1075
+    }
+   ]
+  },
+  {
+   "id": "okf-skl-slop-to-knowledge-pipeline",
+   "title": "Research Slop Deconstruction & GraphRAG Structuring Pipeline",
+   "path": "skills/research-slop-to-knowledge-pipeline.md",
+   "topic": "skills",
+   "subtopic": "knowledge-engineering",
+   "tags": [],
+   "summary": "Comprehensive operational skill defining the multi-stage transformation process for converting unstructured LLM research dumps, chat transcripts, and internal project notes into pu",
+   "status": "published",
+   "chunks": [
+    {
+     "heading": "---",
+     "chars": 596
+    },
+    {
+     "heading": "Research Slop Deconstruction & GraphRAG Structuring Pipeline",
+     "chars": 62
+    },
+    {
+     "heading": "Overview",
+     "chars": 924
+    },
+    {
+     "heading": "Two-Tier Knowledge Separation",
+     "chars": 797
+    },
+    {
+     "heading": "The 8-Stage Transformation Architecture",
+     "chars": 42
+    },
+    {
+     "heading": "Stage 1: Ingestion & Taxonomy Partitioning",
+     "chars": 300
+    },
+    {
+     "heading": "Stage 2: Conversational Slop & Fluff Removal",
+     "chars": 191
+    },
+    {
+     "heading": "Stage 3: Internal Project Artifact Purging",
+     "chars": 250
+    },
+    {
+     "heading": "Stage 4: Sensitive Data Redaction",
+     "chars": 193
+    },
+    {
+     "heading": "Stage 5: Branding Abstraction & Generalization",
+     "chars": 301
+    },
+    {
+     "heading": "Stage 6: Audit-to-Guide Transformations",
+     "chars": 160
+    },
+    {
+     "heading": "Stage 7: Technical English Translation & Standardization",
+     "chars": 157
+    },
+    {
+     "heading": "Stage 8: OKF Synthesis & GraphRAG / RAG Optimization",
+     "chars": 288
+    },
+    {
+     "heading": "Quality Audit Checklist",
+     "chars": 468
+    }
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "id": "doc:okf-age-bro-agent-browser-control",
+   "type": "doc",
+   "label": "R12 — Agent Browser Control: Utility Model steuert The Multi-Provider Gateway Dashboard + Iframes",
+   "path": "general/agent-systems-and-browser-automation/browser-automation/agent-browser-control.md",
+   "size": 13
+  },
+  {
+   "id": "topic:agent-systems-and-browser-automation",
+   "type": "topic",
+   "label": "agent-systems-and-browser-automation",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:browser-automation",
+   "type": "subtopic",
+   "label": "browser-automation",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-age-fra-agent-framework-comparison",
+   "type": "doc",
+   "label": "R5 — Framework Comparison: CrewAI vs LangGraph vs Custom Orchestration",
+   "path": "general/agent-systems-and-browser-automation/framework-evaluations/agent-framework-comparison.md",
+   "size": 44
+  },
+  {
+   "id": "sub:framework-evaluations",
+   "type": "subtopic",
+   "label": "framework-evaluations",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-age-fra-llm-framework-synthesis",
+   "type": "doc",
+   "label": "Llm Framework Synthesis",
+   "path": "general/agent-systems-and-browser-automation/framework-evaluations/llm-framework-synthesis.md",
+   "size": 2
+  },
+  {
+   "id": "doc:okf-age-ski-dap-skills-and-memory",
+   "type": "doc",
+   "label": "R21 — DAP-Vorlage: Skills-Hub, Skill-Security & Memory",
+   "path": "general/agent-systems-and-browser-automation/skills-and-memory/dap-skills-and-memory.md",
+   "size": 11
+  },
+  {
+   "id": "sub:skills-and-memory",
+   "type": "subtopic",
+   "label": "skills-and-memory",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-ana-mes-auto-provisioning-mesh-endpoints",
+   "type": "doc",
+   "label": "R3 — Auto-Provision: Mesh Endpoints in Coding Deployments",
+   "path": "general/analytics-and-telemetry/mesh-endpoints/auto-provisioning-mesh-endpoints.md",
+   "size": 8
+  },
+  {
+   "id": "topic:analytics-and-telemetry",
+   "type": "topic",
+   "label": "analytics-and-telemetry",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:mesh-endpoints",
+   "type": "subtopic",
+   "label": "mesh-endpoints",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-ana-mes-mesh-endpoint-configuration",
+   "type": "doc",
+   "label": "R2 — Coding Deployment Config: Redeploy vs Hot-Reload",
+   "path": "general/analytics-and-telemetry/mesh-endpoints/mesh-endpoint-configuration.md",
+   "size": 8
+  },
+  {
+   "id": "doc:okf-ana-met-model-statistics-pipeline",
+   "type": "doc",
+   "label": "R10 — Model Stats Pipeline: Static Facts + Dynamic Parameters + Fuzzy Fallback",
+   "path": "general/analytics-and-telemetry/metrics-and-pipelines/model-statistics-pipeline.md",
+   "size": 27
+  },
+  {
+   "id": "sub:metrics-and-pipelines",
+   "type": "subtopic",
+   "label": "metrics-and-pipelines",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-07-ebpf-llm-guards-blogpost",
+   "type": "doc",
+   "label": "Stopping Prompt Injection at the Kernel Level: How eBPF + LLM Guards Actually Work",
+   "path": "general/articles/2026-09-07-ebpf-llm-guards-blogpost.md",
+   "size": 9
+  },
+  {
+   "id": "topic:articles",
+   "type": "topic",
+   "label": "articles",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:technical-blogs",
+   "type": "subtopic",
+   "label": "technical-blogs",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-07-ebpf-llm-guards-short-post",
+   "type": "doc",
+   "label": "Blog-Post — Teaser für den Hauptartikel",
+   "path": "general/articles/2026-09-07-ebpf-llm-guards-short-post.md",
+   "size": 3
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-08-entropy-cascades-blogpost",
+   "type": "doc",
+   "label": "The Cheapest Confidence Signal Is Already in Your Response: Entropy-Gated Model Cascades",
+   "path": "general/articles/2026-09-08-entropy-cascades-blogpost.md",
+   "size": 10
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-08-entropy-cascades-short-post",
+   "type": "doc",
+   "label": "Blog-Post — Teaser für den Entropy-Cascades-Artikel",
+   "path": "general/articles/2026-09-08-entropy-cascades-short-post.md",
+   "size": 3
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-08-learning-router-blogpost",
+   "type": "doc",
+   "label": "We Didn't Build a Router. We Built an Economy.",
+   "path": "general/articles/2026-09-08-learning-router-blogpost.md",
+   "size": 10
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-08-learning-router-short-post",
+   "type": "doc",
+   "label": "Blog-Post — Teaser für den Learning-Router-Artikel",
+   "path": "general/articles/2026-09-08-learning-router-short-post.md",
+   "size": 3
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-08-llm-mesh-intro-blogpost",
+   "type": "doc",
+   "label": "One API Key to Route Them All: What an LLM Mesh Is (and Why Your Apps Shouldn't Talk to Providers Directly)",
+   "path": "general/articles/2026-09-08-llm-mesh-intro-blogpost.md",
+   "size": 8
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-08-llm-mesh-intro-short-post",
+   "type": "doc",
+   "label": "Blog-Post — Teaser für den LLM-Mesh-Intro-Artikel",
+   "path": "general/articles/2026-09-08-llm-mesh-intro-short-post.md",
+   "size": 3
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-09-siem-oss-vs-aws-native",
+   "type": "doc",
+   "label": "One Dashboard, Two Security Worlds: Wazuh + Falco vs. AWS GuardDuty + Security Hub",
+   "path": "general/articles/2026-09-09-siem-oss-vs-aws-native.md",
+   "size": 14
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-09-siem-smb-guide-blogpost",
+   "type": "doc",
+   "label": "You Have Logs. You Don’t Have a SIEM. — How to Build One: AWS-Native vs. Open Source (2026)",
+   "path": "general/articles/2026-09-09-siem-smb-guide-blogpost.md",
+   "size": 26
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-09-siem-smb-guide-short-post",
+   "type": "doc",
+   "label": "Blog Post — Teaser für den SIEM-SMB-Guide",
+   "path": "general/articles/2026-09-09-siem-smb-guide-short-post.md",
+   "size": 3
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-13-gvisor-workspace-isolation-blogpost",
+   "type": "doc",
+   "label": "The Bouncer, the Wall, and the Straitjacket: How Multi-Tenant Sandboxes Actually Stay Isolated",
+   "path": "general/articles/2026-09-13-gvisor-workspace-isolation-blogpost.md",
+   "size": 16
+  },
+  {
+   "id": "doc:okf-art-gen-2026-09-13-gvisor-workspace-isolation-short-post",
+   "type": "doc",
+   "label": "Blog Post — Teaser für den gVisor/VLAN/Identity-Routing-Artikel",
+   "path": "general/articles/2026-09-13-gvisor-workspace-isolation-short-post.md",
+   "size": 3
+  },
+  {
+   "id": "doc:okf-art-gen-agentic-knowledge-porting",
+   "type": "doc",
+   "label": "Porting Heterogeneous Engineering Research into Open Knowledge Format (OKF v1.0) for Autonomous Agents & GraphRAG",
+   "path": "general/articles/2026-09-14-okf-agentic-knowledge-porting-blogpost.md",
+   "size": 13
+  },
+  {
+   "id": "doc:okf-con-mcp-container-registry-mcp-discovery",
+   "type": "doc",
+   "label": "R13 — Container Registry + MCP + Auto-Discovery + Tool Registry + Roadmap Graph",
+   "path": "general/container-runtime-security/mcp-integrations/container-registry-mcp-discovery.md",
+   "size": 11
+  },
+  {
+   "id": "topic:container-runtime-security",
+   "type": "topic",
+   "label": "container-runtime-security",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:mcp-integrations",
+   "type": "subtopic",
+   "label": "mcp-integrations",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-con-mcp-docker-mcp-integration",
+   "type": "doc",
+   "label": "Docker MCP Integration — Verified Connectors as Bridge",
+   "path": "general/container-runtime-security/mcp-integrations/docker-mcp-integration.md",
+   "size": 27
+  },
+  {
+   "id": "doc:okf-con-san-gvisor-architecture",
+   "type": "doc",
+   "label": "Basics",
+   "path": "general/container-runtime-security/sandboxing/gvisor-architecture.md",
+   "size": 63
+  },
+  {
+   "id": "sub:sandboxing",
+   "type": "subtopic",
+   "label": "sandboxing",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-con-san-tetragon-gvisor-kata-comparison",
+   "type": "doc",
+   "label": "R25 — Tetragon + gVisor / Kata Containers: Verification & Einordnung for Milestone",
+   "path": "general/container-runtime-security/sandboxing/tetragon-gvisor-kata-comparison.md",
+   "size": 8
+  },
+  {
+   "id": "doc:okf-con-ter-terminal-tmux-vnc-workspaces",
+   "type": "doc",
+   "label": "R23 — Terminal-Only Deployment, OpenCode, tmux/VNC",
+   "path": "general/container-runtime-security/terminal-workspaces/terminal-tmux-vnc-workspaces.md",
+   "size": 13
+  },
+  {
+   "id": "sub:terminal-workspaces",
+   "type": "subtopic",
+   "label": "terminal-workspaces",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-con-ter-vnc-workspace-alternatives",
+   "type": "doc",
+   "label": "OpenCode Abhängigkeiten and ein gutes Terminal installieren",
+   "path": "general/container-runtime-security/terminal-workspaces/vnc-workspace-alternatives.md",
+   "size": 5
+  },
+  {
+   "id": "doc:okf-fro-das-multi-window-dashboard",
+   "type": "doc",
+   "label": "R1 — Multi-Window Dashboard Grid",
+   "path": "general/frontend-and-ui-architecture/dashboard-and-widgets/multi-window-dashboard.md",
+   "size": 13
+  },
+  {
+   "id": "topic:frontend-and-ui-architecture",
+   "type": "topic",
+   "label": "frontend-and-ui-architecture",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:dashboard-and-widgets",
+   "type": "subtopic",
+   "label": "dashboard-and-widgets",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-fro-das-widget-presets-and-security-vault",
+   "type": "doc",
+   "label": "R16 — Widget Presets, App Categories, Security/SecOps & Vault",
+   "path": "general/frontend-and-ui-architecture/dashboard-and-widgets/widget-presets-and-security-vault.md",
+   "size": 28
+  },
+  {
+   "id": "doc:okf-fro-per-frontend-performance-audit",
+   "type": "doc",
+   "label": "R39 — Frontend-Slop-Audit + Lücken-Register (Requirement)",
+   "path": "general/frontend-and-ui-architecture/performance-and-rendering/frontend-performance-audit.md",
+   "size": 13
+  },
+  {
+   "id": "sub:performance-and-rendering",
+   "type": "subtopic",
+   "label": "performance-and-rendering",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-fro-per-iframe-caching-and-http3",
+   "type": "doc",
+   "label": "R9 — Server-Side Iframe Cache with HTTP/3",
+   "path": "general/frontend-and-ui-architecture/performance-and-rendering/iframe-caching-and-http3.md",
+   "size": 80
+  },
+  {
+   "id": "doc:okf-ide-idp-external-idp-integration",
+   "type": "doc",
+   "label": "R22 — Identity Broker & External-IdP Federation (B2B/AWS-Self-Host)",
+   "path": "general/identity-and-access-control/idp-integration/external-idp-integration.md",
+   "size": 7
+  },
+  {
+   "id": "topic:identity-and-access-control",
+   "type": "topic",
+   "label": "identity-and-access-control",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:idp-integration",
+   "type": "subtopic",
+   "label": "idp-integration",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-ide-idp-hosted-app-auth-integration",
+   "type": "doc",
+   "label": "R42 — Superadmin Visibility into a Hosted App's Own Auth/RBAC: Design Synthesis",
+   "path": "general/identity-and-access-control/idp-integration/hosted-app-auth-integration.md",
+   "size": 10
+  },
+  {
+   "id": "doc:okf-infra-dns-protection",
+   "type": "doc",
+   "label": "DNS Protection: TSIG, DNSSEC, and Dynamic Updates with RNDC",
+   "path": "general/infrastructure-automation/dns-dhcp-storage/dns-protection-guide.md",
+   "size": 5
+  },
+  {
+   "id": "topic:infrastructure-automation",
+   "type": "topic",
+   "label": "infrastructure-automation",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:dns-dhcp-storage",
+   "type": "subtopic",
+   "label": "dns-dhcp-storage",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:[dns",
+   "type": "tag",
+   "label": "[dns",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:bind9",
+   "type": "tag",
+   "label": "bind9",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:dnssec",
+   "type": "tag",
+   "label": "dnssec",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:tsig",
+   "type": "tag",
+   "label": "tsig",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:rndc",
+   "type": "tag",
+   "label": "rndc",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:dhcp",
+   "type": "tag",
+   "label": "dhcp",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:storage",
+   "type": "tag",
+   "label": "storage",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:zfs",
+   "type": "tag",
+   "label": "zfs",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:iscsi]",
+   "type": "tag",
+   "label": "iscsi]",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-infra-netsec-layer2",
+   "type": "doc",
+   "label": "Layer-2 Attack Surface in Multi-VM Environments: DNS, DHCP, MAC, SSH",
+   "path": "general/infrastructure-automation/network-security/layer2-attack-surface.md",
+   "size": 7
+  },
+  {
+   "id": "sub:network-security",
+   "type": "subtopic",
+   "label": "network-security",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:[network-security",
+   "type": "tag",
+   "label": "[network-security",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:layer2",
+   "type": "tag",
+   "label": "layer2",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:dns",
+   "type": "tag",
+   "label": "dns",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:suricata",
+   "type": "tag",
+   "label": "suricata",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:ids",
+   "type": "tag",
+   "label": "ids",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:segmentation]",
+   "type": "tag",
+   "label": "segmentation]",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-infra-prov-foreman-pxe",
+   "type": "doc",
+   "label": "Bare-Metal Provisioning with Foreman: PXE, DHCP, TFTP, and Discovery",
+   "path": "general/infrastructure-automation/provisioning/foreman-pxe-provisioning.md",
+   "size": 6
+  },
+  {
+   "id": "sub:provisioning",
+   "type": "subtopic",
+   "label": "provisioning",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:[foreman",
+   "type": "tag",
+   "label": "[foreman",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:pxe",
+   "type": "tag",
+   "label": "pxe",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:provisioning",
+   "type": "tag",
+   "label": "provisioning",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:katello",
+   "type": "tag",
+   "label": "katello",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "tag:infrastructure]",
+   "type": "tag",
+   "label": "infrastructure]",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-llm-age-agent-bridge-self-provisioning",
+   "type": "doc",
+   "label": "Agent Bridge Self Provisioning",
+   "path": "general/llm-orchestration-and-routing/agent-architectures/agent-bridge-self-provisioning.md",
+   "size": 2
+  },
+  {
+   "id": "topic:llm-orchestration-and-routing",
+   "type": "topic",
+   "label": "llm-orchestration-and-routing",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:agent-architectures",
+   "type": "subtopic",
+   "label": "agent-architectures",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-llm-age-browser-agent-integrations",
+   "type": "doc",
+   "label": "requirements: pip install camoufox playwright",
+   "path": "general/llm-orchestration-and-routing/agent-architectures/browser-agent-integrations.md",
+   "size": 16
+  },
+  {
+   "id": "doc:okf-llm-age-mixture-of-experts-agents",
+   "type": "doc",
+   "label": "R6 — Model of Experts (MoE) for Agents",
+   "path": "general/llm-orchestration-and-routing/agent-architectures/mixture-of-experts-agents.md",
+   "size": 52
+  },
+  {
+   "id": "doc:okf-llm-age-plugin-orchestration",
+   "type": "doc",
+   "label": "R7 — DeepSeek Harness Plugin: Orchestration Mode Architecture",
+   "path": "general/llm-orchestration-and-routing/agent-architectures/plugin-orchestration.md",
+   "size": 10
+  },
+  {
+   "id": "doc:okf-llm-cdc-change-data-capture-synthesis",
+   "type": "doc",
+   "label": "R38 — CDC final: geschichtete Synthese (v1 inline + Enterprise Hub-and-Spoke)",
+   "path": "general/llm-orchestration-and-routing/cdc-and-synthesis/change-data-capture-synthesis.md",
+   "size": 8
+  },
+  {
+   "id": "sub:cdc-and-synthesis",
+   "type": "subtopic",
+   "label": "cdc-and-synthesis",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-llm-rou-entropy-based-llm-routing",
+   "type": "doc",
+   "label": "R4 — Nemotron Instruct Principle + Entropy-Based Routing",
+   "path": "general/llm-orchestration-and-routing/routing-algorithms/entropy-based-llm-routing.md",
+   "size": 8
+  },
+  {
+   "id": "sub:routing-algorithms",
+   "type": "subtopic",
+   "label": "routing-algorithms",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-llm-rou-mesh-routing-protocols",
+   "type": "doc",
+   "label": "SPRINT-PLANUNG & NETZWERK-RESEARCH: Zero-Trust & Layer-0 Routing",
+   "path": "general/llm-orchestration-and-routing/routing-algorithms/mesh-routing-protocols.md",
+   "size": 11
+  },
+  {
+   "id": "doc:okf-llm-rou-speculative-decoding",
+   "type": "doc",
+   "label": "R8 — Speculative Decoding & Advanced Model Features",
+   "path": "general/llm-orchestration-and-routing/routing-algorithms/speculative-decoding.md",
+   "size": 10
+  },
+  {
+   "id": "doc:okf-net-con-gvisor-container-networking",
+   "type": "doc",
+   "label": "2. Aktiviere das Interface im Kernel",
+   "path": "general/networking/container-networking/gvisor-container-networking.md",
+   "size": 15
+  },
+  {
+   "id": "topic:networking",
+   "type": "topic",
+   "label": "networking",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:container-networking",
+   "type": "subtopic",
+   "label": "container-networking",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-net-con-gvisor-ssh-networking",
+   "type": "doc",
+   "label": "R29: gVisor Networking, NAT Control, and SSH Agent Forwarding Overhaul",
+   "path": "general/networking/container-networking/gvisor-ssh-networking.md",
+   "size": 8
+  },
+  {
+   "id": "doc:okf-net-sec-gvisor-docker-ufw-security",
+   "type": "doc",
+   "label": "The The Multi-Provider Gateway Ultimate Security, Architecture & Forensic Master Document",
+   "path": "general/networking/security-and-firewalls/gvisor-docker-ufw-security.md",
+   "size": 29
+  },
+  {
+   "id": "sub:security-and-firewalls",
+   "type": "subtopic",
+   "label": "security-and-firewalls",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-net-sec-ufw-bypass-and-firewall-audits",
+   "type": "doc",
+   "label": "Incident Audit Report: 11. September 2026 (Incident V3)",
+   "path": "general/networking/security-and-firewalls/ufw-bypass-and-firewall-audits.md",
+   "size": 13
+  },
+  {
+   "id": "doc:okf-net-tun-port-detection-and-ssh-tunnels",
+   "type": "doc",
+   "label": "R11 — Port Detection + SSH Tunnel Bridge + E2E Deployment",
+   "path": "general/networking/tunnels-and-discovery/port-detection-and-ssh-tunnels.md",
+   "size": 12
+  },
+  {
+   "id": "sub:tunnels-and-discovery",
+   "type": "subtopic",
+   "label": "tunnels-and-discovery",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-net-vpn-tailscale-app-certificates",
+   "type": "doc",
+   "label": "R42 — App-Certs-Plan: Tailscale-Magic-Certs + Wazuh-Fallback (14.9.)",
+   "path": "general/networking/vpn-and-overlay/tailscale-app-certificates.md",
+   "size": 17
+  },
+  {
+   "id": "sub:vpn-and-overlay",
+   "type": "subtopic",
+   "label": "vpn-and-overlay",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-sec-gua-guardrails-otel-reference-stack",
+   "type": "doc",
+   "label": "R37 — Guardrails, OpenTelemetry & OSS-Referenz-Stack (Lizenz-Fundstellen)",
+   "path": "general/security-and-observability/guardrails-and-firewalls/guardrails-otel-reference-stack.md",
+   "size": 8
+  },
+  {
+   "id": "topic:security-and-observability",
+   "type": "topic",
+   "label": "security-and-observability",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:guardrails-and-firewalls",
+   "type": "subtopic",
+   "label": "guardrails-and-firewalls",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-sec-gua-llm-firewall-landscape",
+   "type": "doc",
+   "label": "R19 — LLM-Firewall-Landschaft & Kernel-nahes Injection-Tracking",
+   "path": "general/security-and-observability/guardrails-and-firewalls/llm-firewall-landscape.md",
+   "size": 7
+  },
+  {
+   "id": "doc:okf-sec-gua-llm-misalignment-audits",
+   "type": "doc",
+   "label": "R40 — Voll-Audit: Misalignments gegen die System Administrator-Vision (14.9.2026)",
+   "path": "general/security-and-observability/guardrails-and-firewalls/llm-misalignment-audits.md",
+   "size": 6
+  },
+  {
+   "id": "doc:okf-sec-gua-sast-precommit-kernel-security",
+   "type": "doc",
+   "label": "Sast Precommit Kernel Security",
+   "path": "general/security-and-observability/guardrails-and-firewalls/sast-precommit-kernel-security.md",
+   "size": 2
+  },
+  {
+   "id": "doc:okf-sec-sie-aws-siem-integration",
+   "type": "doc",
+   "label": "Aws Siem Integration",
+   "path": "general/security-and-observability/siem-and-monitoring/aws-siem-integration.md",
+   "size": 3
+  },
+  {
+   "id": "sub:siem-and-monitoring",
+   "type": "subtopic",
+   "label": "siem-and-monitoring",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-sec-sie-siem-architecture",
+   "type": "doc",
+   "label": "Siem Architecture",
+   "path": "general/security-and-observability/siem-and-monitoring/siem-architecture.md",
+   "size": 2
+  },
+  {
+   "id": "doc:okf-skl-doc-creation-guide",
+   "type": "doc",
+   "label": "Open Knowledge Format (OKF v1.0) Specification & Creation Guide",
+   "path": "skills/okf-document-creation.md",
+   "size": 6
+  },
+  {
+   "id": "topic:skills",
+   "type": "topic",
+   "label": "skills",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "sub:documentation-standards",
+   "type": "subtopic",
+   "label": "documentation-standards",
+   "path": "",
+   "size": 0
+  },
+  {
+   "id": "doc:okf-skl-slop-to-knowledge-pipeline",
+   "type": "doc",
+   "label": "Research Slop Deconstruction & GraphRAG Structuring Pipeline",
+   "path": "skills/research-slop-to-knowledge-pipeline.md",
+   "size": 14
+  },
+  {
+   "id": "sub:knowledge-engineering",
+   "type": "subtopic",
+   "label": "knowledge-engineering",
+   "path": "",
+   "size": 0
+  }
+ ],
+ "links": [
+  {
+   "source": "topic:agent-systems-and-browser-automation",
+   "target": "doc:okf-age-bro-agent-browser-control"
+  },
+  {
+   "source": "sub:browser-automation",
+   "target": "doc:okf-age-bro-agent-browser-control"
+  },
+  {
+   "source": "topic:agent-systems-and-browser-automation",
+   "target": "doc:okf-age-fra-agent-framework-comparison"
+  },
+  {
+   "source": "sub:framework-evaluations",
+   "target": "doc:okf-age-fra-agent-framework-comparison"
+  },
+  {
+   "source": "topic:agent-systems-and-browser-automation",
+   "target": "doc:okf-age-fra-llm-framework-synthesis"
+  },
+  {
+   "source": "sub:framework-evaluations",
+   "target": "doc:okf-age-fra-llm-framework-synthesis"
+  },
+  {
+   "source": "topic:agent-systems-and-browser-automation",
+   "target": "doc:okf-age-ski-dap-skills-and-memory"
+  },
+  {
+   "source": "sub:skills-and-memory",
+   "target": "doc:okf-age-ski-dap-skills-and-memory"
+  },
+  {
+   "source": "topic:analytics-and-telemetry",
+   "target": "doc:okf-ana-mes-auto-provisioning-mesh-endpoints"
+  },
+  {
+   "source": "sub:mesh-endpoints",
+   "target": "doc:okf-ana-mes-auto-provisioning-mesh-endpoints"
+  },
+  {
+   "source": "topic:analytics-and-telemetry",
+   "target": "doc:okf-ana-mes-mesh-endpoint-configuration"
+  },
+  {
+   "source": "sub:mesh-endpoints",
+   "target": "doc:okf-ana-mes-mesh-endpoint-configuration"
+  },
+  {
+   "source": "topic:analytics-and-telemetry",
+   "target": "doc:okf-ana-met-model-statistics-pipeline"
+  },
+  {
+   "source": "sub:metrics-and-pipelines",
+   "target": "doc:okf-ana-met-model-statistics-pipeline"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-07-ebpf-llm-guards-blogpost"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-07-ebpf-llm-guards-blogpost"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-07-ebpf-llm-guards-short-post"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-07-ebpf-llm-guards-short-post"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-08-entropy-cascades-blogpost"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-08-entropy-cascades-blogpost"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-08-entropy-cascades-short-post"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-08-entropy-cascades-short-post"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-08-learning-router-blogpost"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-08-learning-router-blogpost"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-08-learning-router-short-post"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-08-learning-router-short-post"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-08-llm-mesh-intro-blogpost"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-08-llm-mesh-intro-blogpost"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-08-llm-mesh-intro-short-post"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-08-llm-mesh-intro-short-post"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-09-siem-oss-vs-aws-native"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-09-siem-oss-vs-aws-native"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-09-siem-smb-guide-blogpost"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-09-siem-smb-guide-blogpost"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-09-siem-smb-guide-short-post"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-09-siem-smb-guide-short-post"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-13-gvisor-workspace-isolation-blogpost"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-13-gvisor-workspace-isolation-blogpost"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-2026-09-13-gvisor-workspace-isolation-short-post"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-2026-09-13-gvisor-workspace-isolation-short-post"
+  },
+  {
+   "source": "topic:articles",
+   "target": "doc:okf-art-gen-agentic-knowledge-porting"
+  },
+  {
+   "source": "sub:technical-blogs",
+   "target": "doc:okf-art-gen-agentic-knowledge-porting"
+  },
+  {
+   "source": "topic:container-runtime-security",
+   "target": "doc:okf-con-mcp-container-registry-mcp-discovery"
+  },
+  {
+   "source": "sub:mcp-integrations",
+   "target": "doc:okf-con-mcp-container-registry-mcp-discovery"
+  },
+  {
+   "source": "topic:container-runtime-security",
+   "target": "doc:okf-con-mcp-docker-mcp-integration"
+  },
+  {
+   "source": "sub:mcp-integrations",
+   "target": "doc:okf-con-mcp-docker-mcp-integration"
+  },
+  {
+   "source": "topic:container-runtime-security",
+   "target": "doc:okf-con-san-gvisor-architecture"
+  },
+  {
+   "source": "sub:sandboxing",
+   "target": "doc:okf-con-san-gvisor-architecture"
+  },
+  {
+   "source": "topic:container-runtime-security",
+   "target": "doc:okf-con-san-tetragon-gvisor-kata-comparison"
+  },
+  {
+   "source": "sub:sandboxing",
+   "target": "doc:okf-con-san-tetragon-gvisor-kata-comparison"
+  },
+  {
+   "source": "topic:container-runtime-security",
+   "target": "doc:okf-con-ter-terminal-tmux-vnc-workspaces"
+  },
+  {
+   "source": "sub:terminal-workspaces",
+   "target": "doc:okf-con-ter-terminal-tmux-vnc-workspaces"
+  },
+  {
+   "source": "topic:container-runtime-security",
+   "target": "doc:okf-con-ter-vnc-workspace-alternatives"
+  },
+  {
+   "source": "sub:terminal-workspaces",
+   "target": "doc:okf-con-ter-vnc-workspace-alternatives"
+  },
+  {
+   "source": "topic:frontend-and-ui-architecture",
+   "target": "doc:okf-fro-das-multi-window-dashboard"
+  },
+  {
+   "source": "sub:dashboard-and-widgets",
+   "target": "doc:okf-fro-das-multi-window-dashboard"
+  },
+  {
+   "source": "topic:frontend-and-ui-architecture",
+   "target": "doc:okf-fro-das-widget-presets-and-security-vault"
+  },
+  {
+   "source": "sub:dashboard-and-widgets",
+   "target": "doc:okf-fro-das-widget-presets-and-security-vault"
+  },
+  {
+   "source": "topic:frontend-and-ui-architecture",
+   "target": "doc:okf-fro-per-frontend-performance-audit"
+  },
+  {
+   "source": "sub:performance-and-rendering",
+   "target": "doc:okf-fro-per-frontend-performance-audit"
+  },
+  {
+   "source": "topic:frontend-and-ui-architecture",
+   "target": "doc:okf-fro-per-iframe-caching-and-http3"
+  },
+  {
+   "source": "sub:performance-and-rendering",
+   "target": "doc:okf-fro-per-iframe-caching-and-http3"
+  },
+  {
+   "source": "topic:identity-and-access-control",
+   "target": "doc:okf-ide-idp-external-idp-integration"
+  },
+  {
+   "source": "sub:idp-integration",
+   "target": "doc:okf-ide-idp-external-idp-integration"
+  },
+  {
+   "source": "topic:identity-and-access-control",
+   "target": "doc:okf-ide-idp-hosted-app-auth-integration"
+  },
+  {
+   "source": "sub:idp-integration",
+   "target": "doc:okf-ide-idp-hosted-app-auth-integration"
+  },
+  {
+   "source": "topic:infrastructure-automation",
+   "target": "doc:okf-infra-dns-protection"
+  },
+  {
+   "source": "sub:dns-dhcp-storage",
+   "target": "doc:okf-infra-dns-protection"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:[dns"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:bind9"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:dnssec"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:tsig"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:rndc"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:dhcp"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:storage"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:zfs"
+  },
+  {
+   "source": "doc:okf-infra-dns-protection",
+   "target": "tag:iscsi]"
+  },
+  {
+   "source": "topic:infrastructure-automation",
+   "target": "doc:okf-infra-netsec-layer2"
+  },
+  {
+   "source": "sub:network-security",
+   "target": "doc:okf-infra-netsec-layer2"
+  },
+  {
+   "source": "doc:okf-infra-netsec-layer2",
+   "target": "tag:[network-security"
+  },
+  {
+   "source": "doc:okf-infra-netsec-layer2",
+   "target": "tag:layer2"
+  },
+  {
+   "source": "doc:okf-infra-netsec-layer2",
+   "target": "tag:dns"
+  },
+  {
+   "source": "doc:okf-infra-netsec-layer2",
+   "target": "tag:dhcp"
+  },
+  {
+   "source": "doc:okf-infra-netsec-layer2",
+   "target": "tag:suricata"
+  },
+  {
+   "source": "doc:okf-infra-netsec-layer2",
+   "target": "tag:ids"
+  },
+  {
+   "source": "doc:okf-infra-netsec-layer2",
+   "target": "tag:segmentation]"
+  },
+  {
+   "source": "topic:infrastructure-automation",
+   "target": "doc:okf-infra-prov-foreman-pxe"
+  },
+  {
+   "source": "sub:provisioning",
+   "target": "doc:okf-infra-prov-foreman-pxe"
+  },
+  {
+   "source": "doc:okf-infra-prov-foreman-pxe",
+   "target": "tag:[foreman"
+  },
+  {
+   "source": "doc:okf-infra-prov-foreman-pxe",
+   "target": "tag:pxe"
+  },
+  {
+   "source": "doc:okf-infra-prov-foreman-pxe",
+   "target": "tag:provisioning"
+  },
+  {
+   "source": "doc:okf-infra-prov-foreman-pxe",
+   "target": "tag:katello"
+  },
+  {
+   "source": "doc:okf-infra-prov-foreman-pxe",
+   "target": "tag:infrastructure]"
+  },
+  {
+   "source": "topic:llm-orchestration-and-routing",
+   "target": "doc:okf-llm-age-agent-bridge-self-provisioning"
+  },
+  {
+   "source": "sub:agent-architectures",
+   "target": "doc:okf-llm-age-agent-bridge-self-provisioning"
+  },
+  {
+   "source": "topic:llm-orchestration-and-routing",
+   "target": "doc:okf-llm-age-browser-agent-integrations"
+  },
+  {
+   "source": "sub:agent-architectures",
+   "target": "doc:okf-llm-age-browser-agent-integrations"
+  },
+  {
+   "source": "topic:llm-orchestration-and-routing",
+   "target": "doc:okf-llm-age-mixture-of-experts-agents"
+  },
+  {
+   "source": "sub:agent-architectures",
+   "target": "doc:okf-llm-age-mixture-of-experts-agents"
+  },
+  {
+   "source": "topic:llm-orchestration-and-routing",
+   "target": "doc:okf-llm-age-plugin-orchestration"
+  },
+  {
+   "source": "sub:agent-architectures",
+   "target": "doc:okf-llm-age-plugin-orchestration"
+  },
+  {
+   "source": "topic:llm-orchestration-and-routing",
+   "target": "doc:okf-llm-cdc-change-data-capture-synthesis"
+  },
+  {
+   "source": "sub:cdc-and-synthesis",
+   "target": "doc:okf-llm-cdc-change-data-capture-synthesis"
+  },
+  {
+   "source": "topic:llm-orchestration-and-routing",
+   "target": "doc:okf-llm-rou-entropy-based-llm-routing"
+  },
+  {
+   "source": "sub:routing-algorithms",
+   "target": "doc:okf-llm-rou-entropy-based-llm-routing"
+  },
+  {
+   "source": "topic:llm-orchestration-and-routing",
+   "target": "doc:okf-llm-rou-mesh-routing-protocols"
+  },
+  {
+   "source": "sub:routing-algorithms",
+   "target": "doc:okf-llm-rou-mesh-routing-protocols"
+  },
+  {
+   "source": "topic:llm-orchestration-and-routing",
+   "target": "doc:okf-llm-rou-speculative-decoding"
+  },
+  {
+   "source": "sub:routing-algorithms",
+   "target": "doc:okf-llm-rou-speculative-decoding"
+  },
+  {
+   "source": "topic:networking",
+   "target": "doc:okf-net-con-gvisor-container-networking"
+  },
+  {
+   "source": "sub:container-networking",
+   "target": "doc:okf-net-con-gvisor-container-networking"
+  },
+  {
+   "source": "topic:networking",
+   "target": "doc:okf-net-con-gvisor-ssh-networking"
+  },
+  {
+   "source": "sub:container-networking",
+   "target": "doc:okf-net-con-gvisor-ssh-networking"
+  },
+  {
+   "source": "topic:networking",
+   "target": "doc:okf-net-sec-gvisor-docker-ufw-security"
+  },
+  {
+   "source": "sub:security-and-firewalls",
+   "target": "doc:okf-net-sec-gvisor-docker-ufw-security"
+  },
+  {
+   "source": "topic:networking",
+   "target": "doc:okf-net-sec-ufw-bypass-and-firewall-audits"
+  },
+  {
+   "source": "sub:security-and-firewalls",
+   "target": "doc:okf-net-sec-ufw-bypass-and-firewall-audits"
+  },
+  {
+   "source": "topic:networking",
+   "target": "doc:okf-net-tun-port-detection-and-ssh-tunnels"
+  },
+  {
+   "source": "sub:tunnels-and-discovery",
+   "target": "doc:okf-net-tun-port-detection-and-ssh-tunnels"
+  },
+  {
+   "source": "topic:networking",
+   "target": "doc:okf-net-vpn-tailscale-app-certificates"
+  },
+  {
+   "source": "sub:vpn-and-overlay",
+   "target": "doc:okf-net-vpn-tailscale-app-certificates"
+  },
+  {
+   "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-gua-guardrails-otel-reference-stack"
+  },
+  {
+   "source": "sub:guardrails-and-firewalls",
+   "target": "doc:okf-sec-gua-guardrails-otel-reference-stack"
+  },
+  {
+   "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-gua-llm-firewall-landscape"
+  },
+  {
+   "source": "sub:guardrails-and-firewalls",
+   "target": "doc:okf-sec-gua-llm-firewall-landscape"
+  },
+  {
+   "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-gua-llm-misalignment-audits"
+  },
+  {
+   "source": "sub:guardrails-and-firewalls",
+   "target": "doc:okf-sec-gua-llm-misalignment-audits"
+  },
+  {
+   "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-gua-sast-precommit-kernel-security"
+  },
+  {
+   "source": "sub:guardrails-and-firewalls",
+   "target": "doc:okf-sec-gua-sast-precommit-kernel-security"
+  },
+  {
+   "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-sie-aws-siem-integration"
+  },
+  {
+   "source": "sub:siem-and-monitoring",
+   "target": "doc:okf-sec-sie-aws-siem-integration"
+  },
+  {
+   "source": "topic:security-and-observability",
+   "target": "doc:okf-sec-sie-siem-architecture"
+  },
+  {
+   "source": "sub:siem-and-monitoring",
+   "target": "doc:okf-sec-sie-siem-architecture"
+  },
+  {
+   "source": "topic:skills",
+   "target": "doc:okf-skl-doc-creation-guide"
+  },
+  {
+   "source": "sub:documentation-standards",
+   "target": "doc:okf-skl-doc-creation-guide"
+  },
+  {
+   "source": "topic:skills",
+   "target": "doc:okf-skl-slop-to-knowledge-pipeline"
+  },
+  {
+   "source": "sub:knowledge-engineering",
+   "target": "doc:okf-skl-slop-to-knowledge-pipeline"
+  }
+ ]
+}

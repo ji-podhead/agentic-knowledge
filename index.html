@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Knowledge — OKF v1.0 Portal</title>
+<meta name="description" content="Open knowledge base for building agent systems — routing, security, sandboxes, identity. OKF v1.0, GraphRAG explorer, multi-hop drill-down.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕸️</text></svg>">
+<style>
+:root{--bg:#0b1329;--panel:#0f172a;--line:#3a506b;--text:#fafafa;--muted:#94a3b8;--cyan:#38bdf8;--violet:#818cf8;--green:#34d399;--amber:#f59e0b;--mono:ui-monospace,'JetBrains Mono',monospace}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(135deg,var(--bg),#1c2541);color:var(--text);font:15px/1.65 system-ui,'Segoe UI',sans-serif}
+a{color:var(--cyan)}
+/* Docsify overrides */
+.sidebar{background:rgba(15,23,42,.92)!important;border-right:1px solid var(--line)!important;color-scheme:dark}
+.sidebar a{color:var(--muted)!important;font-size:12.5px!important}
+.sidebar a:hover{color:var(--cyan)!important}
+.sidebar .active a{color:var(--cyan)!important;font-weight:700}
+.content{background:transparent!important;color:var(--text)!important}
+.markdown-section{max-width:860px}
+.markdown-section h1,.markdown-section h2,.markdown-section h3{letter-spacing:-.4px}
+.markdown-section pre{background:var(--panel)!important}
+.markdown-section code{background:rgba(56,189,248,.08);color:#7dd3fc}
+.search{background:rgba(15,23,42,.95)!important;color:var(--text)!important}
+.search a{color:var(--cyan)!important}
+.search .matching-post{border-bottom:1px solid var(--line)}
+/* Graph explorer */
+#grag{border:1px solid var(--line);border-radius:14px;background:rgba(15,23,42,.75);margin:1.5rem 0;overflow:hidden}
+#grag header{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+#grag header b{color:var(--cyan)}
+#grag .modes{display:flex;gap:.4rem}
+#grag .modes button{background:var(--panel);border:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:.65rem;padding:.25rem .6rem;border-radius:6px;cursor:pointer}
+#grag .modes button.on{color:var(--cyan);border-color:var(--cyan)}
+#grag svg{display:block;width:100%;height:430px;cursor:grab}
+#grag .gl{stroke:rgba(58,80,107,.5);stroke-width:1}
+#grag .gl.hl{stroke:var(--cyan);stroke-width:2;stroke-opacity:.9}
+#grag circle{stroke:rgba(2,6,23,.6);stroke-width:1.5;transition:r .12s}
+#grag circle.sel{stroke:var(--cyan);stroke-width:3}
+#grag circle.dim{opacity:.18}
+#grag text{fill:var(--muted);font-size:9.5px;font-family:var(--mono);pointer-events:none;text-anchor:middle}
+#grag text.dim{opacity:.2}
+/* chunk panel */
+#chunks{position:absolute;top:3rem;right:0;width:300px;max-height:calc(100% - 6rem);overflow:auto;background:rgba(11,19,41,.97);border:1px solid var(--line);border-radius:12px;margin:.5rem;display:none;font-family:var(--mono)}
+#chunks.on{display:block}
+#chunks h4{margin:.6rem .8rem .2rem;font-size:.62rem;letter-spacing:1px;color:var(--cyan)}
+#chunks .ch{padding:.5rem .8rem;border-bottom:1px solid rgba(58,80,107,.35);cursor:pointer;font-size:.68rem;color:var(--muted)}
+#chunks .ch:hover{color:var(--cyan);background:rgba(56,189,248,.06)}
+#chunks .ch b{color:var(--text);display:block;font-size:.7rem;margin-bottom:.15rem}
+/* chat */
+#chatfab{position:fixed;right:1.2rem;bottom:1.2rem;z-index:60;width:52px;height:52px;border-radius:50%;border:none;background:linear-gradient(90deg,var(--cyan),var(--violet));color:#0b1329;font-size:1.4rem;cursor:pointer;box-shadow:0 6px 24px rgba(56,189,248,.35)}
+#chat{position:fixed;right:1.2rem;bottom:5rem;z-index:60;width:340px;max-width:92vw;height:480px;background:rgba(15,23,42,.98);border:1px solid var(--line);border-radius:14px;display:none;flex-direction:column;overflow:hidden}
+#chat.on{display:flex}
+#chat .hd{padding:.6rem .8rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.68rem;color:var(--cyan)}
+#chat .hd .cfg{display:flex;gap:.4rem;margin-top:.4rem}
+#chat select,#chat input{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--text);font-family:var(--mono);font-size:.62rem;padding:.3rem .4rem}
+#chat .msgs{flex:1;overflow:auto;padding:.6rem .8rem;display:flex;flex-direction:column;gap:.5rem}
+#chat .m{max-width:88%;padding:.45rem .6rem;border-radius:9px;font-size:.76rem;white-space:pre-wrap}
+#chat .m.u{align-self:flex-end;background:rgba(56,189,248,.14);color:#bae6fd}
+#chat .m.a{align-self:flex-start;background:rgba(129,140,248,.10);color:#c7d2fe}
+#chat .m.s{align-self:center;font-family:var(--mono);font-size:.6rem;color:var(--muted)}
+#chat .ft{display:flex;gap:.4rem;padding:.5rem;border-top:1px solid var(--line)}
+#chat .ft input{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:.45rem .6rem;font-size:.78rem}
+#chat .ft button{background:var(--cyan);border:none;border-radius:8px;padding:.45rem .9rem;font-weight:700;cursor:pointer;color:#0b1329}
+@media(max-width:760px){#chunks{width:220px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<button id="chatfab" onclick="document.getElementById('chat').classList.toggle('on')" title="AI Retrieval Assistant">🤖</button>
+<div id="chat">
+  <div class="hd">🤖 GraphRAG Assistant
+    <div class="cfg">
+      <select id="model"></select>
+      <input id="oai-key" type="password" placeholder="OpenAI/OpenRouter key (optional)">
+    </div>
+  </div>
+  <div class="msgs" id="msgs"><div class="m a">Hello! I retrieve from the OKF knowledge base. Ask about gVisor, LLM routing, SIEM, MCP… (add a key for live answers; without one I show retrieved chunks only.)</div></div>
+  <div class="ft"><input id="q" placeholder="Ask a question…"><button onclick="ask()">➤</button></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+window.$docsify={name:'agentic-knowledge',loadSidebar:true,auto2top:true,homepage:'README.md',
+  alias:{'/.*/_sidebar.md':'/_sidebar.md'},
+  search:{placeholder:'Search knowledge…',noData:'No results',depth:6},
+  plugins:[function(h,a){a.hook.doneEach(function(){if(a.route.path==='/'||a.route.path.includes('README'))bootGraph()})}]};
+
+/* ── state ── */
+let M=null,hop=1,sel=null,G={};
+const TYPE={topic:{c:'#38bdf8',r:13},subtopic:{c:'#818cf8',r:9},tag:{c:'#34d399',r:7},doc:{c:'#f59e0b',r:10}};
+
+async function bootGraph(){
+  const host=document.querySelector('.markdown-section');if(!host)return;
+  let box=document.getElementById('grag');
+  if(!box){
+    box=document.createElement('div');box.id='grag';
+    box.innerHTML='<header><span>🕸️ <b>GraphRAG Explorer</b> — click: select · dblclick: open doc</span><span class="modes"><button id="h1" class="on">1-hop</button><button id="h2">2-hop</button><button id="all">all</button></span></header><svg></svg><aside id="chunks"></aside>';
+    host.insertBefore(box,host.firstChild);
+    box.querySelector('#h1').onclick=()=>setHop(1);box.querySelector('#h2').onclick=()=>setHop(2);box.querySelector('#all').onclick=()=>setHop(0);
+  }
+  if(!M){M=await(await fetch('manifest.json')).json();draw(box.querySelector('svg'));}
+}
+function setHop(h){hop=h;document.querySelectorAll('#grag .modes button').forEach(b=>b.classList.remove('on'));
+  document.getElementById(h===1?'h1':h===2?'h2':'all').classList.add('on');paint();}
+
+function draw(svg){
+  const W=svg.clientWidth||840,H=430;
+  G.nodes=M.nodes.map(n=>({...n}));
+  const idx={};G.nodes.forEach(n=>idx[n.id]=n);
+  G.links=M.links.map(l=>({source:idx[l.source],target:idx[l.target]})).filter(l=>l.source&&l.target);
+  svg.innerHTML='';
+  const s=d3.select(svg).attr('viewBox',[0,0,W,H]);
+  const gl=s.append('g').selectAll('line').data(G.links).join('line').attr('class','gl');
+  const gn=s.append('g').selectAll('circle').data(G.nodes).join('circle')
+    .attr('r',d=>TYPE[d.type].r+(d.size?Math.min(6,d.size*.4):0)).attr('fill',d=>TYPE[d.type].c)
+    .on('click',(e,d)=>{sel=(sel===d.id)?null:d.id;paint();chunks(d);})
+    .on('dblclick',(e,d)=>{if(d.path)location.hash='#/'+d.path});
+  const gt=s.append('g').selectAll('text').data(G.nodes).join('text').text(d=>d.label.slice(0,26));
+  d3.forceSimulation(G.nodes).force('link',d3.forceLink(G.links).distance(l=>l.target.type==='doc'?46:60))
+    .force('charge',d3.forceManyBody().strength(-190)).force('center',d3.forceCenter(W/2,H/2))
+    .on('tick',()=>{gl.attr('x1',l=>l.source.x).attr('y1',l=>l.source.y).attr('x2',l=>l.target.x).attr('y2',l=>l.target.y);
+      gn.attr('cx',d=>d.x).attr('cy',d=>d.y);gt.attr('x',d=>d.x).attr('y',d=>d.y+TYPE[d.type].r+11);});
+  G.sel=gn;G.lbl=gt;G.lnk=gl;
+  svg.addEventListener('click',e=>{if(e.target===svg||e.target.tagName==='line'){sel=null;paint();document.getElementById('chunks').classList.remove('on')}});
+}
+function neighbors(){
+  if(!sel)return null;const set=new Set([sel]);
+  if(hop>=2){const s2=new Set();G.links.forEach(l=>{if(set.has(l.source.id))s2.add(l.target.id);if(set.has(l.target.id))s2.add(l.source.id)});s2.forEach(x=>set.add(x));}
+  return set;
+}
+function paint(){
+  const nb=hop?neighbors():null;
+  G.lnk.classed('hl',l=>nb&&(nb.has(l.source.id)&&nb.has(l.target.id)));
+  G.sel.classed('sel',d=>d.id===sel).classed('dim',d=>nb&&!nb.has(d.id));
+  G.lbl.classed('dim',d=>nb&&!nb.has(d.id));
+}
+function chunks(d){
+  const el=document.getElementById('chunks');
+  if(!d.path){el.classList.remove('on');return}
+  el.innerHTML='<h4>📄 CHUNKS — '+d.label+'</h4>';
+  fetch(d.path).then(r=>r.text()).then(t=>{
+    const parts=t.split(/\n(?=#{1,3} )/).filter(p=>p.trim().length>40);
+    parts.forEach((p,i)=>{
+      const head=(p.split('\n')[0]||'').replace(/^#+\s*/,'').slice(0,60)||('§'+(i+1));
+      const div=document.createElement('div');div.className='ch';
+      div.innerHTML='<b>'+head+'</b>'+p.slice(0,120).replace(/[#*`>_-]/g,'').trim()+'…';
+      div.onclick=()=>{location.hash='#/'+d.path;setTimeout(()=>{const sec=[...document.querySelectorAll('h1,h2,h3')].find(x=>x.textContent.includes(head));sec&&sec.scrollIntoView({behavior:'smooth'})},600)};
+      el.appendChild(div);
+    });
+    el.classList.add('on');
+  });
+}
+
+/* ── chat + client-side retrieval ── */
+const FREE_MODELS=['(retrieval only — no model)','meta-llama/llama-3.2-3b-instruct:free (OpenRouter)','google/gemma-2-9b-it:free (OpenRouter)','mistralai/mistral-7b-instruct:free (OpenRouter)','gpt-4o-mini (OpenAI)','gpt-4o (OpenAI)'];
+document.getElementById('model').innerHTML=FREE_MODELS.map(m=>'<option>'+m+'</option>').join('');
+document.getElementById('oai-key').onchange=e=>localStorage.setItem('okf_key',e.target.value);
+if(localStorage.getItem('okf_key'))document.getElementById('oai-key').value=localStorage.getItem('okf_key');
+
+function retrieve(q){
+  const toks=q.toLowerCase().split(/\W+/).filter(w=>w.length>3);
+  if(!M)return[];
+  return M.docs.map(d=>{
+    const hay=(d.title+' '+d.topic+' '+d.subtopic+' '+d.tags.join(' ')+' '+d.summary).toLowerCase();
+    let s=0;toks.forEach(t=>{if(hay.includes(t))s+=2;if(d.title.toLowerCase().includes(t))s+=3;if(d.tags.some(g=>g.includes(t)))s+=2});
+    return{d,s};
+  }).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,4);
+}
+async function ask(){
+  const q=document.getElementById('q').value.trim();if(!q||!M)return;
+  const msgs=document.getElementById('msgs');
+  msgs.insertAdjacentHTML('beforeend','<div class="m u">'+q+'</div>');document.getElementById('q').value='';
+  const hits=retrieve(q);
+  const show=hits.map(h=>'• '+h.d.title+' ['+h.d.topic+'/'+h.d.subtopic+']');
+  msgs.insertAdjacentHTML('beforeend','<div class="m s">retrieved '+hits.length+' docs → '+show.join(' | ')+'</div>');
+  if(!hits.length){msgs.insertAdjacentHTML('beforeend','<div class="m a">No matching documents. Try: gVisor, entropy, SIEM, MCP, VLAN, DNS…</div>');msgs.scrollTop=1e6;return}
+  const model=document.getElementById('model').value,key=document.getElementById('oai-key').value;
+  if(!key||model.startsWith('(retrieval')){msgs.insertAdjacentHTML('beforeend','<div class="m a">Top chunks:\n\n'+hits.map(h=>'— '+h.d.title+' → #/'+h.d.path).join('\n')+'</div>');msgs.scrollTop=1e6;return}
+  const openrouter=model.includes('OpenRouter')||model.includes(':free');
+  const url=openrouter?'https://openrouter.ai/api/v1/chat/completions':'https://api.openai.com/v1/chat/completions';
+  const id=openrouter?model.split(' (')[0]:model.split(' (')[0];
+  try{
+    const bodies=await Promise.all(hits.slice(0,3).map(h=>fetch(h.d.path).then(r=>r.text()).then(t=>'# '+h.d.title+'\n'+t.slice(0,1500))));
+    const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},body:JSON.stringify({model:id,messages:[{role:'system',content:'Answer ONLY from the provided knowledge chunks. Cite doc titles.'},{role:'user',content:q+'\n\nKNOWLEDGE:\n'+bodies.join('\n---\n')}]})});
+    const j=await r.json();
+    msgs.insertAdjacentHTML('beforeend','<div class="m a">'+(j.choices?j.choices[0].message.content:j.error?j.error.message:'(empty response)')+'</div>');
+  }catch(e){msgs.insertAdjacentHTML('beforeend','<div class="m a">API error: '+e.message+'</div>')}
+  msgs.scrollTop=1e6;
+}
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')ask()});
+</script>
+</body>
+</html>
