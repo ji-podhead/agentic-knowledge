@@ -6,6 +6,13 @@
 <title>Agentic Knowledge — OKF v1.0 Portal</title>
 <meta name="description" content="Open knowledge base for building agent systems — routing, security, sandboxes, identity. OKF v1.0, GraphRAG explorer, multi-hop drill-down.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕸️</text></svg>">
+<!-- Docsify's base theme CSS establishes the whole layout (fixed sidebar,
+     content pane margin, search box positioning, etc.) — the <style> block
+     below only overrides colors/details on TOP of it. Without this link,
+     Docsify's JS still builds the right DOM, but nothing is positioned or
+     sized, so the page renders as an unstyled list dump instead of a docs
+     site (found live 2026-09-14: no theme stylesheet had ever been added). -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 <style>
 :root{--bg:#0b1329;--panel:#0f172a;--line:#3a506b;--text:#fafafa;--muted:#94a3b8;--cyan:#38bdf8;--violet:#818cf8;--green:#34d399;--amber:#f59e0b;--mono:ui-monospace,'JetBrains Mono',monospace}
 *{box-sizing:border-box}

@@ -1,9 +1,6 @@
 # Open Knowledge Base (OKF Specification v1.0)
 
-Welcome to the **Open Knowledge Base**, a publication-ready, standalone technical research library covering cloud-native architecture, LLM orchestration, container runtime security, networking, security benchmarks, knowledge engineering skills, and gateway specifications.
-
-
-Welcome to the **Open Knowledge Base**, a standardized, publication-ready repository of technical specifications, architecture blueprints, security research, and engineering benchmarks.
+Welcome to the **Open Knowledge Base**, a publication-ready, standardized technical research library covering cloud-native architecture, LLM orchestration, container runtime security, networking, security benchmarks, knowledge engineering skills, and gateway specifications.
 
 All documents in this directory adhere strictly to the **Open Knowledge Format (OKF v1.0)** specification.
 
